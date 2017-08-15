@@ -1,0 +1,218 @@
+% Chapter 2
+
+\chapter{Background information} % Main chapter title
+\label{Chapter2} 
+
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+In this chapter, I will firstly make a survey of different types of recommender systems; then I will narrow down the topic to music recommender systems. As music possess different features comparing to other kind of information such as movie and news, its recommender system also needs to be tailor to bring satisfaction to its listeners.
+
+\section{Overview of recommender systems}
+There are currently three main basic approach to recommendation, namely collaborative recommendation, content-based recommendation, and knowledge-based recommendation \cite{jannach2010recommender}. There are also an approach, called hybrid approaches, that tries to combine different recommendation together, in order to augment the strength and limit the drawback of each separate techniques. The description, as well as the advantages and disadvantages, of each recommendation techniques will be discussed as follow.
+
+\subsection{Collaborative recommendation}
+The main idea of collaborative recommendation approaches is to predict potential items that a user would like using past behavior information of other users. Pure collaborative algorithm take only user-item ratings as input and generate a prediction suggesting to what degree the user will like a certain item or a list of \textit{n} recommended items as output. 
+
+There are two kind of ratings that can be used, namely implicit and explicit ratings. Explicit rating information can be collected by explicitly asking users to rate the item on a specific scale. Different scales are applied to different domain, as the quality of recommendation is different between these scales \cite{cosley2003seeing}. Ratings are then convert internally to numeric values in order for recommender systems to calculate the similarities. Implicit ratings, on the other hand, are knowledge collected based on the interaction between users and the systems. They can be in various forms with distinctive characteristics, such as information about item buying, book reading, music listening, or even user browsing behavior. As implicit ratings are observed behaviors, recommenders have to interpret whether the behaviors have positive or negative impacts toward the users. Even though the interpretation might be incorrect in some cases (e.g., a user might not like all the items that she bought), a massive amount of feedback would exclude these particular cases. In fact, Shafer et al \cite{schafer2006recommender} report that in some domains, user model using implicit information can outperform the one with explicit ratings.
+
+There are many algorithms develop to exploit the rating matrix; However, in this review, I will just go into detail some main approaches that have been studied carefully in the past and have been applied widely in the industry. These approaches include user-based approach, item-based approach, and an approach using matrix factorization/ latent factor models. Some other approaches, such as probabilistic approach, or slope one predictors, will not be mentioned here because of the scope of the thesis.
+
+\subsubsection{User-based nearest neighbor recommendation}
+\textit{User-based nearest neighbor recommendation} is one of the earliest algorithm for this approach. The main idea of the algorithm is to identify other users who have similar preferences to a user; then for any item \textit{i} that is unknown to the current user, a prediction is given based on the similar of the ratings of other users on item \textit{i}.
+
+\paragraph{Pearson's correlation coefficient}
+One common method to calculate the similar between users is Pearson's correlation coefficient. The general formula for the coefficient \(\rho\) \cite{benesty2009pearson} is:
+
+\begin{displaymath}
+\rho_{X,Y} = \frac{cov(X,Y)}{\sigma_X \sigma_Y}
+\end{displaymath}
+
+with \(cov(X,Y)\) is the covariance between X and Y, and \(\sigma_X\) and \(\sigma_Y\) represent the standard deviation of X and Y. 
+
+Apply the formula to the case of collaborative filtering: let \( $\mathbf{U}$ = \{ $\mathbf{u_1}$, \dots, $\mathbf{u_n}$\} \) denote the set of users, \( $\mathbf{U}$ = \{ $\mathbf{p_1}$, \dots, $\mathbf{p_n}$ \}$ \) for the set of items. The 2 sets form a \(n \times m\) matrix of rating \(r_{i,j}\) with \(i \in 1 \dots n, j \in 1 \dots m\), with \(r_{a,p} \) is the rating of user a on item p, and \(\bar{r}_a \) denotes the average rating of user a. The similarity of user a and b \(sim(a, b) \) is defined as follow:
+
+\begin{displaymath}
+sim(a,b) = \frac{\sum_{p \in P}(r_{a,p} - \bar{r}_a)(r_{b,p} - \bar{r}_b)}{\sqrt{\sum_{p \in P}(r_{a,p} - \bar{r}_a)^2} \sqrt{\sum{p \in P}(r_{b,p} - \bar{r}_b)^2}}
+\end{displaymath}
+
+The Pearson correlation coefficient takes value range from -1 to +1, indicating respectively from a strong negative correlation to a strong positive correlation.
+
+\paragraph{Other weighting metrics}
+Apart from Pearson's correlation coefficient, other metrics, such as adjusted cosine similarity, Spearman's rank correlation coefficient, or mean squared difference measure are also proposed to calculate user-based similarity. However, empirical study made by Herlocker et al \cite{herlocker1999algorithmic} shows that for user-based recommender system, the Pearson coefficient outperforms other measures.
+
+Still, the "pure" Pearson measure alone is not ideal as there are cases that the measure cannot handle. Consider a real life problem that there are some items that are favored by everyone, Pearson's measure would not consider that an agreement by two users on a controversial item has more weight than an agreement on a universally like item. Herlocker et al \cite{herlocker1999algorithmic} also showed that applying the measure to user who has rated very few items also lead to bad predictions. Therefore, many attempts, such as significance weighting proposed by Herlocker et al \cite{herlocker1999algorithmic}, or case amplification suggested by Breese et al \cite{breese1998empirical} have been made to fill the gap and improve the accuracy. However, the question of whether these weighting schemes are helpful in real-world settings is still opened.
+
+\paragraph{Challenges}
+Although user-based approaches have been deployed successfully, they faces serious challenges when are applied to large e-commerce sites which possess millions of users and items. Specifically, the cost for scanning a vast number of potential neighbors makes it impossible for the system to predict in real time. Therefore, large scale e-commerce sites often opt for other techniques, one of them is the item-based nearest neighbor approach.
+
+\subsubsection{Item-based nearest neighbor recommendation}
+The main idea of this approach is to calculate the similarity between items instead of one between users. The advantage of this approach over user-based approach is that we can preprocess an item similarity matrix that characterize the degree of similarity between items. At run time, a prediction for product p and user u is made by detecting the most relevant items using the item similar matrix and by calculating the weighted sum of u's rating for these items. As the number of relevant items is commonly limited, the computation of the prediction can be done within a short time frame, suitable for such online applications. A similar matrix is, theoretically, also possible with user-based approaches; however, in real time scenarios, the number of overlapping ratings for two random users is relatively small, making it unstable as a few more ratings may significantly affect the similarity between users.
+
+For item-based approaches, the cosine similarity is found to be the standard metric \cite{jannach2010recommender}. The cosine similarity is defined as follows:
+
+\begin{displaymath}
+sim(\overrightarrow{a}, \overrightarrow{b}) = \frac{\overrightarrow{a} \cdot \overrightarrow{b}}{|\overrightarrow{a}| * | \overrightarrow{b} |}
+\end{displaymath}
+
+where \( \overrightarrow{a} \) is an item vector, \( \cdot \) denotes the dot product, and \(|\overrightarrow{a}| \) is the Euclidian length of the vector, which is defined as the square root of the dot product of the vector with itself. 
+
+One drawback of cosine measure is that it does not take into account the fact that different users have different rating schemes, i.e., some users rate items highly in general, while some others give lower ratings. This drawback is solved using adjusted cosine measure, which subtracts the user average from the rating. Let \( U\) be the set of users that rate both item \(a\) and \(b\). The adjusted cosine measure is as follows:
+
+\begin{displaymath}
+sim(a,b) = \frac{\sum_{u \in U}(r_{u,a} - \bar{r}_u)(r_{u,b} - \bar{r}_u)}{\sqrt{\sum_{u \in U}(r_{u,a} - \bar{r}_u)^2} \sqrt{\sum{u \in U}(r_{u,b} - \bar{r}_u)^2}}
+\end{displaymath}
+
+with \(\bar{r}_u \) is the average rating for item u.
+
+The prediction function, which is computed in real time, is defined as follows:
+
+\begin{displaymath}
+pred(u,p) = \frac{\sum_{i \in ratedItem(u)}{sim(i,p) * r_{u,i}}}{\sum_{i \in ratedItem(a)}{sim(i,p)}}
+\end{displaymath}
+
+Compare to user-based recommendation, item-based approaches prove to be often more scalable as for most of the case, the number of items falls behind the number of user, thus it requires less time and space to compute the similarity matrix (if necessary). Also, item-based approaches are more justifiable by users, for they can easily grasp the explanation of the recommendation, modify the list of neighbors and alter the weights. User-based methods, on the other hand, are less able to justify, as recommendations come from other users are hard to explain. However, as item-based approaches are based on ratings on similar items, the recommender tend to suggest items that might be already familiar to that user. While this behavior leads to safe recommendations, it does not help users explore other novel items that they might like as well.
+
+In general, nearest neighbor approaches work well for popular items. Nonetheless, there are two important drawbacks with these approaches when deal with unpopular item:
+
+\begin{itemize}
+\item[•] Limited coverage: both approaches define neighbor as having ratings in common. This assumption is limiting, as users with very few common items can still have similar preferences. Moreover, coverage of such approaches can be limited, as only items rated by neighbor can be recommended.
+
+\item[•] Sensitive to sparse data: For most system, users only rated a small portions of available items. This results in a cold star problem, when some items have very few or no ratings at all, which affects the prediction of these items. Another problem is when there are only few ratings, the weight of each item has a significant impact over the similarity between vectors, reducing the accuracy of the recommender. 
+\end{itemize}
+
+To solve these problem, many small tunes for the neighborhood approaches have been made, such as the use of Significance Weighting \cite{} for the weighting problem or ... for the Cold Start problem \cite{}. Besides that, other advance algorithms have also been developed to tackle these topics. One of the most popular approach that has gained attraction recently is the use of matrix factorization, as it was exploited to significantly improve the accuracy of the recommender system in the Netflix Prize competition in 2009.
+
+\subsubsection{Matrix factorization/ latent factor model}
+Matrix factorization methods is used to derive a set of salient patterns from user-ratings. For example, let "Gone with the wind" and "Me before you" be the set of liked item of user A, and "Romeo and Juliet" and "The fault in our star" be the set of liked item of user B, while nearest neighbor approaches would consider these books separately, matrix factorization could see that all these books belong to romantic genre and therefore recommend them to the other user. The factors, however, is not always obvious. In some cases, they can be uninterpretable.
+
+The idea of this method is to factorize the original sparse matrix into a product of matrices. Each decomposed matrix is much denser than the original one. The technique can be used for both similarity matrix and rating matrix. There are many matrix factorization techniques with increasing complexity and accuracy. For the scope of this thesis, I will demonstrate Singular value decomposition (SVD) model, a basic yet effective decomposition technique. The example is an adaptation from the one from Grigorik \cite{I. Grigorik}. 
+
+Consider the following table:
+
+\begin{table}
+\centering
+\begin{tabular}{c c c c c}
+\hline\hline
+& User 1 & User 2 & User 3 & User 4 \\
+\hline
+Item 1 & 3 & 4 & 3 & 1 \\
+Item 2 & 1 & 3 & 2 & 6 \\
+Item 3 & 2 & 4 & 1 & 5 \\
+Item 4 & 3 & 3 & 5 & 2 \\
+
+\hline\hline \\
+\end{tabular}
+\caption{Rating for SVD-based recommendation}
+\label{table:1}
+\end{table}
+
+SVD takes a m-by-n matrix M and decomposes it into three factors: two unitary matrices U and V, and a nonnegative diagonal matrix \(\Sigma \). The decomposition is as follows:
+
+\begin{displaymath}
+M = U \Sigma V^T
+\end{displaymath}
+
+where \(V^T\) is the transpose matrix of V. 
+
+Applying the decomposition, we obtain \(\Sigma = {12.2215, 4.9282, 2.0638, 0.2977} \) and 
+
+\begin{tabular}{c c c c}
+\hline\hline \\
+U \\
+\hline \\
+-0.4312 & 0.4932 & -0.5508 & -0.5172 \\
+-0.5327 & -0.5305 & 0.4197 & -0.5085 \\
+-0.5237 & -0.4052 & -0.4873 & 0.5693 \\
+-0.5059 & 0.5578 & 0.5321 & 0.3871 \\
+\hline\hline
+\end{tabular}
+\quad
+\begin{tabular}{c c c c}
+\hline\hline \\
+V \\
+\hline \\
+-0.3593 & 0.3677 & -0.2961 & 0.8050 \\
+-0.5675 & 0.0880 & -0.6285 & -0.5246 \\
+-0.4429 & 0.5686 & 0.6590 & -0.2150 \\
+-0.5939 & -0.7306 & 0.2882 & 0.1746 \\
+\hline\hline \\
+\end{tabular}
+
+\section{Overview of music recommender systems}
+Music, differs from other content domains such as books or movies, has its own unique characteristics regarding consumption. For example, the consumption time of books and movies are quite lengthy, ranging on the average of few hours (for movies) to several days (for books); songs, on the other hand, takes a much shorter time for listener to consume, only a few minutes. Consequently, this lead to the ephemeral and disposable nature of music. Another example is the number of repetition: a single song can be consumed repeatedly (even multiple times in a row), while books are movies are consumed a few times at most. This implies that the user might appreciate recommendations of items that they already heard in the past.
+
+In the past, many approaches, based on the observation of the nature of music and listener's behaviors, had been tried to build an efficient music recommender system. Till now, there are three main approaches to such system \cite{ricci2011introduction}, which will be described in the following sections. 
+
+\subsection{Content-Based Music Recommendation}
+
+Content-based recommendation exploits information describing music as material for recommender systems. There are two main approaches for content-based system: one uses metadata, such as annotations or social tags, while the other analyses audio content using machine learning techniques.
+
+\subsubsection{Metadata content}
+Metadata comes in several forms. One is the manual annotations constructed by music experts or voluntary community. This kind of annotation often obeys a strict structured taxonomy build by expects. Another form of annotations is social tags, which is built by asking casual users to provide unstructured text annotations for the item. The last kind of annotations is information collected on web pages, blogs and RSS feeds related to music items.
+
+\paragraph{Annotation} 
+Manual annotation contain information such as musical genre, record label, year, knowledge about tracks and artists, and albums. Some musical properties, particularly tempo, mood, and instrumentation can also be added. Many online database have been built using editorial metadata, following by many recommender systems trying to exploit them. 
+
+Bogdanov et al. \cite{bogdanov2012taking} build an artist recommender using exclusively metadata from \textit{Discogs}, a free and community-built database containing information about artists, records labels, and their releases. For each artist in the database, a tag weight vector is created using genre, style, label, country, and year information of the releases related to the artist. The role of the artist in each release (e.g. main artist, track artist, or extra artist) and the relations between artist, such as aliases and membership relations, are also taken into account. A sparse tag matrix is then formed from the artist vectors, and latent semantic analysis \cite{deerwester1990indexing} is applied to reduce the dimension of the matrix. Afterwards, the authors use Pearson correlation distance \cite{gibbons2011nonparametric} to measure the similarity between artists.
+
+Apart from community-built database, some other database are developed by experts for commercial use. \textit{Pandora}, for example, is a personalized radio that built its recommender using annotations done by experts \cite{jones2007user}. \textit{AllMusic} is another example that also provides mood annotations besides general editorial metadata. However, not much research has been done using these database, as they are proprietary, and there is no public data sets of this kind are available for researcher. Constructing such a data set would be costly, and they are difficult to scale to large collections.
+
+\paragraph{Social tags}
+Social tags are tags provided by user using the services. Tags are personalized, arbitrary, and do not follow any particular structure, ranging from genre like "blue" or "jazz" to event-related attributes (e.g. "live") and assertion (e.g. "my favorite song"). They also vary in scope, from broad one such as "classical" to niche terminology like "Malcolm Arnold" or "renaissance". Social tags, therefore, need to be preprocess for the data to be useful. A popular method, which is used by \textit{Last.fm}, a social music website, for structuring social tags is to transform them into a folksonomy \cite{sordo2008quest}. The tag weight vectors technique is then applied to compute the similarity \cite{green2009generating}, with the enhancement by using latent semantic analysis techniques to overcome vector sparsity problem \cite{levy2008learning}
+
+\paragraph{Annotations by web crawling}
+Apart from tags made by experts and social tags, some recommender systems are built using information crawled from web pages. These recommenders often apply artist similarity metric, generated by using text mining techniques \cite{schedl2011exploring}, as the main principle for the recommendation. Green et al. \cite{green2009generating} compute artist-to-artist similarity using keyword extracted from \textit{Wikipedia} entries and social tags from \textit{Last.fm}. Similarly, McFee and Lanckriet \cite{mcfee2011learning} predict artist similarity based on social tags and keyword extracted from artist biographies on \textit{Last.fm}. A deviant approach is the one made by Lim et al., as they compute song-level similarity through bag-of-words representations of lyrics found on \textit{musiXmatch.com} \cite{lim2013robust}
+
+\subsubsection{Audio content}
+Audio content analysis is promoted by MIR researchers as an alternative to metadata and collaborative filtering method \cite{barrington2009smarter}. Content analysis is expected to solve "long tail" problem, where unpopular music items are not suggested because the lack of available user ratings, tags, and other types of metadata \cite{celma2009music}. Music content is separated into two broad categories: acoustic features taken directly from the audio, and semantic annotations derived from acoustic features using machine learning techniques. 
+
+\paragraph{Acoustic features}
+Acoustic features are properties 	of a sound that can be recorded and analyzed using signal processing techniques. There are three kinds of features that are used by recommender system:
+
+\begin{itemize}
+\item[•] Timbral features: features related to spectral content (i.e. shape) of the signal;
+\item[•] Temporal and time-domain features: features such as loudness, tempo, onset rate;
+\item[•] Tonal features: musical component such as harmonic pitch, key, scale, and chords distribution.
+\end{itemize}
+
+Timbral similarity method converts timbre information to a standard representation and applies a number of methods to approximate the likelihood between two songs \cite{aucouturier2005way} \cite{logan2001music}. For example, Logan \cite{logan2004music} builds a recommender that compares Mel-frequency cepstrum coefficient (MFCC) based distance of user's music set with target play list. The approach, however, is insufficient as evaluation shows a nominal number of customer satisfaction \cite{bogdanov2013semantic}. 
+
+Pampalk et al. \cite{pampalk2005improvements} \cite{pampalk2005dynamic} study an algorithm that use, in addition to spectral similarity, loudness fluctuations and two derived descriptors from sound wave to improve the accuracy of music similarity and genre classification of a song. The algorithm is used to recommend user playlists, in which songs that are similar to the ones that are skipped by user are eliminate, and only tracks that are similar to the ones that the user wholly listens to remains.
+
+Celma and Herrera \cite{celma2008new} take another approach, calculating Euclidean distance using timbre, dynamics, tempo, meter, tonal strength, key, and mode information. This method is compared to an item-based collaborative filtering and a hybrid method on a large scale evaluation. The result shows that all three algorithms work fine recommending familiar items. For unfamiliar items, collaborative filtering reveals a poor discovery ratio, while pure content-based method sometimes goes off direction (it is technically difficult to differentiate between the sound of classical guitar and the one of harpsichord). The hybrid method performs the best, as it limit the number of possible tracks whose artists are related with the original artist, therefore reducing mistakes performing by pure content-based method.
+
+\paragraph{Semantic annotation}
+Pure acoustic signal, unfortunately, cannot directly capture semantic meaning of a track. As a result, mere acoustic feature recommenders do a poor job in song suggestion, as an "energetic" song can be recommended next to a "nostalgic" track because of the similarity of the instrument. A sudden change in genre might frustrate customer, as one would not expect a mourning song in a middle of a party. Therefore, many approaches have been made in order to bridge this semantic gap by using machine learning techniques to predict annotations from audio content.
+
+However, extracting genre or mood information from acoustic content is perplexing, as mapping between human annotation and acoustic cannot be clearly defined \cite{aucouturier2009sounds}. To solve this,  Barrington et al. \cite{barrington2009smarter} propose a method to measure semantic similarity: they train Gaussian mixture models of MFCCs for semantic concepts such as genres, moods and instruments. Therefore, for a song, a distribution of tags is generated, which is then compared to another in order to estimate similarity. 
+
+\subsection{Contextual Music Recommendation}
+The vast majority of existing recommender system approaches focus on information about users and items but not context information, such as time and place of the event. Only until recently, the topic of context-awareness starts to gain attraction in recommender system research \cite{adomavicius2011context}. Context, in the fields that are directly related to recommender system, is defined as "information describing where you are, whom you are with, and what resources are nearby" \cite{schilit1994context}. Therefore, context in the domain of music can be derived as a collection of factors that affects user's appreciation of music, such as time, mood, and current activities.
+
+Contextual information can be classified using various kind of classifications. Adomavicius et al. \cite{adomavicius2011context} suggest categorizing context into three distinct classes: fully observable, partially observable, and unobservable context. Dey and Abowd \cite{abowd1999towards}, in attempt to construct another classification, propose to classify context into primary context, which is four most important factors that describe user situation: location, identity, activity, and time; and secondary context, which is data derived from primary information. Applying the classification of Dey and Abowd, M. Schedl et al \cite{schedl2015music} divide context information into two generic classes: environment-related context and user-related context. Environment-related context refers to information that can be obtained by user's computer or mobile phone, such as location, time, weather, etc., while user-related context indicates information that can be derived from the environment-related one, such as user's activity, emotion state, and social environment. 
+
+\subsubsection{Environment-Related Context}
+Surrounding environment has been proven to have an influence on user's preference of music. Adrian C. North and David J. Hargreaves \cite{north1996situational} find a correlation between musical descriptors, such as arousal, sensuality, spirituality, and listening situation, such as activity, spirituality, and social constraint. Pettijohn et al. \cite{pettijohn2010music} find that different seasons, such as winter and summer, also affect musical preferences. 
+
+Many attempts have been made to build recommender using environment-related information. Reddy and Mascia \cite{reddy2006lifetrak} used space information capturing using GPS coordinates, internal time data, kinetic information derived from difference in GPS signals, and even meteorological info to build a recommender for a mobile music player called Lifetrak. Songs have to be tagged manually by users using system predefined tagging system, and are played in appropriate situation based on users' preferences. For example, the app may play rock music when a user is in a gym, and classical music when the user tries to study in a cafeteria. 
+
+Ankolekar and Sandholm from HP labs \cite{ankolekar2011foxtrot} propose a mobile audio application, Foxtrot, that exploits crowd-sourced geo-tagged audio information to provide a stream of location-aware audio content to the users. The recommender, however, generated poor user experiences, as an environment generates different meaning to different people, leading to diverse music preferences. Indeed, a research made by Okada et al. \cite{okada2013contextplayer} shows that not only the algorithm, but also the architectural design and usability of the application that matter, as user feedback suggests the need for explanations of the recommendations and more control over the playlist. 
+
+\subsubsection{User-Related Context}
+One's music preference is not only affected by geological and activity component, but also by factors such as emotions and social background. Sch{\"a}fer and Sedlmeier \cite{schafer2009functions} discovered that one's music preference is also linked with one's sociocultural and physiological functions. In other words, people use music preference as a mean to express their identities and personal values. User-related context can be divided into the following groups:
+
+\begin{itemize}
+\item[•] Activity information: information implies user's actions (e.g., walking, driving, working) or user's state (e.g., walking pace or heart rate). Foley \cite{foley1940occupational} showed that people with different occupation have different favored music tempo. For example, those who work with power machines like a slow allegro, while typists prefer faster tempo like presto. 
+\item[•] Emotional information: current mood of user has a direct impact on the choice of music. For example, a user may want to listening energetic music while he is happy, and calm music vice versa. Sch{\"a}fer and Sedlmeier \cite{schafer2009functions} found that music has a function to moderate listener's mood by energizing him or making he feel better.
+\item[•] Social context information: music preference can be affected by the presence of other people. People may choose music taken into account the event they participate in. Many researchers have address the issue of group recommender system. For example, Popescu and Pu \cite{popescu2011probabilistic} proposed using probabilistic weighted sum as the algorithm to recommend group playlist.
+\item[•] Cultural context information: information about user's culture characteristics. Koenigstein et al. \cite{koenigstein2009predicting} exploited file sharing information on a Peer to Peer network in US to predict the success of a song on Billboard Hot 100 Chart. Schedl \cite{schedl2013leveraging} built a location-aware recommender system by retrieving geo-tagged Twitter tweets to detect listening trend at a particular place. 
+\end{itemize}
+
+Compare to environment-related context, user-related context is more difficult to infer using electronic devices. Many attempts have been made to predict user's emotion or daily activities \cite{park2006context} \cite{wang2012context} by extracting environment-related feature such as the time of day, temperature, weather, etc... Emotion-based music recommender has gained attention recently, due to advances in automatic music emotion recognition \cite{yang2012machine}
+
+
+
+

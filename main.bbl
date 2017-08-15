@@ -1,0 +1,1769 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nty/global/}
+  \entry{abowd1999towards}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=AG}{%
+         family={Abowd},
+         familyi={A\bibinitperiod},
+         given={Gregory},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Dey},
+         familyi={D\bibinitperiod},
+         given={Anind},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Brown},
+         familyi={B\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Davies},
+         familyi={D\bibinitperiod},
+         given={Nigel},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Steggles},
+         familyi={S\bibinitperiod},
+         given={Pete},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{AG+1}
+    \strng{fullhash}{AGDABPDNSMSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Handheld and ubiquitous computing}
+    \field{pages}{304\bibrangedash 307}
+    \field{title}{Towards a better understanding of context and
+  context-awareness}
+    \field{year}{1999}
+  \endentry
+
+  \entry{adomavicius2011context}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=AG}{%
+         family={Adomavicius},
+         familyi={A\bibinitperiod},
+         given={Gediminas},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TA}{%
+         family={Tuzhilin},
+         familyi={T\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{AGTA1}
+    \strng{fullhash}{AGTA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Recommender systems handbook}
+    \field{pages}{217\bibrangedash 253}
+    \field{title}{Context-aware recommender systems}
+    \field{year}{2011}
+  \endentry
+
+  \entry{ankolekar2011foxtrot}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=AA}{%
+         family={Ankolekar},
+         familyi={A\bibinitperiod},
+         given={Anupriya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Sandholm},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{AAST1}
+    \strng{fullhash}{AAST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of Interacting with Sound Workshop: Exploring
+  Context-Aware, Local and Social Audio Applications}
+    \field{pages}{26\bibrangedash 31}
+    \field{title}{Foxtrot: a soundtrack for where you are}
+    \field{year}{2011}
+  \endentry
+
+  \entry{aucouturier2005way}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AJJ}{%
+         family={Aucouturier},
+         familyi={A\bibinitperiod},
+         given={J-J},
+         giveni={J\bibinitperiod-J\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Pachet},
+         familyi={P\bibinitperiod},
+         given={Fran{\c{c}}ois},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sandler},
+         familyi={S\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{AJJPFSM1}
+    \strng{fullhash}{AJJPFSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{6}
+    \field{pages}{1028\bibrangedash 1035}
+    \field{title}{" The way it Sounds": timbre models for analysis and
+  retrieval of music signals}
+    \field{volume}{7}
+    \field{journaltitle}{IEEE Transactions on Multimedia}
+    \field{year}{2005}
+  \endentry
+
+  \entry{aucouturier2009sounds}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AJJ}{%
+         family={Aucouturier},
+         familyi={A\bibinitperiod},
+         given={Jean-Julien},
+         giveni={J\bibinitperiod-J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AJJ1}
+    \strng{fullhash}{AJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{pages}{35\bibrangedash 64}
+    \field{title}{Sounds like teen spirit: Computational insights into the
+  grounding of everyday musical terms}
+    \field{journaltitle}{Language, evolution and the brain}
+    \field{year}{2009}
+  \endentry
+
+  \entry{barrington2009smarter}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BL}{%
+         family={Barrington},
+         familyi={B\bibinitperiod},
+         given={Luke},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=OR}{%
+         family={Oda},
+         familyi={O\bibinitperiod},
+         given={Reid},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LGR}{%
+         family={Lanckriet},
+         familyi={L\bibinitperiod},
+         given={Gert\bibnamedelima RG},
+         giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BLORLGR1}
+    \strng{fullhash}{BLORLGR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{ISMIR}
+    \field{pages}{357\bibrangedash 362}
+    \field{title}{Smarter than Genius? Human Evaluation of Music Recommender
+  Systems.}
+    \field{volume}{9}
+    \field{year}{2009}
+  \endentry
+
+  \entry{benesty2009pearson}{incollection}{}
+    \name{author}{4}{}{%
+      {{hash=BJ}{%
+         family={Benesty},
+         familyi={B\bibinitperiod},
+         given={Jacob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Jingdong},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HY}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Yiteng},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CI}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={Israel},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BJ+1}
+    \strng{fullhash}{BJCJHYCI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Noise reduction in speech processing}
+    \field{pages}{1\bibrangedash 4}
+    \field{title}{Pearson correlation coefficient}
+    \field{year}{2009}
+  \endentry
+
+  \entry{bogdanov2012taking}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BD}{%
+         family={Bogdanov},
+         familyi={B\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Herrera},
+         familyi={H\bibinitperiod},
+         given={Perfecto},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDHP1}
+    \strng{fullhash}{BDHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{9th International Symposium on Computer Music Modeling
+  and Retrieval (CMMR)}
+    \field{pages}{618\bibrangedash 632}
+    \field{title}{Taking advantage of editorial metadata to recommend music}
+    \field{year}{2012}
+  \endentry
+
+  \entry{bogdanov2013semantic}{article}{}
+    \name{author}{6}{}{%
+      {{hash=BD}{%
+         family={Bogdanov},
+         familyi={B\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Haro},
+         familyi={H\bibinitperiod},
+         given={Mart{\'\i}N},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FF}{%
+         family={Fuhrmann},
+         familyi={F\bibinitperiod},
+         given={Ferdinand},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=XA}{%
+         family={Xamb{\'o}},
+         familyi={X\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GE}{%
+         family={G{\'o}mez},
+         familyi={G\bibinitperiod},
+         given={Emilia},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Herrera},
+         familyi={H\bibinitperiod},
+         given={Perfecto},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BD+1}
+    \strng{fullhash}{BDHMFFXAGEHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1}
+    \field{pages}{13\bibrangedash 33}
+    \field{title}{Semantic audio content-based music recommendation and
+  visualization based on user preference examples}
+    \field{volume}{49}
+    \field{journaltitle}{Information Processing \& Management}
+    \field{year}{2013}
+  \endentry
+
+  \entry{breese1998empirical}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BJS}{%
+         family={Breese},
+         familyi={B\bibinitperiod},
+         given={John\bibnamedelima S},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Heckerman},
+         familyi={H\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KC}{%
+         family={Kadie},
+         familyi={K\bibinitperiod},
+         given={Carl},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Morgan Kaufmann Publishers Inc.}%
+    }
+    \strng{namehash}{BJSHDKC1}
+    \strng{fullhash}{BJSHDKC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the Fourteenth conference on Uncertainty
+  in artificial intelligence}
+    \field{pages}{43\bibrangedash 52}
+    \field{title}{Empirical analysis of predictive algorithms for collaborative
+  filtering}
+    \field{year}{1998}
+  \endentry
+
+  \entry{celma2008new}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=CO}{%
+         family={Celma},
+         familyi={C\bibinitperiod},
+         given={{\`O}scar},
+         giveni={{\`O}\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Herrera},
+         familyi={H\bibinitperiod},
+         given={Perfecto},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{COHP1}
+    \strng{fullhash}{COHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the 2008 ACM conference on Recommender
+  systems}
+    \field{pages}{179\bibrangedash 186}
+    \field{title}{A new approach to evaluating novel recommendations}
+    \field{year}{2008}
+  \endentry
+
+  \entry{celma2009music}{book}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=CHO}{%
+         family={Celma\bibnamedelima Herrada},
+         familyi={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={{\`O}scar},
+         giveni={{\`O}\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Universitat Pompeu Fabra}%
+    }
+    \strng{namehash}{CHO+1}
+    \strng{fullhash}{CHO+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Music recommendation and discovery in the long tail}
+    \field{year}{2009}
+  \endentry
+
+  \entry{cosley2003seeing}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=CD}{%
+         family={Cosley},
+         familyi={C\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LSK}{%
+         family={Lam},
+         familyi={L\bibinitperiod},
+         given={Shyong\bibnamedelima K},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=AI}{%
+         family={Albert},
+         familyi={A\bibinitperiod},
+         given={Istvan},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=KJA}{%
+         family={Konstan},
+         familyi={K\bibinitperiod},
+         given={Joseph\bibnamedelima A},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Riedl},
+         familyi={R\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{CD+1}
+    \strng{fullhash}{CDLSKAIKJARJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the SIGCHI conference on Human factors in
+  computing systems}
+    \field{pages}{585\bibrangedash 592}
+    \field{title}{Is seeing believing?: how recommender system interfaces
+  affect users' opinions}
+    \field{year}{2003}
+  \endentry
+
+  \entry{deerwester1990indexing}{article}{}
+    \name{author}{5}{}{%
+      {{hash=DS}{%
+         family={Deerwester},
+         familyi={D\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DST}{%
+         family={Dumais},
+         familyi={D\bibinitperiod},
+         given={Susan\bibnamedelima T},
+         giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=FGW}{%
+         family={Furnas},
+         familyi={F\bibinitperiod},
+         given={George\bibnamedelima W},
+         giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=LTK}{%
+         family={Landauer},
+         familyi={L\bibinitperiod},
+         given={Thomas\bibnamedelima K},
+         giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Harshman},
+         familyi={H\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Documentation Institute}%
+    }
+    \strng{namehash}{DS+1}
+    \strng{fullhash}{DSDSTFGWLTKHR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{6}
+    \field{pages}{391}
+    \field{title}{Indexing by latent semantic analysis}
+    \field{volume}{41}
+    \field{journaltitle}{Journal of the American society for information
+  science}
+    \field{year}{1990}
+  \endentry
+
+  \entry{foley1940occupational}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FJJP}{%
+         family={Foley\bibnamedelima Jr},
+         familyi={F\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={John\bibnamedelima P},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis}%
+    }
+    \strng{namehash}{FJJP1}
+    \strng{fullhash}{FJJP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{1}
+    \field{pages}{121\bibrangedash 129}
+    \field{title}{The Occupational Conditioning of Prefer Ential Auditory
+  Tempo: A Contribution toward an Empirical Theory of Aesthetics}
+    \field{volume}{12}
+    \field{journaltitle}{The Journal of Social Psychology}
+    \field{year}{1940}
+  \endentry
+
+  \entry{gibbons2011nonparametric}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=GJD}{%
+         family={Gibbons},
+         familyi={G\bibinitperiod},
+         given={Jean\bibnamedelima Dickinson},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chakraborti},
+         familyi={C\bibinitperiod},
+         given={Subhabrata},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{GJDCS1}
+    \strng{fullhash}{GJDCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{International encyclopedia of statistical science}
+    \field{pages}{977\bibrangedash 979}
+    \field{title}{Nonparametric statistical inference}
+    \field{year}{2011}
+  \endentry
+
+  \entry{goldberg1992using}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GD}{%
+         family={Goldberg},
+         familyi={G\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ND}{%
+         family={Nichols},
+         familyi={N\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=OBM}{%
+         family={Oki},
+         familyi={O\bibinitperiod},
+         given={Brian\bibnamedelima M},
+         giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=TD}{%
+         family={Terry},
+         familyi={T\bibinitperiod},
+         given={Douglas},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{GD+1}
+    \strng{fullhash}{GDNDOBMTD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{12}
+    \field{pages}{61\bibrangedash 70}
+    \field{title}{Using collaborative filtering to weave an information
+  tapestry}
+    \field{volume}{35}
+    \field{journaltitle}{Communications of the ACM}
+    \field{year}{1992}
+  \endentry
+
+  \entry{green2009generating}{inproceedings}{}
+    \name{author}{8}{}{%
+      {{hash=GSJ}{%
+         family={Green},
+         familyi={G\bibinitperiod},
+         given={Stephen\bibnamedelima J},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Lamere},
+         familyi={L\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Alexander},
+         familyi={A\bibinitperiod},
+         given={Jeffrey},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Maillet},
+         familyi={M\bibinitperiod},
+         given={Fran{\c{c}}ois},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Kirk},
+         familyi={K\bibinitperiod},
+         given={Susanna},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Holt},
+         familyi={H\bibinitperiod},
+         given={Jessica},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Bourque},
+         familyi={B\bibinitperiod},
+         given={Jackie},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MXW}{%
+         family={Mak},
+         familyi={M\bibinitperiod},
+         given={Xiao-Wen},
+         giveni={X\bibinitperiod-W\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{GSJ+1}
+    \strng{fullhash}{GSJLPAJMFKSHJBJMXW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{Proceedings of the third ACM conference on Recommender
+  systems}
+    \field{pages}{281\bibrangedash 284}
+    \field{title}{Generating transparent, steerable recommendations from
+  textual descriptions of items}
+    \field{year}{2009}
+  \endentry
+
+  \entry{herlocker1999algorithmic}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HJL}{%
+         family={Herlocker},
+         familyi={H\bibinitperiod},
+         given={Jonathan\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=KJA}{%
+         family={Konstan},
+         familyi={K\bibinitperiod},
+         given={Joseph\bibnamedelima A},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Borchers},
+         familyi={B\bibinitperiod},
+         given={Al},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Riedl},
+         familyi={R\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{HJL+1}
+    \strng{fullhash}{HJLKJABARJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the 22nd annual international ACM SIGIR
+  conference on Research and development in information retrieval}
+    \field{pages}{230\bibrangedash 237}
+    \field{title}{An algorithmic framework for performing collaborative
+  filtering}
+    \field{year}{1999}
+  \endentry
+
+  \entry{hill1995recommending}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HW}{%
+         family={Hill},
+         familyi={H\bibinitperiod},
+         given={Will},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Stead},
+         familyi={S\bibinitperiod},
+         given={Larry},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rosenstein},
+         familyi={R\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FG}{%
+         family={Furnas},
+         familyi={F\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM Press/Addison-Wesley Publishing Co.}%
+    }
+    \strng{namehash}{HW+1}
+    \strng{fullhash}{HWSLRMFG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the SIGCHI conference on Human factors in
+  computing systems}
+    \field{pages}{194\bibrangedash 201}
+    \field{title}{Recommending and evaluating choices in a virtual community of
+  use}
+    \field{year}{1995}
+  \endentry
+
+  \entry{jannach2010recommender}{book}{}
+    \name{author}{4}{}{%
+      {{hash=JD}{%
+         family={Jannach},
+         familyi={J\bibinitperiod},
+         given={Dietmar},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zanker},
+         familyi={Z\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Felfernig},
+         familyi={F\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FG}{%
+         family={Friedrich},
+         familyi={F\bibinitperiod},
+         given={Gerhard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{JD+1}
+    \strng{fullhash}{JDZMFAFG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Recommender systems: an introduction}
+    \field{year}{2010}
+  \endentry
+
+  \entry{jones2007user}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=JN}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Pu},
+         familyi={P\bibinitperiod},
+         given={Pearl},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JNPP1}
+    \strng{fullhash}{JNPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{Proceedings of the 2007 Networking and Electronic
+  Commerce Research Conference}
+    \field{number}{HCI-CONF-2008-001}
+    \field{pages}{379\bibrangedash 394}
+    \field{title}{User technology adoption issues in recommender systems}
+    \field{year}{2007}
+  \endentry
+
+  \entry{koenigstein2009predicting}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=KN}{%
+         family={Koenigstein},
+         familyi={K\bibinitperiod},
+         given={Noam},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Shavitt},
+         familyi={S\bibinitperiod},
+         given={Yuval},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZN}{%
+         family={Zilberman},
+         familyi={Z\bibinitperiod},
+         given={Noa},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{KNSYZN1}
+    \strng{fullhash}{KNSYZN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Multimedia, 2009. ISM'09. 11th IEEE International
+  Symposium on}
+    \field{pages}{465\bibrangedash 470}
+    \field{title}{Predicting billboard success using data-mining in p2p
+  networks}
+    \field{year}{2009}
+  \endentry
+
+  \entry{levy2008learning}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LM}{%
+         family={Levy},
+         familyi={L\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sandler},
+         familyi={S\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis}%
+    }
+    \strng{namehash}{LMSM1}
+    \strng{fullhash}{LMSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{2}
+    \field{pages}{137\bibrangedash 150}
+    \field{title}{Learning latent semantic models for music from social tags}
+    \field{volume}{37}
+    \field{journaltitle}{Journal of New Music Research}
+    \field{year}{2008}
+  \endentry
+
+  \entry{lim2013robust}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=LD}{%
+         family={Lim},
+         familyi={L\bibinitperiod},
+         given={Daryl},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={McFee},
+         familyi={M\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LGR}{%
+         family={Lanckriet},
+         familyi={L\bibinitperiod},
+         given={Gert\bibnamedelima R},
+         giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LDMBLGR1}
+    \strng{fullhash}{LDMBLGR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{Proceedings of the 30th International Conference on
+  Machine Learning (ICML-13)}
+    \field{pages}{615\bibrangedash 623}
+    \field{title}{Robust structural metric learning}
+    \field{year}{2013}
+  \endentry
+
+  \entry{logan2004music}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=LB}{%
+         family={Logan},
+         familyi={L\bibinitperiod},
+         given={Beth},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LB1}
+    \strng{fullhash}{LB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{ISMIR}
+    \field{pages}{425\bibrangedash 428}
+    \field{title}{Music Recommendation from Song Sets.}
+    \field{year}{2004}
+  \endentry
+
+  \entry{logan2001music}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=LB}{%
+         family={Logan},
+         familyi={L\bibinitperiod},
+         given={Beth},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Salomon},
+         familyi={S\bibinitperiod},
+         given={Ariel},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LBSA1}
+    \strng{fullhash}{LBSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{ICME}
+    \field{pages}{22\bibrangedash 25}
+    \field{title}{A Music Similarity Function Based on Signal Analysis.}
+    \field{year}{2001}
+  \endentry
+
+  \entry{mcfee2011learning}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MB}{%
+         family={McFee},
+         familyi={M\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Lanckriet},
+         familyi={L\bibinitperiod},
+         given={Gert},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MBLG1}
+    \strng{fullhash}{MBLG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{Feb}
+    \field{pages}{491\bibrangedash 523}
+    \field{title}{Learning multi-modal similarity}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of machine learning research}
+    \field{year}{2011}
+  \endentry
+
+  \entry{north1996situational}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NAC}{%
+         family={North},
+         familyi={N\bibinitperiod},
+         given={Adrian\bibnamedelima C},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HDJ}{%
+         family={Hargreaves},
+         familyi={H\bibinitperiod},
+         given={David\bibnamedelima J},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The Florida State University}%
+    }
+    \strng{namehash}{NACHDJ1}
+    \strng{fullhash}{NACHDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{number}{1-2}
+    \field{pages}{30}
+    \field{title}{Situational influences on reported musical preference.}
+    \field{volume}{15}
+    \field{journaltitle}{Psychomusicology: A Journal of Research in Music
+  Cognition}
+    \field{year}{1996}
+  \endentry
+
+  \entry{okada2013contextplayer}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=OK}{%
+         family={Okada},
+         familyi={O\bibinitperiod},
+         given={Karla},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=KBF}{%
+         family={Karlsson},
+         familyi={K\bibinitperiod},
+         given={B{\"o}rje\bibnamedelima F},
+         giveni={B\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Sardinha},
+         familyi={S\bibinitperiod},
+         given={Laura},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=NT}{%
+         family={Noleto},
+         familyi={N\bibinitperiod},
+         given={Tomaz},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{OK+1}
+    \strng{fullhash}{OKKBFSLNT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{booktitle}{SIGGRAPH Asia 2013 Symposium on Mobile Graphics and
+  Interactive Applications}
+    \field{pages}{6}
+    \field{title}{ContextPlayer: Learning contextual music preferences for
+  situational recommendations}
+    \field{year}{2013}
+  \endentry
+
+  \entry{pampalk2005improvements}{inproceedings}{}
+    \true{moreauthor}
+    \name{author}{3}{}{%
+      {{hash=PE}{%
+         family={Pampalk},
+         familyi={P\bibinitperiod},
+         given={Elias},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Flexer},
+         familyi={F\bibinitperiod},
+         given={Arthur},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Widmer},
+         familyi={W\bibinitperiod},
+         given={Gerhard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {London, UK}%
+    }
+    \strng{namehash}{PEFAWG+1}
+    \strng{fullhash}{PEFAWG+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{ISMIR}
+    \field{pages}{634\bibrangedash 637}
+    \field{title}{Improvements of Audio-Based Music Similarity and Genre
+  Classificaton.}
+    \field{volume}{5}
+    \field{year}{2005}
+  \endentry
+
+  \entry{pampalk2005dynamic}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PE}{%
+         family={Pampalk},
+         familyi={P\bibinitperiod},
+         given={Elias},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PT}{%
+         family={Pohle},
+         familyi={P\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Widmer},
+         familyi={W\bibinitperiod},
+         given={Gerhard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PEPTWG1}
+    \strng{fullhash}{PEPTWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{ISMIR}
+    \field{pages}{634\bibrangedash 637}
+    \field{title}{Dynamic Playlist Generation Based on Skipping Behavior.}
+    \field{volume}{5}
+    \field{year}{2005}
+  \endentry
+
+  \entry{park2006context}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PHS}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Han-Saem},
+         giveni={H\bibinitperiod-S\bibinitperiod},
+      }}%
+      {{hash=YJO}{%
+         family={Yoo},
+         familyi={Y\bibinitperiod},
+         given={Ji-Oh},
+         giveni={J\bibinitperiod-O\bibinitperiod},
+      }}%
+      {{hash=CSB}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Sung-Bae},
+         giveni={S\bibinitperiod-B\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{PHSYJOCSB1}
+    \strng{fullhash}{PHSYJOCSB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{International Conference on Fuzzy Systems and Knowledge
+  Discovery}
+    \field{pages}{970\bibrangedash 979}
+    \field{title}{A context-aware music recommendation system using fuzzy
+  bayesian networks with utility theory}
+    \field{year}{2006}
+  \endentry
+
+  \entry{pettijohn2010music}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PTF}{%
+         family={Pettijohn},
+         familyi={P\bibinitperiod},
+         given={Terry\bibnamedelima F},
+         giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=WGM}{%
+         family={Williams},
+         familyi={W\bibinitperiod},
+         given={Greg\bibnamedelima M},
+         giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=CTC}{%
+         family={Carter},
+         familyi={C\bibinitperiod},
+         given={Tiffany\bibnamedelima C},
+         giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{PTFWGMCTC1}
+    \strng{fullhash}{PTFWGMCTC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{4}
+    \field{pages}{328\bibrangedash 345}
+    \field{title}{Music for the seasons: seasonal music preferences in college
+  students}
+    \field{volume}{29}
+    \field{journaltitle}{Current psychology}
+    \field{year}{2010}
+  \endentry
+
+  \entry{popescu2011probabilistic}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PG}{%
+         family={Popescu},
+         familyi={P\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Pu},
+         familyi={P\bibinitperiod},
+         given={Pearl},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PGPP1}
+    \strng{fullhash}{PGPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{pages}{30}
+    \field{title}{Probabilistic game theoretic algorithms for group recommender
+  systems}
+    \field{journaltitle}{Colocated with ACM RecSys 2011 Chicago, IL, USA
+  October 23, 2011}
+    \field{year}{2011}
+  \endentry
+
+  \entry{reddy2006lifetrak}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=RS}{%
+         family={Reddy},
+         familyi={R\bibinitperiod},
+         given={Sasank},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Mascia},
+         familyi={M\bibinitperiod},
+         given={Jeff},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{RSMJ1}
+    \strng{fullhash}{RSMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proceedings of the 1st ACM international workshop on
+  Human-centered multimedia}
+    \field{pages}{25\bibrangedash 34}
+    \field{title}{Lifetrak: music in tune with your life}
+    \field{year}{2006}
+  \endentry
+
+  \entry{resnick1994open}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=RP}{%
+         family={Resnick},
+         familyi={R\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RP1}
+    \strng{fullhash}{RP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proc. of CSCW'94}
+    \field{pages}{175\bibrangedash 186}
+    \field{title}{An Open Architecture for Collaboative Filtering of Netnews}
+    \field{year}{1994}
+  \endentry
+
+  \entry{ricci2011introduction}{incollection}{}
+    \name{author}{3}{}{%
+      {{hash=RF}{%
+         family={Ricci},
+         familyi={R\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=RL}{%
+         family={Rokach},
+         familyi={R\bibinitperiod},
+         given={Lior},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Shapira},
+         familyi={S\bibinitperiod},
+         given={Bracha},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{RFRLSB1}
+    \strng{fullhash}{RFRLSB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Recommender systems handbook}
+    \field{pages}{1\bibrangedash 35}
+    \field{title}{Introduction to recommender systems handbook}
+    \field{year}{2011}
+  \endentry
+
+  \entry{schafer2006recommender}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SJB}{%
+         family={Schafer},
+         familyi={S\bibinitperiod},
+         given={J\bibnamedelima Ben},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=KJA}{%
+         family={Konstan},
+         familyi={K\bibinitperiod},
+         given={Joseph\bibnamedelima A},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RJT}{%
+         family={Riedl},
+         familyi={R\bibinitperiod},
+         given={John\bibnamedelima T},
+         giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SJBKJARJT1}
+    \strng{fullhash}{SJBKJARJT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{102\bibrangedash 123}
+    \field{title}{Recommender Systems for the Web}
+    \field{journaltitle}{Visualizing the Semantic Web, Springer}
+    \field{year}{2006}
+  \endentry
+
+  \entry{schafer2009functions}{article}{}
+    \name{author}{2}{}{%
+      {{hash=ST}{%
+         family={Sch{\"a}fer},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Sedlmeier},
+         familyi={S\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Sage Publications Sage UK: London, England}%
+    }
+    \strng{namehash}{STSP1}
+    \strng{fullhash}{STSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{3}
+    \field{pages}{279\bibrangedash 300}
+    \field{title}{From the functions of music to music preference}
+    \field{volume}{37}
+    \field{journaltitle}{Psychology of Music}
+    \field{year}{2009}
+  \endentry
+
+  \entry{schedl2013leveraging}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Schedl},
+         familyi={S\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{ECIR}
+    \field{pages}{796\bibrangedash 799}
+    \field{title}{Leveraging Microblogs for Spatiotemporal Music Information
+  Retrieval.}
+    \field{year}{2013}
+  \endentry
+
+  \entry{schedl2011exploring}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SM}{%
+         family={Schedl},
+         familyi={S\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PT}{%
+         family={Pohle},
+         familyi={P\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Knees},
+         familyi={K\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Widmer},
+         familyi={W\bibinitperiod},
+         given={Gerhard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMPTKPWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{3}
+    \field{pages}{14}
+    \field{title}{Exploring the music similarity space on the web}
+    \field{volume}{29}
+    \field{journaltitle}{ACM Transactions on Information Systems (TOIS)}
+    \field{year}{2011}
+  \endentry
+
+  \entry{schedl2015music}{incollection}{}
+    \name{author}{5}{}{%
+      {{hash=SM}{%
+         family={Schedl},
+         familyi={S\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Knees},
+         familyi={K\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={McFee},
+         familyi={M\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bogdanov},
+         familyi={B\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kaminskas},
+         familyi={K\bibinitperiod},
+         given={Marius},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMKPMBBDKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Recommender Systems Handbook}
+    \field{pages}{453\bibrangedash 492}
+    \field{title}{Music recommender systems}
+    \field{year}{2015}
+  \endentry
+
+  \entry{schilit1994context}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SB}{%
+         family={Schilit},
+         familyi={S\bibinitperiod},
+         given={Bill},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=AN}{%
+         family={Adams},
+         familyi={A\bibinitperiod},
+         given={Norman},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Want},
+         familyi={W\bibinitperiod},
+         given={Roy},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{SBANWR1}
+    \strng{fullhash}{SBANWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Mobile Computing Systems and Applications, 1994. WMCSA
+  1994. First Workshop on}
+    \field{pages}{85\bibrangedash 90}
+    \field{title}{Context-aware computing applications}
+    \field{year}{1994}
+  \endentry
+
+  \entry{shardanand1995social}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SU}{%
+         family={Shardanand},
+         familyi={S\bibinitperiod},
+         given={Upendra},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Maes},
+         familyi={M\bibinitperiod},
+         given={Pattie},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM Press/Addison-Wesley Publishing Co.}%
+    }
+    \strng{namehash}{SUMP1}
+    \strng{fullhash}{SUMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Proceedings of the SIGCHI conference on Human factors in
+  computing systems}
+    \field{pages}{210\bibrangedash 217}
+    \field{title}{Social information filtering: algorithms for automating
+  “word of mouth”}
+    \field{year}{1995}
+  \endentry
+
+  \entry{sordo2008quest}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SM}{%
+         family={Sordo},
+         familyi={S\bibinitperiod},
+         given={Mohamed},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CO}{%
+         family={Celma},
+         familyi={C\bibinitperiod},
+         given={Oscar},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Blech},
+         familyi={B\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GE}{%
+         family={Guaus},
+         familyi={G\bibinitperiod},
+         given={Enric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SM+2}
+    \strng{fullhash}{SMCOBMGE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{ISMIR}
+    \field{pages}{255\bibrangedash 260}
+    \field{title}{The quest for musical genres: Do the experts and the wisdom
+  of crowds agree?}
+    \field{year}{2008}
+  \endentry
+
+  \entry{wang2012context}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=WX}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Xinxi},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=RD}{%
+         family={Rosenblum},
+         familyi={R\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ye},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{WXRDWY1}
+    \strng{fullhash}{WXRDWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{Proceedings of the 20th ACM international conference on
+  Multimedia}
+    \field{pages}{99\bibrangedash 108}
+    \field{title}{Context-aware mobile music recommendation for daily
+  activities}
+    \field{year}{2012}
+  \endentry
+
+  \entry{yang2012machine}{article}{}
+    \name{author}{2}{}{%
+      {{hash=YYH}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Yi-Hsuan},
+         giveni={Y\bibinitperiod-H\bibinitperiod},
+      }}%
+      {{hash=CHH}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Homer\bibnamedelima H},
+         giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{YYHCHH1}
+    \strng{fullhash}{YYHCHH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{number}{3}
+    \field{pages}{40}
+    \field{title}{Machine recognition of music emotion: A review}
+    \field{volume}{3}
+    \field{journaltitle}{ACM Transactions on Intelligent Systems and Technology
+  (TIST)}
+    \field{year}{2012}
+  \endentry
+\endsortlist
+\endinput
