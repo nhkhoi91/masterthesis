@@ -90,7 +90,7 @@ Matrix factorization methods is used to derive a set of salient patterns from us
 
 The idea of this method is to factorize the original sparse matrix into a product of matrices. Each decomposed matrix is much denser than the original one. The technique can be used for both similarity matrix and rating matrix. There are many matrix factorization techniques with increasing complexity and accuracy. For the scope of this thesis, I will demonstrate Singular value decomposition (SVD) model, a basic yet effective decomposition technique. The example is an adaptation from the one from Grigorik \cite{I. Grigorik}. 
 
-Consider the following table:
+Consider the table 2.1:
 
 \begin{table}
 \centering
@@ -109,7 +109,7 @@ Item 4 & 3 & 3 & 5 & 2 \\
 \label{table:1}
 \end{table}
 
-SVD takes a m-by-n matrix M and decomposes it into three factors: two unitary matrices U and V, and a nonnegative diagonal matrix \(\Sigma \). The decomposition is as follows:
+SVD takes a m-by-n matrix M and decomposes it into three factors: two unitary matrices U and V, and a nonnegative diagonal matrix \(\Sigma \). The main point of this decomposition is that after receiving the product matrix, we can retain only  The decomposition is as follows:
 
 \begin{displaymath}
 M = U \Sigma V^T
@@ -117,7 +117,10 @@ M = U \Sigma V^T
 
 where \(V^T\) is the transpose matrix of V. 
 
-Applying the decomposition, we obtain \(\Sigma = {12.2215, 4.9282, 2.0638, 0.2977} \) and 
+Applying the decomposition, we obtain \(\Sigma = {12.2215, 4.9282, 2.0638, 0.2977} \) and the two matrices
+
+\noindent\begin{minipage}[t]{\textwidth}
+\begin{minipage}[c][5cm][c]{\dimexpr0.5\textwidth-0.5\Colsep\relax}
 
 \begin{tabular}{c c c c}
 \hline\hline \\
@@ -129,7 +132,10 @@ U \\
 -0.5059 & 0.5578 & 0.5321 & 0.3871 \\
 \hline\hline
 \end{tabular}
-\quad
+
+\end{minipage}\hfill
+\begin{minipage}[c][5cm][c]{\dimexpr0.5\textwidth-0.5\Colsep\relax}
+
 \begin{tabular}{c c c c}
 \hline\hline \\
 V \\
@@ -140,6 +146,10 @@ V \\
 -0.5939 & -0.7306 & 0.2882 & 0.1746 \\
 \hline\hline \\
 \end{tabular}
+\end{minipage}%
+\end{minipage}
+
+
 
 \section{Overview of music recommender systems}
 Music, differs from other content domains such as books or movies, has its own unique characteristics regarding consumption. For example, the consumption time of books and movies are quite lengthy, ranging on the average of few hours (for movies) to several days (for books); songs, on the other hand, takes a much shorter time for listener to consume, only a few minutes. Consequently, this lead to the ephemeral and disposable nature of music. Another example is the number of repetition: a single song can be consumed repeatedly (even multiple times in a row), while books are movies are consumed a few times at most. This implies that the user might appreciate recommendations of items that they already heard in the past.
