@@ -19,50 +19,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 11811 items from 5000.
+Reallocated field_info (elt_size=4) to 15008 items from 5000.
 Database file #1: main-blx.bib
 Database file #2: example.bib
+Warning--I didn't find a database entry for "whitman2001artist"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 49 entries,
+You've used 71 entries,
             6256 wiz_defined-function locations,
-            1447 strings with 17466 characters,
-and the built_in function-call counts, 298969 in all, are:
-= -- 20741
-> -- 5967
-< -- 1768
-+ -- 7764
-- -- 2248
-* -- 22446
-:= -- 30243
+            1560 strings with 21534 characters,
+and the built_in function-call counts, 423474 in all, are:
+= -- 29052
+> -- 8479
+< -- 2498
++ -- 10990
+- -- 3189
+* -- 31709
+:= -- 42577
 add.period$ -- 0
-call.type$ -- 49
-change.case$ -- 909
+call.type$ -- 71
+change.case$ -- 1278
 chr.to.int$ -- 30
-cite$ -- 96
-duplicate$ -- 32799
-empty$ -- 26960
-format.name$ -- 3701
-if$ -- 61279
+cite$ -- 140
+duplicate$ -- 46995
+empty$ -- 38350
+format.name$ -- 5289
+if$ -- 86785
 int.to.chr$ -- 0
-int.to.str$ -- 134
+int.to.str$ -- 194
 missing$ -- 0
-newline$ -- 1726
-num.names$ -- 2508
-pop$ -- 16803
+newline$ -- 2472
+num.names$ -- 3569
+pop$ -- 24423
 preamble$ -- 1
-purify$ -- 1234
+purify$ -- 1739
 quote$ -- 0
-skip$ -- 9285
+skip$ -- 13269
 stack$ -- 0
-substring$ -- 33709
-swap$ -- 7962
-text.length$ -- 1449
-text.prefix$ -- 48
+substring$ -- 46608
+swap$ -- 11454
+text.length$ -- 2071
+text.prefix$ -- 73
 top$ -- 1
-type$ -- 1654
+type$ -- 2402
 warning$ -- 0
-while$ -- 3777
+while$ -- 5364
 width$ -- 0
-write$ -- 1678
+write$ -- 2402
+(There was 1 warning)
