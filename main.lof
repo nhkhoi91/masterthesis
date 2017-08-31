@@ -4,4 +4,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Projection of user and item on a two-dimensional space\relax }}{7}{figure.caption.24}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Monolithic hybridization design\relax }}{11}{figure.caption.33}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Parallelized hybridization design\relax }}{11}{figure.caption.34}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Pipelined hybridization design\relax }}{11}{figure.caption.35}
 \addvspace {10\p@ }

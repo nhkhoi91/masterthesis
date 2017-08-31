@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  25 AUG 2017 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  31 AUG 2017 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2548,7 +2548,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[4] [5] [6] <Figures/SVD.png, id=296, 400.49625pt x 361.35pt>
+[4] [5] [6] <Figures/SVD.png, id=308, 400.49625pt x 361.35pt>
 File: Figures/SVD.png Graphic file (type png)
 
 <use Figures/SVD.png>
@@ -2560,7 +2560,7 @@ ine 191.
 
 ! Undefined control sequence.
 l.211 \multirow
-               {5}{|c|}{Timbre} & Zero Crossing Rate & \cite{tzanetakis2002m...
+               {Timbre} & Zero Crossing Rate & \cite{tzanetakis2002musical},...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2569,7 +2569,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.219 \multirow
-               {3}{|c|}{Temporal} & Statistical Moments & \cite{tzanetakis20...
+               {Temporal} & Statistical Moments & \cite{tzanetakis2002musica...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2583,36 +2583,57 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Citation 'whitman2001artist' on page 9 undefined on input line 2
 29.
 
-[9] [10] [11]
-Overfull \hbox (6.21858pt too wide) in paragraph at lines 278--279
+[9] [10] <Figures/monolithic.png, id=410, 671.50874pt x 214.8025pt>
+File: Figures/monolithic.png Graphic file (type png)
+
+<use Figures/monolithic.png>
+Package pdftex.def Info: Figures/monolithic.png used on input line 248.
+(pdftex.def)             Requested size: 227.62204pt x 72.81227pt.
+
+<Figures/Parallelized.png, id=411, 667.49374pt x 224.84pt>
+File: Figures/Parallelized.png Graphic file (type png)
+
+<use Figures/Parallelized.png>
+Package pdftex.def Info: Figures/Parallelized.png used on input line 255.
+(pdftex.def)             Requested size: 227.62204pt x 76.671pt.
+
+<Figures/Pipelined.png, id=412, 671.50874pt x 150.5625pt>
+File: Figures/Pipelined.png Graphic file (type png)
+
+<use Figures/Pipelined.png>
+Package pdftex.def Info: Figures/Pipelined.png used on input line 262.
+(pdftex.def)             Requested size: 227.62204pt x 51.03664pt.
+ [11 <./Figures/monolithic.png> <./Figures/Parallelized.png> <./Figures/Pipelin
+ed.png>] [12]
+Overfull \hbox (6.21858pt too wide) in paragraph at lines 303--304
 \T1/ppl/m/n/10.95 This method is com-pared to an item-based col-lab-o-ra-tive f
 il-ter-ing and a hy-brid method
  []
 
-[12]
-Overfull \hbox (4.69145pt too wide) in paragraph at lines 293--294
+[13] [14]
+Overfull \hbox (4.69145pt too wide) in paragraph at lines 318--319
 []\T1/ppl/m/n/10.95 Many at-tempts have been made to build rec-om-mender us-ing
  environment-related
  []
 
-[13]
-Overfull \hbox (11.01497pt too wide) in paragraph at lines 303--304
-\T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]49[][]] pro-posed
+
+Overfull \hbox (11.01497pt too wide) in paragraph at lines 328--329
+\T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]57[][]] pro-posed
  us-ing prob-a-bilis-tic weighted
  []
 
-) [14]
+[15]) [16]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (./Appendices/AppendixA.tex
 Appendix A.
 )
 1: section
-[15
+[17
 
 
 
-] [16
+] [18
 
 
 ]
@@ -2622,25 +2643,31 @@ xt-aware rec-om-mender
  []
 
 
+Overfull \hbox (10.90947pt too wide) in paragraph at lines 298--298
+[]\T1/ppl/m/n/10.95 Juan Pablo Bello. ^^P  Audio-Based Cover Song Re-trieval Us
+-ing Ap-prox-i-mate Chord
+ []
+
+
 Overfull \hbox (3.32552pt too wide) in paragraph at lines 298--298
 []\T1/ppl/m/n/10.95 Pedro Cano, Markus Kop-pen-berger, and Nico-las Wack. ^^P  
 An industrial-strength
  []
 
 1: section
-[17]
+[19]
 Overfull \hbox (2.46312pt too wide) in paragraph at lines 298--298
 []\T1/ppl/m/n/10.95 Jay Hodg-son. \T1/ppl/m/it/10.95 Un-der-stand-ing Records: 
 A Field Guide to Record-ing Prac-tice\T1/ppl/m/n/10.95 . Blooms-
  []
 
-
+[20]
 Overfull \hbox (0.19327pt too wide) in paragraph at lines 298--298
 []\T1/ppl/m/n/10.95 Daryl Lim, Brian McFee, and Gert R Lanck-riet. ^^P  Ro-bust
  struc-tural met-ric learn-
  []
 
-[18]
+
 Overfull \hbox (16.0778pt too wide) in paragraph at lines 298--298
 []\T1/ppl/m/n/10.95 Chien-Chang Lin et al. ^^P  Au-dio clas-si-fi-ca-tion and c
 at-e-go-riza-tion based on wavelets
@@ -2652,13 +2679,13 @@ Overfull \hbox (8.06715pt too wide) in paragraph at lines 298--298
 ^^Q In: \T1/ppl/m/it/10.95 IS-MIR\T1/ppl/m/n/10.95 . 2004, pp. 425^^U
  []
 
-
+[21]
 Overfull \hbox (3.87486pt too wide) in paragraph at lines 298--298
 []\T1/ppl/m/n/10.95 Elias Pam-palk, Arthur Flexer, Ger-hard Wid-mer, et al. ^^P
   Im-prove-ments of Audio-
  []
 
-[19]
+[22]
 Overfull \hbox (3.9817pt too wide) in paragraph at lines 298--298
 []\T1/ppl/m/n/10.95 Upendra Shardanand and Pat-tie Maes. ^^P  So-cial in-for-ma
 -tion fil-ter-ing: al-go-rithms
@@ -2667,22 +2694,18 @@ Overfull \hbox (3.9817pt too wide) in paragraph at lines 298--298
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 298.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [20] [21]
+) [23]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
-
-(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
+ (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Appendices/AppendixA.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9B0C58221A39A99B0626A0F43761E3D4;4021.
+(rerunfilecheck)             Checksum: 69C48925EAEDB3AF26450492B291DAD8;4187.
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -2693,20 +2716,19 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  )
-(\end occurred inside a group at level 3)
+(\end occurred inside a group at level 2)
 
-### simple group (level 3) entered at line 35 ({)
 ### simple group (level 2) entered at line 35 ({)
 ### simple group (level 1) entered at line 35 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44581 strings out of 492995
- 909556 string characters out of 6132705
+ 44630 strings out of 492995
+ 911039 string characters out of 6132705
  1342038 words of memory out of 5000000
- 47396 multiletter control sequences out of 15000+600000
+ 47426 multiletter control sequences out of 15000+600000
  51187 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,20n,82p,10377b,3219s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,20n,82p,10377b,3066s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
@@ -2722,10 +2744,10 @@ xlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (43 pages, 294281 bytes).
+Output written on main.pdf (45 pages, 364402 bytes).
 PDF statistics:
- 594 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 159 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
