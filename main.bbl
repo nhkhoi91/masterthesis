@@ -194,6 +194,72 @@
     \field{year}{2009}
   \endentry
 
+  \entry{baltrunas2011incarmusic}{article}{}
+    \name{author}{8}{}{%
+      {{hash=BL}{%
+         family={Baltrunas},
+         familyi={B\bibinitperiod},
+         given={Linas},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kaminskas},
+         familyi={K\bibinitperiod},
+         given={Marius},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Ludwig},
+         familyi={L\bibinitperiod},
+         given={Bernd},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MO}{%
+         family={Moling},
+         familyi={M\bibinitperiod},
+         given={Omar},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=RF}{%
+         family={Ricci},
+         familyi={R\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Aydin},
+         familyi={A\bibinitperiod},
+         given={Aykan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LKH}{%
+         family={L{\"u}ke},
+         familyi={L\bibinitperiod},
+         given={Karl-Heinz},
+         giveni={K\bibinitperiod-H\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Schwaiger},
+         familyi={S\bibinitperiod},
+         given={Roland},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BL+1}
+    \strng{fullhash}{BLKMLBMORFAALKHSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{89\bibrangedash 100}
+    \field{title}{Incarmusic: Context-aware music recommendations in a car}
+    \field{journaltitle}{E-Commerce and web technologies}
+    \field{year}{2011}
+  \endentry
+
   \entry{barrington2009smarter}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=BL}{%
@@ -1131,6 +1197,44 @@
     \field{title}{Generating transparent, steerable recommendations from
   textual descriptions of items}
     \field{year}{2009}
+  \endentry
+
+  \entry{hariri2012context}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=HN}{%
+         family={Hariri},
+         familyi={H\bibinitperiod},
+         given={Negar},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Mobasher},
+         familyi={M\bibinitperiod},
+         given={Bamshad},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BR}{%
+         family={Burke},
+         familyi={B\bibinitperiod},
+         given={Robin},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{HNMBBR1}
+    \strng{fullhash}{HNMBBR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the sixth ACM conference on Recommender
+  systems}
+    \field{pages}{131\bibrangedash 138}
+    \field{title}{Context-aware music recommendation based on latenttopic
+  sequential patterns}
+    \field{year}{2012}
   \endentry
 
   \entry{herlocker1999algorithmic}{inproceedings}{}
@@ -2800,6 +2904,37 @@
   www.igvita.com/2007/01/15/svd-recommendation-system-in-ruby/}}
     \field{note}{Accessed: 2017-08-15}
     \field{title}{SVD recommendation system in ruby}
+  \endentry
+
+  \entry{tiemann2007towards}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=TM}{%
+         family={Tiemann},
+         familyi={T\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pauws},
+         familyi={P\bibinitperiod},
+         given={Steffen},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{TMPS1}
+    \strng{fullhash}{TMPS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{Proceedings of the 2007 ACM conference on Recommender
+  systems}
+    \field{pages}{177\bibrangedash 178}
+    \field{title}{Towards ensemble learning for hybrid music recommendation}
+    \field{year}{2007}
   \endentry
 
   \entry{tsai2005query}{inproceedings}{}
