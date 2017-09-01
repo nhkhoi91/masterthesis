@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  1 SEP 2017 23:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  2 SEP 2017 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2696,10 +2696,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6376DB2E92C7427F85A358EDE58CBC33;6420.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -2710,10 +2706,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 35 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44658 strings out of 492995
- 912335 string characters out of 6132705
- 1342038 words of memory out of 5000000
- 47451 multiletter control sequences out of 15000+600000
+ 44655 strings out of 492995
+ 912297 string characters out of 6132705
+ 1342035 words of memory out of 5000000
+ 47448 multiletter control sequences out of 15000+600000
  46953 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,20n,83p,10377b,3100s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2734,7 +2730,7 @@ xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/palatino/uplri8a.pfb>
-Output written on main.pdf (42 pages, 386407 bytes).
+Output written on main.pdf (42 pages, 386080 bytes).
 PDF statistics:
  709 PDF objects out of 1000 (max. 8388607)
  634 compressed objects within 7 object streams
