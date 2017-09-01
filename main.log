@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  1 SEP 2017 23:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  1 SEP 2017 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2583,37 +2583,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: Figures/monolithic.png Graphic file (type png)
 
 <use Figures/monolithic.png>
-Package pdftex.def Info: Figures/monolithic.png used on input line 248.
+Package pdftex.def Info: Figures/monolithic.png used on input line 250.
 (pdftex.def)             Requested size: 227.62204pt x 72.81227pt.
 
 <Figures/Parallelized.png, id=456, 667.49374pt x 224.84pt>
 File: Figures/Parallelized.png Graphic file (type png)
 
 <use Figures/Parallelized.png>
-Package pdftex.def Info: Figures/Parallelized.png used on input line 255.
+Package pdftex.def Info: Figures/Parallelized.png used on input line 257.
 (pdftex.def)             Requested size: 227.62204pt x 76.671pt.
 
 <Figures/Pipelined.png, id=457, 671.50874pt x 150.5625pt>
 File: Figures/Pipelined.png Graphic file (type png)
 
 <use Figures/Pipelined.png>
-Package pdftex.def Info: Figures/Pipelined.png used on input line 262.
+Package pdftex.def Info: Figures/Pipelined.png used on input line 264.
 (pdftex.def)             Requested size: 227.62204pt x 51.03664pt.
  [11 <./Figures/monolithic.png> <./Figures/Parallelized.png> <./Figures/Pipelin
 ed.png>] [12] [13] [14]
-Overfull \hbox (6.21858pt too wide) in paragraph at lines 332--333
+Overfull \hbox (6.21858pt too wide) in paragraph at lines 334--335
 \T1/ppl/m/n/10.95 This method is com-pared to an item-based col-lab-o-ra-tive f
 il-ter-ing and a hy-brid method
  []
 
 [15]
-Overfull \hbox (4.69145pt too wide) in paragraph at lines 347--348
+Overfull \hbox (4.69145pt too wide) in paragraph at lines 349--350
 []\T1/ppl/m/n/10.95 Many at-tempts have been made to build rec-om-mender us-ing
  environment-related
  []
 
 [16]
-Overfull \hbox (11.01497pt too wide) in paragraph at lines 357--358
+Overfull \hbox (11.01497pt too wide) in paragraph at lines 359--360
 \T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]63[][]] pro-posed
  us-ing prob-a-bilis-tic weighted
  []
@@ -2621,10 +2621,10 @@ Overfull \hbox (11.01497pt too wide) in paragraph at lines 357--358
 [17]
 
 LaTeX Warning: Citation 'tiemann2007towards' on page 18 undefined on input line
- 384.
+ 386.
 
 
-Overfull \hbox (47.35262pt too wide) in paragraph at lines 384--385
+Overfull \hbox (47.35262pt too wide) in paragraph at lines 386--387
 []\T1/ppl/m/n/10.95 One sim-ple ex-am-ple is a hy-brid de-sign that uses en-sem
 -ble learn-ing [[]].
  []
@@ -2632,17 +2632,17 @@ Overfull \hbox (47.35262pt too wide) in paragraph at lines 384--385
 [18]
 
 LaTeX Warning: Citation 'baltrunas2011incarmusic' on page 19 undefined on input
- line 387.
+ line 389.
 
 
-Overfull \hbox (106.36652pt too wide) in paragraph at lines 387--388
+Overfull \hbox (106.36652pt too wide) in paragraph at lines 389--390
 \T1/ppl/m/n/10.95 One ex-am-ple is the context-aware mu-sic rec-om-mender built
  by Bal-trunas et al. [[]].
  []
 
 
 LaTeX Warning: Citation 'hariri2012context' on page 19 undefined on input line 
-389.
+391.
 
 ) [19]
 \openout2 = `Appendices/AppendixA.aux'.
@@ -2772,10 +2772,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 35 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44684 strings out of 492995
- 912495 string characters out of 6132705
- 1341038 words of memory out of 5000000
- 47457 multiletter control sequences out of 15000+600000
+ 44682 strings out of 492995
+ 912466 string characters out of 6132705
+ 1342038 words of memory out of 5000000
+ 47455 multiletter control sequences out of 15000+600000
  51187 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,20n,83p,10377b,3114s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2796,7 +2796,7 @@ xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/palatino/uplri8a.pfb>
-Output written on main.pdf (50 pages, 392896 bytes).
+Output written on main.pdf (50 pages, 392839 bytes).
 PDF statistics:
  747 PDF objects out of 1000 (max. 8388607)
  664 compressed objects within 7 object streams
