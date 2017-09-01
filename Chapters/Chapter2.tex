@@ -265,6 +265,35 @@ Hybrid recommendation is a method that combine several kind of recommenders toge
 
 \end{figure}
 
+\subsubsection{Monolithic hybridization design}
+
+Monolithic design consist of a single recommender that combines different type of input data and and uses a build-in algorithm to exploit these data for the recommendation process. Feature combination and feature augmentation strategies from Burke's taxonomy \cite{burke2002hybrid} can be assigned to this category. 
+
+A feature combination hybrid is a monolithic recommender that simply combine information from a varied source of input data. For instance, Basu et al. \cite{basu1998recommendation} proposed a hybrid recommender that combines collaborative features, such as users' likes and dislikes of each movie, with genre features of the movie. Therefore, instead of identifying just a group of users who watch the same movies, the recommender determines a group of users who watch same movies of the same genre, such as comedy, drama, or action.
+
+A feature augmentation hybrid is also a monolithic design that combines different source of features. In contrast with feature combination, feature augmentation does not simply combine features, but also apply some transformations so that some features are strengthened as compared to other features. Content-boost collaborative filtering \cite{melville2002content} is an example of this hybrid. The algorithm creates a concept of pseudo-user-ratings, as well as uses different weighting scheme between collaborative features and content features. 
+
+\subsubsection{Parallelized hybridization design}
+Parallelized hybridization designs gather result of several recommenders and aggregate their outputs using a hybridization machanism. Mixed, weighted, and switching are three main strategies that are used in the parallel design. 
+
+A mixed hybrid design combines the results of several recommenders at the level of user interface. The top-scoring items are then presented to users in order. However, as items from different recommenders are mixed together, some conflicts might happen. For example, Zanker et al. \cite{zanker2007development} built a mixed system to propose bundles of different product in the tourism domain. One bundle, for example, contains two recommenders, one for accommodations and the other for sport and leisure activities. As the two recommenders are separated, there would be a case when the top-score accommodations are far away from the suggested sport place. Therefore, a Constraint Satisfaction Problem solver is often employed in the design to resolve these kind of conflicts.
+
+A weighted hybrid design also combines the results of different recommenders, then compute the weighted sums of their scores. The weight can be estimate by using an empirical bootstrapping approach \cite{zanker2009case} or a dynamic weighting scheme \cite{claypool1999combing}. 
+
+Switching hybrid strategy assigns which recommender to use under certain situations. For example, to overcome the cold start problem, the system can use the results of content-base recommender until enough user rating are available. When the recommender see a sufficient number of user rating, it starts to use results generated from collaborative filtering recommender. One practical example of this hybrid design is the NewsDude system \cite{billsus2000user} to recommend news articles. First, a content-based nearest neighbor recommender is used. If there is no related articles found, a user collaborative filtering recommender is used to propose cross-genre alternative.
+
+\subsubsection{Pipelined hybridization design}
+Pipelined hybrids is a design that the output of a recommender is used as the input of another one with the exception of the final one, whose results are shown to users. Cascade hybrids and meta-level hybrids are two types of this principles. 
+
+In cascade hybrid design, the succeeding recommender can only receive the output of its predecessor. In other words, except the first recommender that process the whole set of items, all other remaining recommenders can only alter the score or exclude the items that endure from their preceders without the ability to add new one. As each recommender have the property of reducing the size of the recommending set, cascade strategies might meet a problem of not proposing enough recommending items. The problem can be solved by combining cascade hybrids with a switching strategy, as applied by Zanker et al. \cite{zanker2009case} to build a cigar recommender system. 
+
+A meta-level hybrid is one that, in the training phase, use a recommender to transform raw data to a model that is then fed into the actual recommender. In the testing phase, however, the contributing recommender is eliminated from the system. That is to say, the raw data in the testing phase is evaluated directly by the actual recommender. This hybrid design is hard to apply, as the contributing recommender has to generate a model that is useful for the actual recommender, and not all recommendation logics can do so.
+
+\subsection{Other kind of recommendation}
+So far, collaborative filtering, content-based filtering, and hybrid approaches have been introduced. There are many other kinds of recommendation system, such as knowledge-based recommendation, critique-based recommendation that are used in some specific domains. In the music domain, there are also context-aware recommender system, where the recommenders try to incorporate contextual information, such as time and current activities, into the recommendation process. I will not discuss in deep these methods here, as it goes beyond the scope of the thesis. However, information of recommenders that use contextual information will also be included in the overview of music recommender systems part.
+
+In the next section, recommender systems that are build in music domain will be discussed. Specifically, the kind of information as well as the methods used in content-based and context-based recommendation will be presented. Also, some hybrid designs that combine content, context, and user-rating information will also be introduced. 
+
 \section{Overview of music recommender systems}
 Music, differs from other content domains such as books or movies, has its own unique characteristics regarding consumption. For example, the consumption time of books and movies are quite lengthy, ranging on the average of few hours (for movies) to several days (for books); songs, on the other hand, takes a much shorter time for listener to consume, only a few minutes. Consequently, this lead to the ephemeral and disposable nature of music. Another example is the number of repetition: a single song can be consumed repeatedly (even multiple times in a row), while books are movies are consumed a few times at most. This implies that the user might appreciate recommendations of items that they already heard in the past.
 
@@ -331,6 +360,31 @@ One's music preference is not only affected by geological and activity component
 
 Compare to environment-related context, user-related context is more difficult to infer using electronic devices. Many attempts have been made to predict user's emotion or daily activities \cite{park2006context} \cite{wang2012context} by extracting environment-related feature such as the time of day, temperature, weather, etc... Emotion-based music recommender has gained attention recently, due to advances in automatic music emotion recognition \cite{yang2012machine}
 
+\subsection{Hybrid music recommendation}
+Since music preference is a complex and multi-faceted concept, it is reasonable to incorporate multiple aspects of music similarity into recommendation. Like other hybrid designs applied in other domains, music hybrid designs are also expected to gain better performance than a single approach. There are three main hybrid system in music domain: one that combines content and context information, one that combines collaborative filtering and content, and the final one mixes collaborative filtering and context information. 
 
+\subsubsection{Hybrid designs combining content and context information}
+To date, not so many research focus on combining these two types of information. One typical example is the Mobile Music Genius project \cite{schedl2013ameliorating}, which gather context information, such as time, location, weather, motion, and player-related features, and metadata, such as genre and artist, and use a decision tree to adapt the playlist as the user's context changes by a certain amount. 
 
+Another mobile music recommender built by Wang et al. \cite{wang2012context} also uses a hybrid design. The music player collects information about time of the day, accelerometer data, and ambient noise to predict user's current activity, such as running, walking, sleeping, etc. The player then associate activity information with activity labels of music tracks to infer suitable playlist for the activity. 
+
+\subsubsection{Hybrid designs combining collaborative filtering and content information}
+Hybrid designs combining these two features receive massive intention from researchers, as the two features fusing together is expected to solve multiple problems \cite{burke2002hybrid} \cite{burke2007adaptive} \cite{aoscar2010music}
+
+\begin{itemize}
+\item[•] Cold start problem: As audio content analysis can be performed instantly to new track, content-based recommender can be used to recommend songs for a user when his profile is not sufficient enough for collaborative filtering techniques. 
+
+\item[•] Popularity bias: collaborative filtering might cause popularity bias, as users only listen to popular items. Including tracks with similar content to the recommendation is a solution for this problem.
+
+\item[•] novelty and diversity: popularity bias results in a limited range of recommendation. Content-based recommendation helps suggest more tracks from the long tail, therefore increasing the novelty and diversity of the system.
+\end{itemize}
+
+Techniques applied in these hybrid designs can be a simple one, such as ensemble learning or fusing output, to a more sophisticated one, such as the one that use probabilistic framework or graph-based interpretation. The content features used in these research varied from only low-level features (MFCC), to a combination of low and mid-level features (timbral, temporal, and tonal features), and also with track metadata (genre, mood, release year, etc.)
+
+One simple example is a hybrid design that uses ensemble learning \cite{tiemann2007towards}. The system implements a item-item collaborative filtering recommender as well as a content-based recommender using timbral, tempo, genre, mood, and release year information. Both recommenders use the weighted mean of most similar item's rating to predict the scores of an item. The feature combination strategy is then applied to associate the two scores into a vector for each user, and the mapping \(\{P_{r_1},\dot{},P_{r_n}\} \rightarrow R \) is constructed, with \( R_{r_n} \) is the estimate of the \textit{n}th recommender and R is the actually observed value. To predict a value for a new instance, first, a feature vector \( \{P_{r_1},\dot{},P_{r_n}\} \) for that instance is established. Then the Euclidean distance is calculated between this vector and all the predicted vectors to find the most similar vector, whose actual value is promoted. 
+
+\subsubsection{Hybrid designs combining collaborative filtering and context information}
+The third kind of hybrid design tries to combine collaborative and context features. One example is the context-aware music recommender built by Baltrunas et al. \cite{baltrunas2011incarmusic}. The recommender try to offer context-aware music to users in a car scenario by extending matrix factorization model with contextual parameters.
+
+Another example a context-aware music recommendation based on latent topic sequential patterns by Hariri et al. \cite{hariri2012context}. The recommender use latent factor techniques to discover latent topics, and sequential pattern mining techniques to reveal the relationship between these topics. The prediction then predicts the next topic using a sequence of song in user's current playlist. 
 

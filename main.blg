@@ -19,56 +19,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 16398 items from 5000.
+Reallocated field_info (elt_size=4) to 17649 items from 5000.
 Database file #1: main-blx.bib
 Database file #2: example.bib
-Repeated entry---line 695 of file example.bib
- : @article{morchen2006modeling
- :                             ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "whitman2001artist"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 81 entries,
+You've used 91 entries,
             6256 wiz_defined-function locations,
-            1604 strings with 23146 characters,
-and the built_in function-call counts, 481081 in all, are:
-= -- 32966
-> -- 9595
-< -- 2811
-+ -- 12349
-- -- 3616
-* -- 36164
-:= -- 48281
+            1645 strings with 24924 characters,
+and the built_in function-call counts, 536618 in all, are:
+= -- 36600
+> -- 10827
+< -- 3169
++ -- 13744
+- -- 4089
+* -- 40287
+:= -- 53704
 add.period$ -- 0
-call.type$ -- 81
-change.case$ -- 1429
+call.type$ -- 91
+change.case$ -- 1600
 chr.to.int$ -- 30
-cite$ -- 160
-duplicate$ -- 53141
-empty$ -- 43762
-format.name$ -- 5993
-if$ -- 98681
+cite$ -- 180
+duplicate$ -- 59365
+empty$ -- 48813
+format.name$ -- 6737
+if$ -- 110183
 int.to.chr$ -- 0
-int.to.str$ -- 220
+int.to.str$ -- 251
 missing$ -- 0
-newline$ -- 2799
-num.names$ -- 4045
-pop$ -- 27841
+newline$ -- 3119
+num.names$ -- 4560
+pop$ -- 31296
 preamble$ -- 1
-purify$ -- 1947
+purify$ -- 2178
 quote$ -- 0
-skip$ -- 15027
+skip$ -- 16913
 stack$ -- 0
-substring$ -- 53194
-swap$ -- 13004
-text.length$ -- 2351
-text.prefix$ -- 83
+substring$ -- 58747
+swap$ -- 14545
+text.length$ -- 2652
+text.prefix$ -- 93
 top$ -- 1
-type$ -- 2742
+type$ -- 3082
 warning$ -- 0
-while$ -- 6048
+while$ -- 6732
 width$ -- 0
-write$ -- 2719
-(There was 1 error message)
+write$ -- 3029

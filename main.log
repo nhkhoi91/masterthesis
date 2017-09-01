@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  31 AUG 2017 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  1 SEP 2017 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1902,72 +1902,72 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \@title with sig. ' ' on line 82.
+. Redefining command \@title with sig. ' ' on line 83.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ttitle with sig. ' ' on line 82.
+. Defining command \ttitle with sig. ' ' on line 83.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \supname with sig. ' ' on line 84.
+. Defining command \supname with sig. ' ' on line 85.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \examname with sig. ' ' on line 86.
+. Defining command \examname with sig. ' ' on line 87.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \degreename with sig. ' ' on line 87.
+. Defining command \degreename with sig. ' ' on line 88.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \authorname with sig. ' ' on line 88.
+. Defining command \authorname with sig. ' ' on line 89.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \@author with sig. ' ' on line 88.
+. Redefining command \@author with sig. ' ' on line 89.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \addressname with sig. ' ' on line 90.
+. Defining command \addressname with sig. ' ' on line 91.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \subjectname with sig. ' ' on line 92.
+. Defining command \subjectname with sig. ' ' on line 93.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \keywordnames with sig. ' ' on line 94.
+. Defining command \keywordnames with sig. ' ' on line 95.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \univname with sig. ' ' on line 96.
+. Defining command \univname with sig. ' ' on line 97.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \deptname with sig. ' ' on line 98.
+. Defining command \deptname with sig. ' ' on line 99.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \groupname with sig. ' ' on line 100.
+. Defining command \groupname with sig. ' ' on line 101.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \facname with sig. ' ' on line 102.
+. Defining command \facname with sig. ' ' on line 103.
 .................................................
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -2050,7 +2050,7 @@ LaTeX Info: Redefining \pageref on input line 6432.
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 110.
+(scrhack)             need that hack, on input line 111.
 
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -2067,17 +2067,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip84
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 110.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 110.
-Package hyperref Info: Option `colorlinks' set `true' on input line 110.
-Package hyperref Info: Option `unicode' set `true' on input line 110.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 111.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 111.
+Package hyperref Info: Option `colorlinks' set `true' on input line 111.
+Package hyperref Info: Option `unicode' set `true' on input line 111.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2017/03/14 v6.85a Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 110.
+Package hyperref Info: Option `breaklinks' set `true' on input line 111.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -2091,23 +2091,23 @@ Package csquotes Info: ... found 'babel' package.
 (./Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 111.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -2263,14 +2263,14 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 110.
-Package scrbase Info: activating english \abbrevname on input line 110.
-Package scrbase Info: activating english \byname on input line 110.
-Package scrbase Info: activating english \acknowledgementname on input line 110
+(scrlayer)             \begin{document} on input line 111.
+Package scrbase Info: activating english \abbrevname on input line 111.
+Package scrbase Info: activating english \byname on input line 111.
+Package scrbase Info: activating english \acknowledgementname on input line 111
 .
-Package scrbase Info: activating english \authorshipname on input line 110.
-Package scrbase Info: activating english \constantsname on input line 110.
-Package scrbase Info: activating english \symbolsname on input line 110.
+Package scrbase Info: activating english \authorshipname on input line 111.
+Package scrbase Info: activating english \constantsname on input line 111.
+Package scrbase Info: activating english \symbolsname on input line 111.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -2282,23 +2282,23 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 110.
-Package biblatex Info: Reference segment=0 on input line 110.
+Package biblatex Info: Reference section=0 on input line 111.
+Package biblatex Info: Reference segment=0 on input line 111.
  ABD: EveryShipout initializing macros
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ttitle' on input line 110.
+(hyperref)                removing `\ttitle' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\authorname' on input line 110.
+(hyperref)                removing `\authorname' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\keywordnames' on input line 110.
+(hyperref)                removing `\keywordnames' on input line 111.
 
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring ON on input line 110.
+Package hyperref Info: Link coloring ON on input line 111.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -2307,9 +2307,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count407
 )
-LaTeX Info: Redefining \ref on input line 110.
-LaTeX Info: Redefining \pageref on input line 110.
-LaTeX Info: Redefining \nameref on input line 110.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 
 (./main.out) (./main.out)
 \@outlinefile=\write6
@@ -2320,7 +2320,7 @@ LaTeX Info: Redefining \nameref on input line 110.
 
 1: section
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 129.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 130.
 [1
 
 
@@ -2332,15 +2332,15 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 --------------------
  Declaration of Authorship
 --------------------
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 169.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 170.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
@@ -2354,7 +2354,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--175
  Abstract
 --------------------
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 200.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 201.
 1: section
 [7] [8
 
@@ -2367,7 +2367,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 218.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 219.
  (./main.toc)
 \tf@toc=\write7
 \openout7 = `main.toc'.
@@ -2548,7 +2548,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[4] [5] [6] <Figures/SVD.png, id=308, 400.49625pt x 361.35pt>
+[4] [5] [6] <Figures/SVD.png, id=351, 400.49625pt x 361.35pt>
 File: Figures/SVD.png Graphic file (type png)
 
 <use Figures/SVD.png>
@@ -2579,133 +2579,183 @@ and I'll forget about whatever was undefined.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation 'whitman2001artist' on page 9 undefined on input line 2
-29.
-
-[9] [10] <Figures/monolithic.png, id=410, 671.50874pt x 214.8025pt>
+[9] [10] <Figures/monolithic.png, id=455, 671.50874pt x 214.8025pt>
 File: Figures/monolithic.png Graphic file (type png)
 
 <use Figures/monolithic.png>
 Package pdftex.def Info: Figures/monolithic.png used on input line 248.
 (pdftex.def)             Requested size: 227.62204pt x 72.81227pt.
 
-<Figures/Parallelized.png, id=411, 667.49374pt x 224.84pt>
+<Figures/Parallelized.png, id=456, 667.49374pt x 224.84pt>
 File: Figures/Parallelized.png Graphic file (type png)
 
 <use Figures/Parallelized.png>
 Package pdftex.def Info: Figures/Parallelized.png used on input line 255.
 (pdftex.def)             Requested size: 227.62204pt x 76.671pt.
 
-<Figures/Pipelined.png, id=412, 671.50874pt x 150.5625pt>
+<Figures/Pipelined.png, id=457, 671.50874pt x 150.5625pt>
 File: Figures/Pipelined.png Graphic file (type png)
 
 <use Figures/Pipelined.png>
 Package pdftex.def Info: Figures/Pipelined.png used on input line 262.
 (pdftex.def)             Requested size: 227.62204pt x 51.03664pt.
  [11 <./Figures/monolithic.png> <./Figures/Parallelized.png> <./Figures/Pipelin
-ed.png>] [12]
-Overfull \hbox (6.21858pt too wide) in paragraph at lines 303--304
+ed.png>] [12] [13] [14]
+Overfull \hbox (6.21858pt too wide) in paragraph at lines 332--333
 \T1/ppl/m/n/10.95 This method is com-pared to an item-based col-lab-o-ra-tive f
 il-ter-ing and a hy-brid method
  []
 
-[13] [14]
-Overfull \hbox (4.69145pt too wide) in paragraph at lines 318--319
+[15]
+Overfull \hbox (4.69145pt too wide) in paragraph at lines 347--348
 []\T1/ppl/m/n/10.95 Many at-tempts have been made to build rec-om-mender us-ing
  environment-related
  []
 
-
-Overfull \hbox (11.01497pt too wide) in paragraph at lines 328--329
-\T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]57[][]] pro-posed
+[16]
+Overfull \hbox (11.01497pt too wide) in paragraph at lines 357--358
+\T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]63[][]] pro-posed
  us-ing prob-a-bilis-tic weighted
  []
 
-[15]) [16]
+[17]
+
+LaTeX Warning: Citation 'tiemann2007towards' on page 18 undefined on input line
+ 384.
+
+
+Overfull \hbox (47.35262pt too wide) in paragraph at lines 384--385
+[]\T1/ppl/m/n/10.95 One sim-ple ex-am-ple is a hy-brid de-sign that uses en-sem
+-ble learn-ing [[]].
+ []
+
+[18]
+
+LaTeX Warning: Citation 'baltrunas2011incarmusic' on page 19 undefined on input
+ line 387.
+
+
+Overfull \hbox (106.36652pt too wide) in paragraph at lines 387--388
+\T1/ppl/m/n/10.95 One ex-am-ple is the context-aware mu-sic rec-om-mender built
+ by Bal-trunas et al. [[]].
+ []
+
+
+LaTeX Warning: Citation 'hariri2012context' on page 19 undefined on input line 
+389.
+
+) [19]
 \openout2 = `Appendices/AppendixA.aux'.
 
- (./Appendices/AppendixA.tex
-Appendix A.
-)
-1: section
-[17
+ (./Appendices/AppendixA.tex [20
 
-
-
-] [18
 
 
 ]
-Overfull \hbox (11.72002pt too wide) in paragraph at lines 298--298
+Appendix A.
+)
+1: section
+[21] [22
+
+
+]
+Overfull \hbox (11.72002pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Gediminas Ado-mavi-cius and Alexan-der Tuzhilin. ^^P  Conte
 xt-aware rec-om-mender
  []
 
 
-Overfull \hbox (10.90947pt too wide) in paragraph at lines 298--298
+Overfull \hbox (10.90947pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Juan Pablo Bello. ^^P  Audio-Based Cover Song Re-trieval Us
 -ing Ap-prox-i-mate Chord
  []
 
+1: section
+[23]
+Overfull \hbox (0.33592pt too wide) in paragraph at lines 299--299
+[]\T1/ppl/m/n/10.95 Robin Burke. ^^P  The adap-tive web. chap-ter Hy-brid web r
+ec-om-mender sys-tems^^Q.
+ []
 
-Overfull \hbox (3.32552pt too wide) in paragraph at lines 298--298
+
+Overfull \hbox (3.32552pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Pedro Cano, Markus Kop-pen-berger, and Nico-las Wack. ^^P  
 An industrial-strength
  []
 
-1: section
-[19]
-Overfull \hbox (2.46312pt too wide) in paragraph at lines 298--298
+[24]
+Overfull \hbox (2.46312pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Jay Hodg-son. \T1/ppl/m/it/10.95 Un-der-stand-ing Records: 
 A Field Guide to Record-ing Prac-tice\T1/ppl/m/n/10.95 . Blooms-
  []
 
-[20]
-Overfull \hbox (0.19327pt too wide) in paragraph at lines 298--298
+
+Overfull \hbox (0.19327pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Daryl Lim, Brian McFee, and Gert R Lanck-riet. ^^P  Ro-bust
  struc-tural met-ric learn-
  []
 
 
-Overfull \hbox (16.0778pt too wide) in paragraph at lines 298--298
+Overfull \hbox (16.0778pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Chien-Chang Lin et al. ^^P  Au-dio clas-si-fi-ca-tion and c
 at-e-go-riza-tion based on wavelets
  []
 
 
-Overfull \hbox (8.06715pt too wide) in paragraph at lines 298--298
+Overfull \hbox (8.06715pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Beth Lo-gan. ^^P  Mu-sic Rec-om-men-da-tion from Song Sets.
 ^^Q In: \T1/ppl/m/it/10.95 IS-MIR\T1/ppl/m/n/10.95 . 2004, pp. 425^^U
  []
 
-[21]
-Overfull \hbox (3.87486pt too wide) in paragraph at lines 298--298
+[25]
+Overfull \hbox (11.14418pt too wide) in paragraph at lines 299--299
+[]\T1/ppl/m/n/10.95 Prem Melville, Ray-mond J Mooney, and Ra-madass Na-gara-jan
+. ^^P  Content-boosted
+ []
+
+
+Overfull \hbox (19.82222pt too wide) in paragraph at lines 299--299
+\T1/ppl/m/n/10.95 col-lab-o-ra-tive fil-ter-ing for im-proved rec-om-men-da-tio
+ns^^Q. In: \T1/ppl/m/it/10.95 Aaai/iaai\T1/ppl/m/n/10.95 . 2002, pp. 187^^U
+ []
+
+
+Overfull \hbox (3.87486pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Elias Pam-palk, Arthur Flexer, Ger-hard Wid-mer, et al. ^^P
   Im-prove-ments of Audio-
  []
 
-[22]
-Overfull \hbox (3.9817pt too wide) in paragraph at lines 298--298
+[26]
+Overfull \hbox (0.29132pt too wide) in paragraph at lines 299--299
+[]\T1/ppl/m/n/10.95 Markus Schedl. ^^P  Ame-lio-rat-ing mu-sic rec-om-men-da-ti
+on: In-te-grat-ing mu-sic con-
+ []
+
+
+Overfull \hbox (3.9817pt too wide) in paragraph at lines 299--299
 []\T1/ppl/m/n/10.95 Upendra Shardanand and Pat-tie Maes. ^^P  So-cial in-for-ma
 -tion fil-ter-ing: al-go-rithms
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 298.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 299.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
- (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
+) [27] [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 303.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
+
+(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Appendices/AppendixA.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 69C48925EAEDB3AF26450492B291DAD8;4187.
+(rerunfilecheck)             Checksum: E1CE3F28D0AB460FBD8E6B04F5D61321;6525.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -2722,32 +2772,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 35 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44630 strings out of 492995
- 911039 string characters out of 6132705
- 1342038 words of memory out of 5000000
- 47426 multiletter control sequences out of 15000+600000
+ 44684 strings out of 492995
+ 912495 string characters out of 6132705
+ 1341038 words of memory out of 5000000
+ 47457 multiletter control sequences out of 15000+600000
  51187 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,20n,82p,10377b,3066s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,20n,83p,10377b,3114s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
-ype1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (45 pages, 364402 bytes).
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
+/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+urw/palatino/uplri8a.pfb>
+Output written on main.pdf (50 pages, 392896 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
- 175 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 747 PDF objects out of 1000 (max. 8388607)
+ 664 compressed objects within 7 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 281 words of extra memory for PDF output out of 10000 (max. 10000000)
 
