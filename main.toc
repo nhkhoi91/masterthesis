@@ -4,41 +4,40 @@
 \contentsline {chapter}{Declaration of Authorship}{iii}{section*.1}
 \contentsline {chapter}{Abstract}{vii}{section*.2}
 \contentsline {chapter}{Acknowledgements}{ix}{section*.3}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.12}
-\contentsline {section}{\numberline {1.1}A statement of the problem}{1}{section.13}
-\contentsline {chapter}{\numberline {2}Background information}{3}{chapter.14}
-\contentsline {section}{\numberline {2.1}Overview of recommender systems}{3}{section.15}
-\contentsline {subsection}{\numberline {2.1.1}Collaborative recommendation}{3}{subsection.16}
-\contentsline {subsubsection}{\numberline {2.1.1.1}User-based nearest neighbor recommendation}{4}{subsubsection.17}
-\contentsline {paragraph}{\numberline {2.1.1.1.1}Pearson's correlation coefficient}{4}{paragraph.18}
-\contentsline {paragraph}{\numberline {2.1.1.1.2}Other weighting metrics}{4}{paragraph.19}
-\contentsline {paragraph}{\numberline {2.1.1.1.3}Challenges}{5}{paragraph.20}
-\contentsline {subsubsection}{\numberline {2.1.1.2}Item-based nearest neighbor recommendation}{5}{subsubsection.21}
-\contentsline {subsubsection}{\numberline {2.1.1.3}Matrix factorization/ latent factor model}{6}{subsubsection.22}
-\contentsline {subsection}{\numberline {2.1.2}Content-based recommendation}{8}{subsection.25}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Feature extraction}{9}{subsubsection.27}
-\contentsline {paragraph}{\numberline {2.1.2.1.1}Low-level features}{9}{paragraph.29}
-\contentsline {paragraph}{\numberline {2.1.2.1.2}Mid-level features}{10}{paragraph.31}
-\contentsline {subsection}{\numberline {2.1.3}Hybrid recommendation}{11}{subsection.32}
-\contentsline {subsubsection}{\numberline {2.1.3.1}Monolithic hybridization design}{11}{subsubsection.36}
-\contentsline {subsubsection}{\numberline {2.1.3.2}Parallelized hybridization design}{12}{subsubsection.37}
-\contentsline {subsubsection}{\numberline {2.1.3.3}Pipelined hybridization design}{12}{subsubsection.38}
-\contentsline {subsection}{\numberline {2.1.4}Other kind of recommendation}{13}{subsection.39}
-\contentsline {section}{\numberline {2.2}Overview of music recommender systems}{13}{section.40}
-\contentsline {subsection}{\numberline {2.2.1}Content-Based Music Recommendation}{13}{subsection.41}
-\contentsline {subsubsection}{\numberline {2.2.1.1}Metadata content}{14}{subsubsection.42}
-\contentsline {paragraph}{\numberline {2.2.1.1.1}Annotation}{14}{paragraph.43}
-\contentsline {paragraph}{\numberline {2.2.1.1.2}Social tags}{14}{paragraph.44}
-\contentsline {paragraph}{\numberline {2.2.1.1.3}Annotations by web crawling}{14}{paragraph.45}
-\contentsline {subsubsection}{\numberline {2.2.1.2}Audio content}{15}{subsubsection.46}
-\contentsline {paragraph}{\numberline {2.2.1.2.1}Acoustic features}{15}{paragraph.47}
-\contentsline {paragraph}{\numberline {2.2.1.2.2}Semantic annotation}{15}{paragraph.48}
-\contentsline {subsection}{\numberline {2.2.2}Contextual Music Recommendation}{16}{subsection.49}
-\contentsline {subsubsection}{\numberline {2.2.2.1}Environment-Related Context}{16}{subsubsection.50}
-\contentsline {subsubsection}{\numberline {2.2.2.2}User-Related Context}{17}{subsubsection.51}
-\contentsline {subsection}{\numberline {2.2.3}Hybrid music recommendation}{17}{subsection.52}
-\contentsline {subsubsection}{\numberline {2.2.3.1}Hybrid designs combining content and context information}{18}{subsubsection.53}
-\contentsline {subsubsection}{\numberline {2.2.3.2}Hybrid designs combining collaborative filtering and content information}{18}{subsubsection.54}
-\contentsline {subsubsection}{\numberline {2.2.3.3}Hybrid designs combining collaborative filtering and context information}{19}{subsubsection.55}
-\contentsline {chapter}{\numberline {A}Appendix A}{21}{appendix.56}
-\contentsline {chapter}{Bibliography}{23}{appendix*.57}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
+\contentsline {section}{\numberline {1.1}A statement of the problem}{1}{section.10}
+\contentsline {chapter}{\numberline {2}Background information}{3}{chapter.11}
+\contentsline {section}{\numberline {2.1}Overview of recommender systems}{3}{section.12}
+\contentsline {subsection}{\numberline {2.1.1}Collaborative recommendation}{3}{subsection.13}
+\contentsline {subsubsection}{\numberline {2.1.1.1}User-based nearest neighbor recommendation}{4}{subsubsection.14}
+\contentsline {paragraph}{\numberline {2.1.1.1.1}Pearson's correlation coefficient}{4}{paragraph.15}
+\contentsline {paragraph}{\numberline {2.1.1.1.2}Other weighting metrics}{4}{paragraph.16}
+\contentsline {paragraph}{\numberline {2.1.1.1.3}Challenges}{5}{paragraph.17}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Item-based nearest neighbor recommendation}{5}{subsubsection.18}
+\contentsline {subsubsection}{\numberline {2.1.1.3}Matrix factorization/ latent factor model}{6}{subsubsection.19}
+\contentsline {subsection}{\numberline {2.1.2}Content-based recommendation}{8}{subsection.22}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Feature extraction}{9}{subsubsection.24}
+\contentsline {paragraph}{\numberline {2.1.2.1.1}Low-level features}{9}{paragraph.26}
+\contentsline {paragraph}{\numberline {2.1.2.1.2}Mid-level features}{10}{paragraph.28}
+\contentsline {subsection}{\numberline {2.1.3}Hybrid recommendation}{11}{subsection.29}
+\contentsline {subsubsection}{\numberline {2.1.3.1}Monolithic hybridization design}{11}{subsubsection.33}
+\contentsline {subsubsection}{\numberline {2.1.3.2}Parallelized hybridization design}{12}{subsubsection.34}
+\contentsline {subsubsection}{\numberline {2.1.3.3}Pipelined hybridization design}{12}{subsubsection.35}
+\contentsline {subsection}{\numberline {2.1.4}Other kind of recommendation}{13}{subsection.36}
+\contentsline {section}{\numberline {2.2}Overview of music recommender systems}{13}{section.37}
+\contentsline {subsection}{\numberline {2.2.1}Content-Based Music Recommendation}{13}{subsection.38}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Metadata content}{14}{subsubsection.39}
+\contentsline {paragraph}{\numberline {2.2.1.1.1}Annotation}{14}{paragraph.40}
+\contentsline {paragraph}{\numberline {2.2.1.1.2}Social tags}{14}{paragraph.41}
+\contentsline {paragraph}{\numberline {2.2.1.1.3}Annotations by web crawling}{14}{paragraph.42}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Audio content}{15}{subsubsection.43}
+\contentsline {paragraph}{\numberline {2.2.1.2.1}Acoustic features}{15}{paragraph.44}
+\contentsline {paragraph}{\numberline {2.2.1.2.2}Semantic annotation}{15}{paragraph.45}
+\contentsline {subsection}{\numberline {2.2.2}Contextual Music Recommendation}{16}{subsection.46}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Environment-Related Context}{16}{subsubsection.47}
+\contentsline {subsubsection}{\numberline {2.2.2.2}User-Related Context}{17}{subsubsection.48}
+\contentsline {subsection}{\numberline {2.2.3}Hybrid music recommendation}{17}{subsection.49}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Hybrid designs combining content and context information}{18}{subsubsection.50}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Hybrid designs combining collaborative filtering and content information}{18}{subsubsection.51}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Hybrid designs combining collaborative filtering and context information}{19}{subsubsection.52}
+\contentsline {chapter}{Bibliography}{21}{appendix*.53}
