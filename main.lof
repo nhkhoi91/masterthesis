@@ -3,7 +3,7 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Projection of user and item on a two-dimensional space\relax }}{7}{figure.caption.21}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Monolithic hybridization design\relax }}{11}{figure.caption.30}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Parallelized hybridization design\relax }}{11}{figure.caption.31}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Pipelined hybridization design\relax }}{11}{figure.caption.32}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Projection of user and item on a two-dimensional space\relax }}{7}{figure.caption.19}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Monolithic hybridization design\relax }}{11}{figure.caption.28}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Parallelized hybridization design\relax }}{11}{figure.caption.29}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Pipelined hybridization design\relax }}{11}{figure.caption.30}
