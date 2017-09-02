@@ -194,6 +194,34 @@
     \field{year}{2009}
   \endentry
 
+  \entry{balabanovic1997content}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BM}{%
+         family={Balabanovi{\'c}},
+         familyi={B\bibinitperiod},
+         given={Marko},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Shohom},
+         familyi={S\bibinitperiod},
+         given={Yoav},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BMSY1}
+    \strng{fullhash}{BMSY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{3}
+    \field{title}{Content-based, callaborative recommendation}
+    \field{volume}{40}
+    \field{journaltitle}{Communications of the ACM}
+    \field{year}{1997}
+  \endentry
+
   \entry{baltrunas2011incarmusic}{article}{}
     \name{author}{8}{}{%
       {{hash=BL}{%
@@ -2896,6 +2924,20 @@
     \field{year}{2008}
   \endentry
 
+  \entry{press_2014}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Spotify Acquires The Echo Nest}
+    \verb{url}
+    \verb https://press.spotify.com/us/2014/03/06/spotify-acquires-the-echo-nes
+    \verb t/
+    \endverb
+    \field{journaltitle}{Press}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Grigorik2017}{misc}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
@@ -2935,6 +2977,29 @@
     \field{pages}{177\bibrangedash 178}
     \field{title}{Towards ensemble learning for hybrid music recommendation}
     \field{year}{2007}
+  \endentry
+
+  \entry{trewin2000knowledge}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TS}{%
+         family={Trewin},
+         familyi={T\bibinitperiod},
+         given={Shari},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TS1}
+    \strng{fullhash}{TS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{number}{Supplement 32}
+    \field{pages}{180}
+    \field{title}{Knowledge-based recommender systems}
+    \field{volume}{69}
+    \field{journaltitle}{Encyclopedia of library and information science}
+    \field{year}{2000}
   \endentry
 
   \entry{tsai2005query}{inproceedings}{}
