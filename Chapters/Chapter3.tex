@@ -1,0 +1,32 @@
+\chapter{Implementation} % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+In this chapter, the approaches used in this research is examined. First, the dataset taken from Spotify is mentioned. After that, the three algorithms and the evaluation metrics are discussed in detail.
+
+\section{Dataset}
+
+The dataset for this thesis is a combination between two databases from two services: \todo{add the other here} and Spotify Web Api \footnote{https://developer.spotify.com/web-api}. First, a list of user, the album they listen, the artists, and the number of times they listen to the album is taken from \todo{also here}. The album name and artist name are then used to get album tracks, which are all the tracks contain in that album, on Spotify. Finally, using the track id of each tracks, track audio features are crawled. Then, for each album, the mean of the acoustic features is calculated, which represents the acoustic features of the whole album. The ultimate dataset, creating by joining the mention above databases, contains the following fields:
+
+\begin{itemize}
+\item[•] Username: The user who listen to the album, taken from \todo{here also} database.
+\item[•] Album: The name of the album the user listens to.
+\item[•] Artist: The artist who performs the album.
+\item[•] Playcount: The total number of time the user listens to the album.
+\item[•] Energy: A perceptual measurement of intensity and activity in a range from 0 to 1. The higher the score, the higher the energy the track contains. For example, metal rock has high energy, while a Bach prelude is perceived to have low energy. This measurement is built on top of dynamic range, loudness, timbral, onset rate, and general entropy.
+\item[•] Speechiness: A measurement of how much spoken words is present compare to music. A value from 0.66 to 1 indicates that the track is mostly spoken words, such as talk show or audio book. Vice versa, a value between 0.33 and 0.66 implies that the track contains both music and speech, ranging from pop to rap music. A value below 0.33 indicates a non speech track. 
+\item[•] Acousticness: A evaluation of how much acoustic a track contains compare to how much electronic. Again, a value closer to 1 implements that the track is played with mostly acoustic instruments, such as guitar and harmonica; while a value closer to 0 implements the present of electronic instruments.
+\item[•] Danceability: A measurement of how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability,  beat strength, and overall regularity. The higher the value, the more danceable the track.
+\item[•] Tempo: The overall estimated tempo of a track, measuring in beats per minute (BPM).
+\item[•] Instrumentalness: The assessment of how much a track incorporates vocals. The higher the instrumentalness, the greater likelihood the track contains no vocal content. 
+\item[•] Key: The key (tonal center) a track is in. Integers map to pitches using Pitch Class notation \footnote{https://en.wikipedia.org/wiki/Pitch_class}. 
+\item[•] Duration\_ms: The duration of a track in milliseconds.
+\item[•] Valence: A measure from 0 to 1 of the positiveness of a track. Tracks with high valence sound more positive (e.g. happy, cheerful), and vice versa.
+\item[•] Liveness: An indication of whether a track is performed live or in studio. The higher the liveness, the higher possibility that the track is performed live.
+\item[•] Loudness: The overall loudness of a track in decibels (dB), with range from -60 to 0 db. 
+\end{itemize}
+
+As some of the features (e.g. key, duration) are not in the scale from 0 to 1, a standardization is necessary to eliminate over-weighting variables. The standardization for all the acoustic features is achieve by subtracting the mean following by dividing by the standard deviation for each feature. 
+
+\todo{add correlation part}
+

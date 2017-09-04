@@ -40,4 +40,6 @@
 \contentsline {subsubsection}{\numberline {2.2.3.1}Hybrid designs combining content and context information}{18}{subsubsection.51}
 \contentsline {subsubsection}{\numberline {2.2.3.2}Hybrid designs combining collaborative filtering and content information}{18}{subsubsection.52}
 \contentsline {subsubsection}{\numberline {2.2.3.3}Hybrid designs combining collaborative filtering and context information}{19}{subsubsection.53}
-\contentsline {chapter}{Bibliography}{21}{appendix*.54}
+\contentsline {chapter}{\numberline {3}Implementation}{21}{chapter.54}
+\contentsline {section}{\numberline {3.1}Dataset}{21}{section.55}
+\contentsline {chapter}{Bibliography}{23}{appendix*.62}
