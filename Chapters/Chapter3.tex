@@ -6,10 +6,10 @@ In this chapter, the approaches used in this research is examined. First, the da
 
 \section{Dataset}
 
-The dataset for this thesis is a combination between two databases from two services: \todo{add the other here} and Spotify Web Api \footnote{https://developer.spotify.com/web-api}. First, a list of user, the album they listen, the artists, and the number of times they listen to the album is taken from \todo{also here}. The album name and artist name are then used to get album tracks, which are all the tracks contain in that album, on Spotify. Finally, using the track id of each tracks, track audio features are crawled. Then, for each album, the mean of the acoustic features is calculated, which represents the acoustic features of the whole album. The ultimate dataset, creating by joining the mention above databases, contains the following fields:
+The dataset for this thesis is a combination between two databases from two services: last.fm \footnote{https://last.fm} and Spotify Web Api \footnote{https://developer.spotify.com/web-api}. First, a list of user, the album they listen, the artists, and the number of times they listen to the album is taken from last.fm. The album name and artist name are then used to get album tracks, which are all the tracks contain in that album, on Spotify. Finally, using the track id of each tracks, track audio features are crawled. Then, for each album, the mean of the acoustic features is calculated, which represents the acoustic features of the whole album. The ultimate dataset, creating by joining the mention above databases, contains the following fields:
 
 \begin{itemize}
-\item[•] Username: The user who listen to the album, taken from \todo{here also} database.
+\item[•] Username: The user who listen to the album, taken from last.fm database.
 \item[•] Album: The name of the album the user listens to.
 \item[•] Artist: The artist who performs the album.
 \item[•] Playcount: The total number of time the user listens to the album.
@@ -29,4 +29,37 @@ The dataset for this thesis is a combination between two databases from two serv
 As some of the features (e.g. key, duration) are not in the scale from 0 to 1, a standardization is necessary to eliminate over-weighting variables. The standardization for all the acoustic features is achieve by subtracting the mean following by dividing by the standard deviation for each feature. 
 
 \todo{add correlation part}
+
+\section{Algorithms}
+
+The following sections describe my implementation of the three algorithms: a pure collaborative filtering, a pure content-based filtering, followed by the details of the hybrid approach.
+
+\subsection{Pure Collaborative Filtering}
+As the number of song outnumbers the number of user, I decide to implement the user-user based collaborative filtering. The algorithm can be summarized in the following steps:
+
+\begin{enumerate}
+	\item Calculate similarity between users as Pearson correlation between users' rating vectors. 
+	\item For each user, form a neighborhood of \textit{n} users that have the highest similarity.
+	\item Compute a prediction for an item from a weighted combination of selected neighbor's ratings. 
+\end{enumerate}
+
+In step 3, predictions are calculated using \todo{add formula}
+
+\subsection{Pure Content-based Filtering}
+The algorithm for pure content-based approach is similar to the one of the pure collaborative filtering. Acoustic features are treated as elements of the item vector for each track. However, one difference is that, instead of using Pearson correlation, the cosine similarity is used for calculating the similarity between items.
+
+\subsection{Content-boosted Collaborative Filtering}
+The idea of the content-booasted collaborative filtering algorithm is quite simple. First, a pseudo user-ratings vector is created for every user in the database. Each element of a pseudo user-ratings vector of a user is the user-rating if available, or the value predicted by the content-based recommender otherwise. The formal definition of a pseudo vector is as follow:
+
+\begin{displaymath}
+
+\end{displaymath}
+
+when \( r_(u,i) \) denotes the actual rating of user u for item i, and \(c_(u,i) \) is the prediction of the content-based predictor. 
+
+The pseudo user-ratings vectors of all user together construct a dense pseudo user-rating matrix. This matrix is then used as a substitution of the original user-rating matrix for collaborative filtering method. 
+
+
+
+
 
