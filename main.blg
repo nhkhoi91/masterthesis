@@ -19,50 +19,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 18483 items from 5000.
+Reallocated field_info (elt_size=4) to 18900 items from 5000.
 Database file #1: main-blx.bib
 Database file #2: example.bib
+Warning--I didn't find a database entry for "hazan2007logarithmic"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 97 entries,
+You've used 99 entries,
             6256 wiz_defined-function locations,
-            1676 strings with 25946 characters,
-and the built_in function-call counts, 568346 in all, are:
-= -- 38670
-> -- 11417
-< -- 3334
-+ -- 14566
-- -- 4324
-* -- 42665
-:= -- 56879
+            1686 strings with 26179 characters,
+and the built_in function-call counts, 577781 in all, are:
+= -- 39278
+> -- 11637
+< -- 3419
++ -- 14765
+- -- 4391
+* -- 43271
+:= -- 57663
 add.period$ -- 0
-call.type$ -- 97
-change.case$ -- 1669
+call.type$ -- 99
+change.case$ -- 1720
 chr.to.int$ -- 31
-cite$ -- 192
-duplicate$ -- 63053
-empty$ -- 51796
-format.name$ -- 7132
-if$ -- 116622
+cite$ -- 196
+duplicate$ -- 64092
+empty$ -- 52696
+format.name$ -- 7247
+if$ -- 118674
 int.to.chr$ -- 0
-int.to.str$ -- 265
+int.to.str$ -- 270
 missing$ -- 0
-newline$ -- 3316
-num.names$ -- 4788
-pop$ -- 33373
+newline$ -- 3364
+num.names$ -- 4905
+pop$ -- 34041
 preamble$ -- 1
-purify$ -- 2282
+purify$ -- 2340
 quote$ -- 0
-skip$ -- 17865
+skip$ -- 18278
 stack$ -- 0
-substring$ -- 62002
-swap$ -- 15443
-text.length$ -- 2812
-text.prefix$ -- 99
+substring$ -- 62858
+swap$ -- 15718
+text.length$ -- 2866
+text.prefix$ -- 101
 top$ -- 1
-type$ -- 3286
+type$ -- 3354
 warning$ -- 0
-while$ -- 7146
+while$ -- 7239
 width$ -- 0
-write$ -- 3220
+write$ -- 3266
+(There was 1 warning)

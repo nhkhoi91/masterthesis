@@ -19,14 +19,14 @@ The dataset for this thesis is a combination between two databases from two serv
 \item[•] Danceability: A measurement of how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability,  beat strength, and overall regularity. The higher the value, the more danceable the track.
 \item[•] Tempo: The overall estimated tempo of a track, measuring in beats per minute (BPM).
 \item[•] Instrumentalness: The assessment of how much a track incorporates vocals. The higher the instrumentalness, the greater likelihood the track contains no vocal content. 
-\item[•] Key: The key (tonal center) a track is in. Integers map to pitches using Pitch Class notation \footnote{https://en.wikipedia.org/wiki/Pitch_class}. 
+\item[•] Key: The key (tonal center) a track is in. Integers map to pitches using Pitch Class notation \footnote{https://en.wikipedia.org/wiki/Pitch\_class}. 
 \item[•] Duration\_ms: The duration of a track in milliseconds.
 \item[•] Valence: A measure from 0 to 1 of the positiveness of a track. Tracks with high valence sound more positive (e.g. happy, cheerful), and vice versa.
 \item[•] Liveness: An indication of whether a track is performed live or in studio. The higher the liveness, the higher possibility that the track is performed live.
 \item[•] Loudness: The overall loudness of a track in decibels (dB), with range from -60 to 0 db. 
 \end{itemize}
 
-As some of the features (e.g. key, duration) are not in the scale from 0 to 1, a standardization is necessary to eliminate over-weighting variables. The standardization for all the acoustic features is achieve by subtracting the mean following by dividing by the standard deviation for each feature. 
+\noindent As some of the features (e.g. key, duration) are not in the scale from 0 to 1, a standardization is necessary to eliminate over-weighting variables. The standardization for all the acoustic features is achieve by subtracting the mean following by dividing by the standard deviation for each feature. 
 
 \todo{add correlation part}
 
@@ -43,23 +43,98 @@ As the number of song outnumbers the number of user, I decide to implement the u
 	\item Compute a prediction for an item from a weighted combination of selected neighbor's ratings. 
 \end{enumerate}
 
-In step 3, predictions are calculated using \todo{add formula}
+In step 3, predictions are calculated using the weighted average of deviations from neighbors' mean. The formula is as follow:
+
+\begin{displaymath}
+p_{a,i} = \overline{r}_a + \frac{\sum_{u=1}^{n} (r_{u,i} - \overline{r}_{u}) \times P_{a,u}}{\sum_{u=1}^{n} P_{a,u}}
+\end{displaymath}
+
+with \(p_{a,i} \) is the prediction of item i for user a, \(P_{a,i}\) is the similarity between user a and user u, and \(\overline{r}_a\) is the average of the ratings of user a.  
 
 \subsection{Pure Content-based Filtering}
-The algorithm for pure content-based approach is similar to the one of the pure collaborative filtering. Acoustic features are treated as elements of the item vector for each track. However, one difference is that, instead of using Pearson correlation, the cosine similarity is used for calculating the similarity between items.
+Regression approach is applied to predict user-rating for the content-based filtering method, as linear predictors are proved to be useful when data is high-dimensional \cite{dekel2016linear}. Particularly, the \textit{Stochastic Gradient Descent} algorithm will be used to train the predictors. The formalization of the problem and the algorithm are as follows:
+
+\subsubsection{Problem formalization}
+Let \({(x_i, y_i)}_{i=1}^{m}\) be the training set of rating, where each \(x_i \in \mathbb{R}^n\) is an acoustic feature vector and \(y_i \in \mathbb{R} \) is its corresponding user rating. We also define a loss function \( \ell : \mathbb{R}^2 \rightarrowtail \mathbb{R}\) over pairs of label, where \( \ell(p,y) \) is the penalty associating with predicting rating p when the correct rating is y. Depends on the type of loss function, the problem can become a regression problem or a binary classification one. In this case, as we are trying to estimate the rating, the problem belongs to the regression family. \\
+
+\noindent A linear predictor for a user is a pair \(( \mathbf{w}, b)\), where \( \mathbf{w} \in \mathbb{R}^n \) is the weight vector and \(b \in \mathbb{R} \) is the bias. Given an acoustic feature vector \( x \), the prediction \(p\) is calculated as follow:
+
+\begin{displaymath}
+p = \mathbf{w} \cdot x + b
+\end{displaymath} 
+
+\noindent The loss function for the training dataset, therefore, is:
+\begin{displaymath}
+\frac{1}{m} \sum_{i=1}^{m} \ell (\mathbf{w} \cdot x + b, y_i)
+\end{displaymath}
+
+\noindent Finally, the Ridge regularization is added to the objective function for the purpose of statistical generalization \cite{du2013neural}
+
+\begin{displaymath}
+\mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell (\mathbf{w} \cdot x_i + b, y_i) + \frac{\lambda}{2} (\lVert \mathbf{w} \rVert^2 + b^2) \tag{1} \label{eq:1}
+\end{displaymath}
+
+\noindent where \(\lambda\) is a user-defined regularization parameter. The goal of our algorithms is to find the linear predictor that minimize \(\mathbf{F}\). As mentioned earlier, the \textit{Stochastic Gradient Descent} (SGD) algorithm is used to solve this optimization problem.
+
+\subsubsection{Stochastic Gradient Descent}
+SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}, b) \). Given the randomize initial predictor \( (\mathbf{w_0}, b_0) \), the algorithm will perform \(T\) gradient descend steps and produce a sequence of intermediate linear predictors \( ((\mathbf{w}_t, b_t))_{t=0}^{T} \). In each gradient descend step \(t\), the linear predictor is updated using the information exploiting from an individual training example \( (x, y)\). 
+
+\noindent Formally, let \( \pi_1, \dots, \pi_T \) be a sequence of independently random indices, with \( 1 \leq \pi_t \leq m \). On each iteration \( t\), the algorithm runs on index \(\pi_t\). Also, let \([\mathbf{w}, b] \) denote the concatenation of \(\mathbf{w}\) and \(b\). The subgradient of Eq. \eqref{eq:1} is :
+
+\begin{displaymath}
+\nabla \mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell' (\mathbf{w} \cdot x_i + b, y_i) [x_i, 1] + \lambda [\mathbf{w}, b] \tag{2} \label{eq:2}
+\end{displaymath}
+
+\noindent As \(\pi\) is a random index, chosen uniformly between \(1\) and \(m\), 
+
+\begin{displaymath}
+\lambda [\mathbf{w}, b] + \ell' (\mathbf{w} \cdot x_\pi + b, y_\pi) [x_\pi, 1]
+\end{displaymath}
+
+\noindent is an unbiased estimator of Eq. \eqref{eq:2}, as well as a stochastic gradient of the objective function in Eq. \eqref{eq:1}. We choose the size of learning step \(t \) to be \( 1/\lambda t\), where  \(lambda\) is the regularization parameter in Eq. \eqref{eq:1}. The learning step size is chosen according to the theoretical convergence analysis of SGD with strongly convex objective functions \cite{hazan2007logarithmic}. Therefore, the update of the predictor on each iteration t is:
+
+\begin{displaymath}
+[\mathbf{w}_t, b_t] = [\mathbf{w}_{t-1},b_{t-1}] - \frac{1}{\lambda t} \left(\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1}, y_{\pi_t}) [x_{\pi_t},1] + \lambda [\mathbf{w}_{t-1}, b_{t-1}]\right) 
+\end{displaymath}
+
+\noindent Rearrange the above equation:
+\begin{displaymath}
+[\mathbf{w}_t, b_t] = \left(1 - \frac{1}{t}\right) \left[\mathbf{w}_{t-1}, b_{t-1}\right] - \frac{\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1})}{\lambda t} [x_{\pi_t}, 1]
+\end{displaymath}
+
+\noindent The pseudo code for this algorithm is in Algorithm 1:
+ 
 
 \subsection{Content-boosted Collaborative Filtering}
 The idea of the content-booasted collaborative filtering algorithm is quite simple. First, a pseudo user-ratings vector is created for every user in the database. Each element of a pseudo user-ratings vector of a user is the user-rating if available, or the value predicted by the content-based recommender otherwise. The formal definition of a pseudo vector is as follow:
 
 \begin{displaymath}
-
+v_{u,i} = \left\{ \begin{array}{lcl} r_{u,i} & \mbox{:} & \text{if user }u \text{ rated item } i \\
+c_{u,i} & \mbox{:} & \text{ otherwise} \\
+\end{array} \right.
 \end{displaymath}
 
-when \( r_(u,i) \) denotes the actual rating of user u for item i, and \(c_(u,i) \) is the prediction of the content-based predictor. 
+\noindent when \( r_{(u,i)} \) denotes the actual rating of user u for item i, and \(c_{(u,i)} \) is the prediction of the content-based predictor. \\
 
-The pseudo user-ratings vectors of all user together construct a dense pseudo user-rating matrix. This matrix is then used as a substitution of the original user-rating matrix for collaborative filtering method. 
+\noindent The pseudo user-ratings vectors of all user together construct a dense pseudo user-rating matrix. This matrix is then used as a substitution of the original user-rating matrix for collaborative filtering method. \\
 
+\noindent To increase the accuracy of the model as well as to promote the score from the content predictor,
+the following weighting schemes are added:\\
 
+\noindent \textbf{Harmonic Mean Weighting}: The accuracy of a pseudo user-ratings vector depends on the number of album the user listens to. The more album and the more times the user listen to them, the better the result that the content-based predictor generates and vice versa. Therefore, \textit{Harmonic Mean weighting} is used to reduce the impact of pseudo vector that does not contain much actual user information. The weighting is as follow:
 
+\begin{gather*}
+hm_{i,j} = \frac{2m_im_j}{m_i + m_j} \\
+m_i = \left\{ \begin{array}{lcl} 
+\frac{n_i}{T} & \mbox{:} & \text{if } n_i < T \\
+1 & \mbox{:} & \text{otherwise} 
+\end{array}
+\right.
+\end{gather*} 
 
+With \( n_i \) is the number of item user i has rated. The harmonic mean tends to bias toward the lower value; therefore, if one of the two vectors has less than \(T\) items, the correlation will be devalued accordingly. 
+
+\todo{add threshold T and the experience to derive T}
+
+\noindent \textbf{Significant Weighting} If two users are highly correlated but the number of co-rated items is small, 
 

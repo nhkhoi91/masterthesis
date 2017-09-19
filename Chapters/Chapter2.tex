@@ -32,7 +32,7 @@ One common method to calculate the similar between users is Pearson's correlatio
 
 with \(cov(X,Y)\) is the covariance between X and Y, and \(\sigma_X\) and \(\sigma_Y\) represent the standard deviation of X and Y. 
 
-Apply the formula to the case of collaborative filtering: let \( $\mathbf{U}$ = \{ $\mathbf{u_1}$, \dots, $\mathbf{u_n}$\} \) denote the set of users, \( $\mathbf{U}$ = \{ $\mathbf{p_1}$, \dots, $\mathbf{p_n}$ \}$ \) for the set of items. The 2 sets form a \(n \times m\) matrix of rating \(r_{i,j}\) with \(i \in 1 \dots n, j \in 1 \dots m\), with \(r_{a,p} \) is the rating of user a on item p, and \(\bar{r}_a \) denotes the average rating of user a. The similarity of user a and b \(sim(a, b) \) is defined as follow:
+Apply the formula to the case of collaborative filtering: let \( \mathbf{U} = \{ \mathbf{u_1}, \dots, \mathbf{u_n}\} \) denote the set of users, \( \mathbf{U} = \{ \mathbf{p_1}, \dots, \mathbf{p_n} \} \) for the set of items. The 2 sets form a \(n \times m\) matrix of rating \(r_{i,j}\) with \(i \in 1 \dots n, j \in 1 \dots m\), with \(r_{a,p} \) is the rating of user a on item p, and \(\bar{r}_a \) denotes the average rating of user a. The similarity of user a and b \(sim(a, b) \) is defined as follow:
 
 \begin{displaymath}
 sim(a,b) = \frac{\sum_{p \in P}(r_{a,p} - \bar{r}_a)(r_{b,p} - \bar{r}_b)}{\sqrt{\sum_{p \in P}(r_{a,p} - \bar{r}_a)^2} \sqrt{\sum{p \in P}(r_{b,p} - \bar{r}_b)^2}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  6 SEP 2017 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.6)  19 SEP 2017 12:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1899,75 +1899,85 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 \c@@todonotes@numberoftodonotes=\count390
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \@title with sig. ' ' on line 83.
+. Redefining command \@title with sig. ' ' on line 87.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ttitle with sig. ' ' on line 83.
+. Defining command \ttitle with sig. ' ' on line 87.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \supname with sig. ' ' on line 85.
+. Defining command \supname with sig. ' ' on line 89.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \examname with sig. ' ' on line 87.
+. Defining command \examname with sig. ' ' on line 91.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \degreename with sig. ' ' on line 88.
+. Defining command \degreename with sig. ' ' on line 92.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \authorname with sig. ' ' on line 89.
+. Defining command \authorname with sig. ' ' on line 93.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \@author with sig. ' ' on line 89.
+. Redefining command \@author with sig. ' ' on line 93.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \addressname with sig. ' ' on line 91.
+. Defining command \addressname with sig. ' ' on line 95.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \subjectname with sig. ' ' on line 93.
+. Defining command \subjectname with sig. ' ' on line 97.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \keywordnames with sig. ' ' on line 95.
+. Defining command \keywordnames with sig. ' ' on line 99.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \univname with sig. ' ' on line 97.
+. Defining command \univname with sig. ' ' on line 101.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \deptname with sig. ' ' on line 99.
+. Defining command \deptname with sig. ' ' on line 103.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \groupname with sig. ' ' on line 101.
+. Defining command \groupname with sig. ' ' on line 105.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \facname with sig. ' ' on line 103.
+. Defining command \facname with sig. ' ' on line 107.
 .................................................
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -2050,7 +2060,7 @@ LaTeX Info: Redefining \pageref on input line 6432.
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 111.
+(scrhack)             need that hack, on input line 115.
 
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -2067,17 +2077,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip84
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 111.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 111.
-Package hyperref Info: Option `colorlinks' set `true' on input line 111.
-Package hyperref Info: Option `unicode' set `true' on input line 111.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 115.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 115.
+Package hyperref Info: Option `colorlinks' set `true' on input line 115.
+Package hyperref Info: Option `unicode' set `true' on input line 115.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2017/03/14 v6.85a Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 111.
+Package hyperref Info: Option `breaklinks' set `true' on input line 115.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -2091,23 +2101,23 @@ Package csquotes Info: ... found 'babel' package.
 (./Chapters/Chapter3.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 111.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 115.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -2263,14 +2273,14 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 111.
-Package scrbase Info: activating english \abbrevname on input line 111.
-Package scrbase Info: activating english \byname on input line 111.
-Package scrbase Info: activating english \acknowledgementname on input line 111
+(scrlayer)             \begin{document} on input line 115.
+Package scrbase Info: activating english \abbrevname on input line 115.
+Package scrbase Info: activating english \byname on input line 115.
+Package scrbase Info: activating english \acknowledgementname on input line 115
 .
-Package scrbase Info: activating english \authorshipname on input line 111.
-Package scrbase Info: activating english \constantsname on input line 111.
-Package scrbase Info: activating english \symbolsname on input line 111.
+Package scrbase Info: activating english \authorshipname on input line 115.
+Package scrbase Info: activating english \constantsname on input line 115.
+Package scrbase Info: activating english \symbolsname on input line 115.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -2288,23 +2298,23 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 111.
-Package biblatex Info: Reference segment=0 on input line 111.
+Package biblatex Info: Reference section=0 on input line 115.
+Package biblatex Info: Reference segment=0 on input line 115.
  ABD: EveryShipout initializing macros
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ttitle' on input line 111.
+(hyperref)                removing `\ttitle' on input line 115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\authorname' on input line 111.
+(hyperref)                removing `\authorname' on input line 115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\keywordnames' on input line 111.
+(hyperref)                removing `\keywordnames' on input line 115.
 
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring ON on input line 111.
+Package hyperref Info: Link coloring ON on input line 115.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -2313,20 +2323,30 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count407
 )
-LaTeX Info: Redefining \ref on input line 111.
-LaTeX Info: Redefining \pageref on input line 111.
-LaTeX Info: Redefining \nameref on input line 111.
+LaTeX Info: Redefining \ref on input line 115.
+LaTeX Info: Redefining \pageref on input line 115.
+LaTeX Info: Redefining \nameref on input line 115.
 
 (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
 \c__siunitx_mathsf_int=\count408
+LaTeX Font Info:    Try loading font information for U+msa on input line 115.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 115.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 \c__siunitx_mathtt_int=\count409
 
 1: section
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 130.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 134.
 [1
 
 
@@ -2338,15 +2358,15 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 --------------------
  Declaration of Authorship
 --------------------
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 170.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 174.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 174.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
@@ -2360,7 +2380,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--176
  Abstract
 --------------------
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 201.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 205.
 1: section
 [7] [8
 
@@ -2373,22 +2393,22 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 219.
- (./main.toc)
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 223.
+ (./main.toc
+1: section
+[11])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
-
-1: section
-[11] [12
-
-] (./main.lof)
+ [12] (./main.lof)
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
 
 1: section
-[13] [14
+[13
+
+] [14
 
 ] (./main.lot)
 \tf@lot=\write9
@@ -2424,121 +2444,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 
 
 
-]
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 ...ollaborative filtering: let \( $\mathbf{U}
-                                                  $ = \{ $\mathbf{u_1}$, \do...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 ...ng: let \( $\mathbf{U}$ = \{ $\mathbf{u_1}
-                                                  $, \dots, $\mathbf{u_n}$\}...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.35 ...ng: let \( $\mathbf{U}$ = \{ $\mathbf{u_1}
-                                                  $, \dots, $\mathbf{u_n}$\}...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-\select@group ...pandafter \non@alpherr \fi #1{#4}
-                                                  }
-l.35 ...ng: let \( $\mathbf{U}$ = \{ $\mathbf{u_1}
-                                                  $, \dots, $\mathbf{u_n}$\}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten $.
-\select@group ...andafter \non@alpherr \fi #1{#4}}
-                                                  
-l.35 ...ng: let \( $\mathbf{U}$ = \{ $\mathbf{u_1}
-                                                  $, \dots, $\mathbf{u_n}$\}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 ...$\mathbf{u_1}$, \dots, $\mathbf{u_n}$\} \)
-                                                   denote the set of users, ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 ...\} \) denote the set of users, \( $\mathbf
-                                                  {U}$ = \{ $\mathbf{p_1}$, ...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 ...et of users, \( $\mathbf{U}$ = \{ $\mathbf
-                                                  {p_1}$, \dots, $\mathbf{p_...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.35 ...of users, \( $\mathbf{U}$ = \{ $\mathbf{p_
-                                                  1}$, \dots, $\mathbf{p_n}$...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.35 ... users, \( $\mathbf{U}$ = \{ $\mathbf{p_1}
-                                                  $, \dots, $\mathbf{p_n}$ \...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[4] [5] [6] <Figures/SVD.png, id=344, 400.49625pt x 361.35pt>
+] [4] [5] [6] <Figures/SVD.png, id=374, 400.49625pt x 361.35pt>
 File: Figures/SVD.png Graphic file (type png)
 
 <use Figures/SVD.png>
@@ -2566,21 +2472,28 @@ and I'll forget about whatever was undefined.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9] [10] <Figures/monolithic.png, id=445, 671.50874pt x 214.8025pt>
+[9]
+! Too many }'s.
+l.231 ...g}, rhythmic coefficient \{west2009novel}
+                                                  , etc. Morchen \cite{morch...
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+[10] <Figures/monolithic.png, id=476, 671.50874pt x 214.8025pt>
 File: Figures/monolithic.png Graphic file (type png)
 
 <use Figures/monolithic.png>
 Package pdftex.def Info: Figures/monolithic.png used on input line 248.
 (pdftex.def)             Requested size: 227.62204pt x 72.81227pt.
 
-<Figures/Parallelized.png, id=446, 667.49374pt x 224.84pt>
+<Figures/Parallelized.png, id=477, 667.49374pt x 224.84pt>
 File: Figures/Parallelized.png Graphic file (type png)
 
 <use Figures/Parallelized.png>
 Package pdftex.def Info: Figures/Parallelized.png used on input line 255.
 (pdftex.def)             Requested size: 227.62204pt x 76.671pt.
 
-<Figures/Pipelined.png, id=447, 671.50874pt x 150.5625pt>
+<Figures/Pipelined.png, id=478, 671.50874pt x 150.5625pt>
 File: Figures/Pipelined.png Graphic file (type png)
 
 <use Figures/Pipelined.png>
@@ -2601,7 +2514,7 @@ Overfull \hbox (4.69145pt too wide) in paragraph at lines 347--348
 
 [16]
 Overfull \hbox (11.01497pt too wide) in paragraph at lines 357--358
-\T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]66[][]] pro-posed
+\T1/ppl/m/n/10.95 sys-tem. For ex-am-ple, Popescu and Pu [[][]68[][]] pro-posed
  us-ing prob-a-bilis-tic weighted
  []
 
@@ -2616,171 +2529,178 @@ Overfull \hbox (11.01497pt too wide) in paragraph at lines 357--358
 Chapter 3.
 1: section
 [21]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.22 ...https://en.wikipedia.org/wiki/Pitch_class}
-                                                  .
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.22 ...https://en.wikipedia.org/wiki/Pitch_class}
-                                                  .
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 31.
-) [22]
-Overfull \hbox (11.72002pt too wide) in paragraph at lines 299--299
+ [22]
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+[23]
+
+LaTeX Warning: Citation 'hazan2007logarithmic' on page 24 undefined on input li
+ne 94.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+[24]) [25] [26
+
+
+]
+Overfull \hbox (11.72002pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Gediminas Ado-mavi-cius and Alexan-der Tuzhilin. ^^P  Conte
 xt-aware rec-om-mender
  []
 
 
-Overfull \hbox (10.90947pt too wide) in paragraph at lines 299--299
+Overfull \hbox (10.90947pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Juan Pablo Bello. ^^P  Audio-Based Cover Song Re-trieval Us
 -ing Ap-prox-i-mate Chord
  []
 
 1: section
-[23
-
-
-]
-Overfull \hbox (0.33592pt too wide) in paragraph at lines 299--299
+[27]
+Overfull \hbox (0.33592pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Robin Burke. ^^P  The adap-tive web. chap-ter Hy-brid web r
 ec-om-mender sys-tems^^Q.
  []
 
 
-Overfull \hbox (3.32552pt too wide) in paragraph at lines 299--299
+Overfull \hbox (3.32552pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Pedro Cano, Markus Kop-pen-berger, and Nico-las Wack. ^^P  
 An industrial-strength
  []
 
-[24]
-Overfull \hbox (2.46312pt too wide) in paragraph at lines 299--299
+
+Overfull \hbox (19.74315pt too wide) in paragraph at lines 303--303
+[]\T1/ppl/m/n/10.95 Ofer Dekel. ^^P  Lin-ear Learn-ing with Sparse Data^^Q. In:
+ \T1/ppl/m/it/10.95 arXiv preprint arXiv:1612.09147
+ []
+
+[28]
+Overfull \hbox (2.46312pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Jay Hodg-son. \T1/ppl/m/it/10.95 Un-der-stand-ing Records: 
 A Field Guide to Record-ing Prac-tice\T1/ppl/m/n/10.95 . Blooms-
  []
 
 
-Overfull \hbox (0.19327pt too wide) in paragraph at lines 299--299
+Overfull \hbox (0.19327pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Daryl Lim, Brian McFee, and Gert R Lanck-riet. ^^P  Ro-bust
  struc-tural met-ric learn-
  []
 
 
-Overfull \hbox (16.0778pt too wide) in paragraph at lines 299--299
+Overfull \hbox (16.0778pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Chien-Chang Lin et al. ^^P  Au-dio clas-si-fi-ca-tion and c
 at-e-go-riza-tion based on wavelets
  []
 
-
-Overfull \hbox (8.06715pt too wide) in paragraph at lines 299--299
+[29]
+Overfull \hbox (8.06715pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Beth Lo-gan. ^^P  Mu-sic Rec-om-men-da-tion from Song Sets.
 ^^Q In: \T1/ppl/m/it/10.95 IS-MIR\T1/ppl/m/n/10.95 . 2004, pp. 425^^U
  []
 
-[25]
-Overfull \hbox (11.14418pt too wide) in paragraph at lines 299--299
+
+Overfull \hbox (11.14418pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Prem Melville, Ray-mond J Mooney, and Ra-madass Na-gara-jan
 . ^^P  Content-boosted
  []
 
 
-Overfull \hbox (19.82222pt too wide) in paragraph at lines 299--299
+Overfull \hbox (19.82222pt too wide) in paragraph at lines 303--303
 \T1/ppl/m/n/10.95 col-lab-o-ra-tive fil-ter-ing for im-proved rec-om-men-da-tio
 ns^^Q. In: \T1/ppl/m/it/10.95 Aaai/iaai\T1/ppl/m/n/10.95 . 2002, pp. 187^^U
  []
 
 
-Overfull \hbox (3.87486pt too wide) in paragraph at lines 299--299
+Overfull \hbox (3.87486pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Elias Pam-palk, Arthur Flexer, Ger-hard Wid-mer, et al. ^^P
   Im-prove-ments of Audio-
  []
 
-[26]
-Overfull \hbox (0.29132pt too wide) in paragraph at lines 299--299
+[30]
+Overfull \hbox (0.29132pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Markus Schedl. ^^P  Ame-lio-rat-ing mu-sic rec-om-men-da-ti
 on: In-te-grat-ing mu-sic con-
  []
 
 
-Overfull \hbox (3.9817pt too wide) in paragraph at lines 299--299
+Overfull \hbox (3.9817pt too wide) in paragraph at lines 303--303
 []\T1/ppl/m/n/10.95 Upendra Shardanand and Pat-tie Maes. ^^P  So-cial in-for-ma
 -tion fil-ter-ing: al-go-rithms
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 299.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 303.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [27] [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 303.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
+) [31] [32]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
 
 (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Chapters/Chapter3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 6245021C700EC43E7EFDB6FF9A393E78;7777.
 
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: CD01590450B6336AEB6DA6C787A44B3E;6628
-(rerunfilecheck)             After:  ECDD72C3E6B2AE8B390A1D1734309402;6628.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
- )
-(\end occurred inside a group at level 2)
-
-### simple group (level 2) entered at line 35 ({)
-### simple group (level 1) entered at line 35 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 44725 strings out of 492995
- 913495 string characters out of 6132705
- 1337031 words of memory out of 5000000
- 47487 multiletter control sequences out of 15000+600000
- 54018 words of font info for 96 fonts, out of 8000000 for 9000
+ 45036 strings out of 492995
+ 917025 string characters out of 6132705
+ 1337636 words of memory out of 5000000
+ 47763 multiletter control sequences out of 15000+600000
+ 56079 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,20n,83p,10377b,3212s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{appendix*.61} has been referenced b
-ut does not exist, replaced by a fixed one
-
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
-e1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/
-palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatin
-o/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri
-8a.pfb>
-Output written on main.pdf (44 pages, 404218 bytes).
+ 73i,20n,83p,10377b,2900s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/pa
+latino/uplri8a.pfb>
+Output written on main.pdf (48 pages, 425018 bytes).
 PDF statistics:
- 757 PDF objects out of 1000 (max. 8388607)
- 679 compressed objects within 7 object streams
- 201 named destinations out of 1000 (max. 500000)
- 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 826 PDF objects out of 1000 (max. 8388607)
+ 742 compressed objects within 8 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 

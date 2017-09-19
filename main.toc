@@ -42,4 +42,10 @@
 \contentsline {subsubsection}{\numberline {2.2.3.3}Hybrid designs combining collaborative filtering and context information}{19}{subsubsection.52}
 \contentsline {chapter}{\numberline {3}Implementation}{21}{chapter.53}
 \contentsline {section}{\numberline {3.1}Dataset}{21}{section.54}
-\contentsline {chapter}{Bibliography}{23}{appendix*.59}
+\contentsline {section}{\numberline {3.2}Algorithms}{22}{section.59}
+\contentsline {subsection}{\numberline {3.2.1}Pure Collaborative Filtering}{22}{subsection.60}
+\contentsline {subsection}{\numberline {3.2.2}Pure Content-based Filtering}{23}{subsection.64}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Problem formalization}{23}{subsubsection.65}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Stochastic Gradient Descent}{23}{subsubsection.67}
+\contentsline {subsection}{\numberline {3.2.3}Content-boosted Collaborative Filtering}{24}{subsection.69}
+\contentsline {chapter}{Bibliography}{27}{appendix*.70}

@@ -942,6 +942,54 @@
     \field{year}{1990}
   \endentry
 
+  \entry{dekel2016linear}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DO}{%
+         family={Dekel},
+         familyi={D\bibinitperiod},
+         given={Ofer},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DO1}
+    \strng{fullhash}{DO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Linear Learning with Sparse Data}
+    \field{journaltitle}{arXiv preprint arXiv:1612.09147}
+    \field{year}{2016}
+  \endentry
+
+  \entry{du2013neural}{book}{}
+    \name{author}{2}{}{%
+      {{hash=DKL}{%
+         family={Du},
+         familyi={D\bibinitperiod},
+         given={Ke-Lin},
+         giveni={K\bibinitperiod-L\bibinitperiod},
+      }}%
+      {{hash=SMN}{%
+         family={Swamy},
+         familyi={S\bibinitperiod},
+         given={Madisetti\bibnamedelima NS},
+         giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{DKLSMN1}
+    \strng{fullhash}{DKLSMN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Neural networks and statistical learning}
+    \field{year}{2013}
+  \endentry
+
   \entry{ellis2007identifyingcover}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=EDP}{%
