@@ -1313,6 +1313,44 @@
     \field{year}{2012}
   \endentry
 
+  \entry{hazan2007logarithmic}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HE}{%
+         family={Hazan},
+         familyi={H\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Agarwal},
+         familyi={A\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Kale},
+         familyi={K\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HEAAKS1}
+    \strng{fullhash}{HEAAKS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{2-3}
+    \field{pages}{169\bibrangedash 192}
+    \field{title}{Logarithmic regret algorithms for online convex optimization}
+    \field{volume}{69}
+    \field{journaltitle}{Machine Learning}
+    \field{year}{2007}
+  \endentry
+
   \entry{herlocker1999algorithmic}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=HJL}{%
@@ -3277,6 +3315,50 @@
     \field{volume}{1}
     \field{journaltitle}{Advances in Data Analysis and Classification}
     \field{year}{2007}
+  \endentry
+
+  \entry{west2009novel}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WK}{%
+         family={West},
+         familyi={W\bibinitperiod},
+         given={Kristopher},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Cox},
+         familyi={C\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Milner},
+         familyi={M\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Reiss},
+         familyi={R\bibinitperiod},
+         given={Josh},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{WK+1}
+    \strng{fullhash}{WKCSMBRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{1}
+    \field{pages}{15\bibrangedash 15}
+    \field{title}{Novel techniques for audio music classification and search}
+    \field{volume}{1}
+    \field{journaltitle}{ACM SIGMultimedia Records}
+    \field{year}{2009}
   \endentry
 
   \entry{whitman2001artist}{inproceedings}{}

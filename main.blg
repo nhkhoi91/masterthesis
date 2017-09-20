@@ -19,52 +19,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 18900 items from 5000.
+Reallocated field_info (elt_size=4) to 19039 items from 5000.
 Database file #1: main-blx.bib
 Database file #2: example.bib
-Warning--I didn't find a database entry for "hazan2007logarithmic"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 99 entries,
+You've used 101 entries,
             6256 wiz_defined-function locations,
-            1686 strings with 26179 characters,
-and the built_in function-call counts, 577781 in all, are:
-= -- 39278
-> -- 11637
-< -- 3419
-+ -- 14765
-- -- 4391
-* -- 43271
-:= -- 57663
+            1695 strings with 26468 characters,
+and the built_in function-call counts, 590088 in all, are:
+= -- 40095
+> -- 11892
+< -- 3484
++ -- 15129
+- -- 4492
+* -- 44207
+:= -- 58949
 add.period$ -- 0
-call.type$ -- 99
-change.case$ -- 1720
+call.type$ -- 101
+change.case$ -- 1753
 chr.to.int$ -- 31
-cite$ -- 196
-duplicate$ -- 64092
-empty$ -- 52696
-format.name$ -- 7247
-if$ -- 118674
+cite$ -- 200
+duplicate$ -- 65580
+empty$ -- 53768
+format.name$ -- 7416
+if$ -- 121130
 int.to.chr$ -- 0
-int.to.str$ -- 270
+int.to.str$ -- 276
 missing$ -- 0
-newline$ -- 3364
-num.names$ -- 4905
-pop$ -- 34041
+newline$ -- 3446
+num.names$ -- 5004
+pop$ -- 34747
 preamble$ -- 1
-purify$ -- 2340
+purify$ -- 2389
 quote$ -- 0
-skip$ -- 18278
+skip$ -- 18649
 stack$ -- 0
-substring$ -- 62858
-swap$ -- 15718
-text.length$ -- 2866
-text.prefix$ -- 101
+substring$ -- 64058
+swap$ -- 16077
+text.length$ -- 2925
+text.prefix$ -- 103
 top$ -- 1
-type$ -- 3354
+type$ -- 3422
 warning$ -- 0
-while$ -- 7239
+while$ -- 7417
 width$ -- 0
-write$ -- 3266
-(There was 1 warning)
+write$ -- 3346

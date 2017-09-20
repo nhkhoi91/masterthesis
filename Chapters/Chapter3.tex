@@ -20,7 +20,6 @@ The dataset for this thesis is a combination between two databases from two serv
 \item[•] Tempo: The overall estimated tempo of a track, measuring in beats per minute (BPM).
 \item[•] Instrumentalness: The assessment of how much a track incorporates vocals. The higher the instrumentalness, the greater likelihood the track contains no vocal content. 
 \item[•] Key: The key (tonal center) a track is in. Integers map to pitches using Pitch Class notation \footnote{https://en.wikipedia.org/wiki/Pitch\_class}. 
-\item[•] Duration\_ms: The duration of a track in milliseconds.
 \item[•] Valence: A measure from 0 to 1 of the positiveness of a track. Tracks with high valence sound more positive (e.g. happy, cheerful), and vice versa.
 \item[•] Liveness: An indication of whether a track is performed live or in studio. The higher the liveness, the higher possibility that the track is performed live.
 \item[•] Loudness: The overall loudness of a track in decibels (dB), with range from -60 to 0 db. 
@@ -46,7 +45,7 @@ As the number of song outnumbers the number of user, I decide to implement the u
 In step 3, predictions are calculated using the weighted average of deviations from neighbors' mean. The formula is as follow:
 
 \begin{displaymath}
-p_{a,i} = \overline{r}_a + \frac{\sum_{u=1}^{n} (r_{u,i} - \overline{r}_{u}) \times P_{a,u}}{\sum_{u=1}^{n} P_{a,u}}
+p_{a,i} = \overline{r}_a + \frac{\sum_{u=1}^{n} (r_{u,i} - \overline{r}_{u}) \times P_{a,u}}{\sum_{u=1}^{n} P_{a,u}}  \tag{1} \label{eq:1}
 \end{displaymath}
 
 with \(p_{a,i} \) is the prediction of item i for user a, \(P_{a,i}\) is the similarity between user a and user u, and \(\overline{r}_a\) is the average of the ratings of user a.  
@@ -71,7 +70,7 @@ p = \mathbf{w} \cdot x + b
 \noindent Finally, the Ridge regularization is added to the objective function for the purpose of statistical generalization \cite{du2013neural}
 
 \begin{displaymath}
-\mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell (\mathbf{w} \cdot x_i + b, y_i) + \frac{\lambda}{2} (\lVert \mathbf{w} \rVert^2 + b^2) \tag{1} \label{eq:1}
+\mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell (\mathbf{w} \cdot x_i + b, y_i) + \frac{\lambda}{2} (\lVert \mathbf{w} \rVert^2 + b^2) \tag{2} \label{eq:2}
 \end{displaymath}
 
 \noindent where \(\lambda\) is a user-defined regularization parameter. The goal of our algorithms is to find the linear predictor that minimize \(\mathbf{F}\). As mentioned earlier, the \textit{Stochastic Gradient Descent} (SGD) algorithm is used to solve this optimization problem.
@@ -79,10 +78,10 @@ p = \mathbf{w} \cdot x + b
 \subsubsection{Stochastic Gradient Descent}
 SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}, b) \). Given the randomize initial predictor \( (\mathbf{w_0}, b_0) \), the algorithm will perform \(T\) gradient descend steps and produce a sequence of intermediate linear predictors \( ((\mathbf{w}_t, b_t))_{t=0}^{T} \). In each gradient descend step \(t\), the linear predictor is updated using the information exploiting from an individual training example \( (x, y)\). 
 
-\noindent Formally, let \( \pi_1, \dots, \pi_T \) be a sequence of independently random indices, with \( 1 \leq \pi_t \leq m \). On each iteration \( t\), the algorithm runs on index \(\pi_t\). Also, let \([\mathbf{w}, b] \) denote the concatenation of \(\mathbf{w}\) and \(b\). The subgradient of Eq. \eqref{eq:1} is :
+\noindent Formally, let \( \pi_1, \dots, \pi_T \) be a sequence of independently random indices, with \( 1 \leq \pi_t \leq m \). On each iteration \( t\), the algorithm runs on index \(\pi_t\). Also, let \([\mathbf{w}, b] \) denote the concatenation of \(\mathbf{w}\) and \(b\). The subgradient of Eq. \eqref{eq:2} is :
 
 \begin{displaymath}
-\nabla \mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell' (\mathbf{w} \cdot x_i + b, y_i) [x_i, 1] + \lambda [\mathbf{w}, b] \tag{2} \label{eq:2}
+\nabla \mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell' (\mathbf{w} \cdot x_i + b, y_i) [x_i, 1] + \lambda [\mathbf{w}, b] \tag{3} \label{eq:3}
 \end{displaymath}
 
 \noindent As \(\pi\) is a random index, chosen uniformly between \(1\) and \(m\), 
@@ -91,7 +90,7 @@ SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}
 \lambda [\mathbf{w}, b] + \ell' (\mathbf{w} \cdot x_\pi + b, y_\pi) [x_\pi, 1]
 \end{displaymath}
 
-\noindent is an unbiased estimator of Eq. \eqref{eq:2}, as well as a stochastic gradient of the objective function in Eq. \eqref{eq:1}. We choose the size of learning step \(t \) to be \( 1/\lambda t\), where  \(lambda\) is the regularization parameter in Eq. \eqref{eq:1}. The learning step size is chosen according to the theoretical convergence analysis of SGD with strongly convex objective functions \cite{hazan2007logarithmic}. Therefore, the update of the predictor on each iteration t is:
+\noindent is an unbiased estimator of Eq. \eqref{eq:3}, as well as a stochastic gradient of the objective function in Eq. \eqref{eq:2}. We choose the size of learning step \(t \) to be \( 1/\lambda t\), where  \(lambda\) is the regularization parameter in Eq. \eqref{eq:1}. The learning step size is chosen according to the theoretical convergence analysis of SGD with strongly convex objective functions \cite{hazan2007logarithmic}. Therefore, the update of the predictor on each iteration t is:
 
 \begin{displaymath}
 [\mathbf{w}_t, b_t] = [\mathbf{w}_{t-1},b_{t-1}] - \frac{1}{\lambda t} \left(\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1}, y_{\pi_t}) [x_{\pi_t},1] + \lambda [\mathbf{w}_{t-1}, b_{t-1}]\right) 
@@ -99,11 +98,31 @@ SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}
 
 \noindent Rearrange the above equation:
 \begin{displaymath}
-[\mathbf{w}_t, b_t] = \left(1 - \frac{1}{t}\right) \left[\mathbf{w}_{t-1}, b_{t-1}\right] - \frac{\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1})}{\lambda t} [x_{\pi_t}, 1]
+[\mathbf{w}_t, b_t] = \left(1 - \frac{1}{t}\right) \left[\mathbf{w}_{t-1}, b_{t-1}\right] - \frac{\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1}, y_{\pi_t})}{\lambda t} [x_{\pi_t}, 1] \tag{4} \label{eq:4}
 \end{displaymath}
 
 \noindent The pseudo code for this algorithm is in Algorithm 1:
- 
+\begin{algorithm}
+\caption{SGD for regularized linear regression} \label{SGD}
+\begin{algorithmic}[1]
+\Function{SGD}{$T, \lambda, \left\{(x_y, y_t)\right\}_{i=1}^{m}$} \text{// number of steps, regularization parameter, training set}
+	\State $\text{draw random indices } \pi_1, \dots, \pi_T$ 
+	\State $w \gets 0$
+	\State $b \gets 0$
+	
+	\For{ $t = 1, \dots, T$}
+		\State $l \gets \ell'(w \cdot x_{\pi_t} + b, y_{\pi_1})$
+		\State $w\_initial \gets 1 - (1 / t) \cdot w$
+		\State $b\_initial \gets 1 - (1 / t) \cdot b$
+		\State $w\_deviate \gets l \cdot x_{\pi_t} / \lambda t $
+		\State $b\_deviate \gets l / \lambda t$
+		\State $w \gets w\_initial - w\_deviate$
+		\State $b \gets b\_initial - b\_deviate$
+	\EndFor
+	\Return [w, b]
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
 
 \subsection{Content-boosted Collaborative Filtering}
 The idea of the content-booasted collaborative filtering algorithm is quite simple. First, a pseudo user-ratings vector is created for every user in the database. Each element of a pseudo user-ratings vector of a user is the user-rating if available, or the value predicted by the content-based recommender otherwise. The formal definition of a pseudo vector is as follow:
@@ -129,12 +148,45 @@ m_i = \left\{ \begin{array}{lcl}
 \frac{n_i}{T} & \mbox{:} & \text{if } n_i < T \\
 1 & \mbox{:} & \text{otherwise} 
 \end{array}
-\right.
+\right. 
 \end{gather*} 
 
-With \( n_i \) is the number of item user i has rated. The harmonic mean tends to bias toward the lower value; therefore, if one of the two vectors has less than \(T\) items, the correlation will be devalued accordingly. 
+with \( n_i \) is the number of item user i has rated. The harmonic mean tends to bias toward the lower value; therefore, if one of the two vectors has less than \(T\) items, the correlation will be devalued accordingly. 
 
 \todo{add threshold T and the experience to derive T}
 
-\noindent \textbf{Significant Weighting} If two users are highly correlated but the number of co-rated items is small, 
+\noindent \textbf{Significant Weighting}: If a user has a high correlated neighbor but the number of co-rating between the two users are small, it is a high chance that the neighbor would worsen the prediction for the user. Therefore, a \textit{Significant weighting} is imposed to the correlation between two users. The weighting penetrates the correlation by a factor of \( n/T\) if the number of co-rated item is less than \(T\); otherwise, the correlation is left unchanged. The equation for the weighting is as follow:
 
+\begin{displaymath}
+sg_{a,u} = \left\{ \begin{array}{lcl} 
+\frac{n}{T} & \mbox{:} & \text{ if } \left\vert{r_a \cap r_u}\right\vert < T \\
+1 & \mbox{:} & \text{otherwise}
+
+\end{array} \right. 
+\end{displaymath} 
+
+with \(r_a\) is the set of rating item of user \(a\). The final hybrid correlation weight \(hw_{a,u}\) is as follow:
+
+\begin{displaymath}
+hw_{a,u} = hm_{a,u} + sg_{a,u} \tag{5} \label{eq:5}
+\end{displaymath}
+
+\noindent \textbf{Self Weighting}: The idea of self weighting is that we want to put more weight in the content-based prediction as we have more user listening information and vice versa. The formula for self weighting is as follow:
+
+\begin{displaymath}
+sw_a = \left\{ \begin{array}{lcl}
+\frac{n_a}{T} \times max & \mbox{:} & \text{if} n_a < T \\
+max & \mbox{:} & \text{otherwise}
+\end{array}
+\right. \tag{6} \label{eq:6}
+\end{displaymath}
+
+where \(n_a\) is the number of items rated by the user. The parameter \(max\) is the maximum confidence that we put on the content-based predictor, in case the user listen to more than T album. In our experiments, we used a value of 2 for \(max\) \\
+
+\noindent \textbf{Final Predictions} Combining the above weighting schemes, the final hybrid prediction for a user \(a\) for item \(i\) is as follow:
+
+\begin{displaymath}
+p_{a,i} = \overline{v}_a + \frac{sw_a \left(c_{a,i} - \overline{v}_a \right) + \sum\limits_{\substack{ u=1 \\ u \neq a}}^{n} hw_{a,u}P_{a,u} \left(v_{u,i} - \overline{v}_u \right) } {sw_a +\sum\limits_{\substack{ u=1 \\ u \neq a}}^{n} hw_{a,u}P_{a,u}}
+\end{displaymath}
+
+where \(c_{a,i}\) is the content-based prediction for user \(a\) for item  \(i\); \(v_{u,i}\) is the pseudo user-rating for user \(u\) and item \(i\); \(\overline{v}_u\) is the mean over all item for user \(u\). \(sw_a\), \(hw_{a,u}\), and \(P_{a,u}\) are shown in equation \eqref{eq:6}, \eqref{eq:5}, and \eqref{eq:1} respectively; and n is the size of neighborhood. 
