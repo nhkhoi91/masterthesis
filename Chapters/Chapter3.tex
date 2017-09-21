@@ -6,7 +6,21 @@ In this chapter, the approaches used in this research is examined. First, the da
 
 \section{Dataset}
 
-The dataset for this thesis is a combination between two databases from two services: last.fm \footnote{https://last.fm} and Spotify Web Api \footnote{https://developer.spotify.com/web-api}. First, a list of user, the album they listen, the artists, and the number of times they listen to the album is taken from last.fm. The album name and artist name are then used to get album tracks, which are all the tracks contain in that album, on Spotify. Finally, using the track id of each tracks, track audio features are crawled. Then, for each album, the mean of the acoustic features is calculated, which represents the acoustic features of the whole album. The ultimate dataset, creating by joining the mention above databases, contains the following fields:
+The dataset for this thesis is a combination between two databases from two services: last.fm \footnote{https://last.fm} and Spotify Web Api \footnote{https://developer.spotify.com/web-api}. First, a list of user, the album they listen, the artists, and the number of times they listen to the album is taken from last.fm. The album name and artist name are then used to get album tracks, which are all the tracks contain in that album, on Spotify. Finally, using the track id of each tracks, track audio features are crawled. 
+
+
+In the data processing phase, I recognize that some albums have only 1 or 2 tracks. This phenomenon might be due to the lack of data, or because the creators of those albums decide so. However, as an album with just few tracks might not be a good representation for the album, I decide to eliminate all albums that have less than 5 tracks, as following the \textit{Chart Rule} from Official UK Singles Chart \cite{chartUK2017}. Then, for each album, the mean of the acoustic features is calculated, which represents the acoustic features of the whole album. 
+
+The ultimate dataset, creating by joining the mention above databases, contains about 185000 users listening to 64000 different albums. The distribution of user listening is shown in the figure \ref{fig:user_distribution}. In number, the total number of user listening to less than 20 albums accounts for 65\%. The number of user listening to between 20 and 40 albums acquire 19\%. The rest 16\% is accumulated unevenly from user listening to 40 up to 600 albums. 
+
+\begin{figure}[h]
+\centering
+\includegraphics{user_distribution}
+\caption{distribution of user listening to less than 50 albums}
+\label{fig:user_distribution}
+\end{figure}
+
+The final dataset contains the following fields:
 
 \begin{itemize}
 \item[•] Username: The user who listen to the album, taken from last.fm database.
@@ -26,8 +40,6 @@ The dataset for this thesis is a combination between two databases from two serv
 \end{itemize}
 
 \noindent As some of the features (e.g. key, duration) are not in the scale from 0 to 1, a standardization is necessary to eliminate over-weighting variables. The standardization for all the acoustic features is achieve by subtracting the mean following by dividing by the standard deviation for each feature. 
-
-\todo{add correlation part}
 
 \section{Algorithms}
 
