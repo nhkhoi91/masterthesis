@@ -15,37 +15,41 @@
 \contentsline {paragraph}{\numberline {2.1.1.1.3}Challenges}{5}{paragraph.19}
 \contentsline {subsubsection}{\numberline {2.1.1.2}Item-based nearest neighbor recommendation}{5}{subsubsection.20}
 \contentsline {subsubsection}{\numberline {2.1.1.3}Matrix factorization/ latent factor model}{6}{subsubsection.21}
-\contentsline {subsection}{\numberline {2.1.2}Content-based recommendation}{7}{subsection.24}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Feature extraction}{8}{subsubsection.25}
+\contentsline {subsection}{\numberline {2.1.2}Content-based recommendation}{8}{subsection.24}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Feature extraction}{9}{subsubsection.25}
 \contentsline {paragraph}{\numberline {2.1.2.1.1}Low-level features}{9}{paragraph.26}
 \contentsline {paragraph}{\numberline {2.1.2.1.2}Mid-level features}{10}{paragraph.28}
-\contentsline {subsection}{\numberline {2.1.3}Hybrid recommendation}{10}{subsection.29}
+\contentsline {subsection}{\numberline {2.1.3}Hybrid recommendation}{11}{subsection.29}
 \contentsline {subsubsection}{\numberline {2.1.3.1}Monolithic hybridization design}{11}{subsubsection.33}
-\contentsline {subsubsection}{\numberline {2.1.3.2}Parallelized hybridization design}{11}{subsubsection.34}
+\contentsline {subsubsection}{\numberline {2.1.3.2}Parallelized hybridization design}{12}{subsubsection.34}
 \contentsline {subsubsection}{\numberline {2.1.3.3}Pipelined hybridization design}{12}{subsubsection.35}
-\contentsline {subsection}{\numberline {2.1.4}Other kind of recommendation}{12}{subsection.36}
+\contentsline {subsection}{\numberline {2.1.4}Other kind of recommendation}{13}{subsection.36}
 \contentsline {section}{\numberline {2.2}Overview of music recommender systems}{13}{section.37}
 \contentsline {subsection}{\numberline {2.2.1}Content-Based Music Recommendation}{13}{subsection.38}
-\contentsline {subsubsection}{\numberline {2.2.1.1}Metadata content}{13}{subsubsection.39}
-\contentsline {paragraph}{\numberline {2.2.1.1.1}Annotation}{13}{paragraph.40}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Metadata content}{14}{subsubsection.39}
+\contentsline {paragraph}{\numberline {2.2.1.1.1}Annotation}{14}{paragraph.40}
 \contentsline {paragraph}{\numberline {2.2.1.1.2}Social tags}{14}{paragraph.41}
 \contentsline {paragraph}{\numberline {2.2.1.1.3}Annotations by web crawling}{14}{paragraph.42}
-\contentsline {subsubsection}{\numberline {2.2.1.2}Audio content}{14}{subsubsection.43}
-\contentsline {paragraph}{\numberline {2.2.1.2.1}Acoustic features}{14}{paragraph.44}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Audio content}{15}{subsubsection.43}
+\contentsline {paragraph}{\numberline {2.2.1.2.1}Acoustic features}{15}{paragraph.44}
 \contentsline {paragraph}{\numberline {2.2.1.2.2}Semantic annotation}{15}{paragraph.45}
-\contentsline {subsection}{\numberline {2.2.2}Contextual Music Recommendation}{15}{subsection.46}
+\contentsline {subsection}{\numberline {2.2.2}Contextual Music Recommendation}{16}{subsection.46}
 \contentsline {subsubsection}{\numberline {2.2.2.1}Environment-Related Context}{16}{subsubsection.47}
-\contentsline {subsubsection}{\numberline {2.2.2.2}User-Related Context}{16}{subsubsection.48}
+\contentsline {subsubsection}{\numberline {2.2.2.2}User-Related Context}{17}{subsubsection.48}
 \contentsline {subsection}{\numberline {2.2.3}Hybrid music recommendation}{17}{subsection.49}
-\contentsline {subsubsection}{\numberline {2.2.3.1}Hybrid designs combining content and context information}{17}{subsubsection.50}
-\contentsline {subsubsection}{\numberline {2.2.3.2}Hybrid designs combining collaborative filtering and content information}{17}{subsubsection.51}
-\contentsline {subsubsection}{\numberline {2.2.3.3}Hybrid designs combining collaborative filtering and context information}{18}{subsubsection.52}
-\contentsline {chapter}{\numberline {3}Implementation}{19}{chapter.53}
-\contentsline {section}{\numberline {3.1}Dataset}{19}{section.54}
-\contentsline {section}{\numberline {3.2}Algorithms}{20}{section.59}
-\contentsline {subsection}{\numberline {3.2.1}Pure Collaborative Filtering}{21}{subsection.60}
-\contentsline {subsection}{\numberline {3.2.2}Pure Content-based Filtering}{21}{subsection.65}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Problem formalization}{21}{subsubsection.66}
-\contentsline {subsubsection}{\numberline {3.2.2.2}Stochastic Gradient Descent}{22}{subsubsection.68}
-\contentsline {subsection}{\numberline {3.2.3}Content-boosted Collaborative Filtering}{23}{subsection.72}
-\contentsline {chapter}{Bibliography}{25}{appendix*.76}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Hybrid designs combining content and context information}{18}{subsubsection.50}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Hybrid designs combining collaborative filtering and content information}{18}{subsubsection.51}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Hybrid designs combining collaborative filtering and context information}{19}{subsubsection.52}
+\contentsline {chapter}{\numberline {3}Implementation}{21}{chapter.53}
+\contentsline {section}{\numberline {3.1}Dataset}{21}{section.54}
+\contentsline {section}{\numberline {3.2}Algorithms}{23}{section.58}
+\contentsline {subsection}{\numberline {3.2.1}Pure Collaborative Filtering}{23}{subsection.59}
+\contentsline {subsection}{\numberline {3.2.2}Collaborative Filtering for Implicit Feedback Dataset}{23}{subsection.64}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Introduction}{23}{subsubsection.65}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Model Formalization}{24}{subsubsection.72}
+\contentsline {subsection}{\numberline {3.2.3}Metadata Embeddings for Item Recommendation}{26}{subsection.75}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Metadata Embedding Hybrid Model}{26}{subsubsection.76}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Learning to Rank Recommendation with WARP Loss}{28}{subsubsection.78}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Stochastic Gradient Descent}{29}{subsubsection.81}
+\contentsline {subsection}{\numberline {3.2.4}Content-boosted Collaborative Filtering}{29}{subsection.85}
+\contentsline {chapter}{Bibliography}{33}{appendix*.89}

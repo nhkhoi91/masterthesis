@@ -942,54 +942,6 @@
     \field{year}{1990}
   \endentry
 
-  \entry{dekel2016linear}{article}{}
-    \name{author}{1}{}{%
-      {{hash=DO}{%
-         family={Dekel},
-         familyi={D\bibinitperiod},
-         given={Ofer},
-         giveni={O\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{DO1}
-    \strng{fullhash}{DO1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{title}{Linear Learning with Sparse Data}
-    \field{journaltitle}{arXiv preprint arXiv:1612.09147}
-    \field{year}{2016}
-  \endentry
-
-  \entry{du2013neural}{book}{}
-    \name{author}{2}{}{%
-      {{hash=DKL}{%
-         family={Du},
-         familyi={D\bibinitperiod},
-         given={Ke-Lin},
-         giveni={K\bibinitperiod-L\bibinitperiod},
-      }}%
-      {{hash=SMN}{%
-         family={Swamy},
-         familyi={S\bibinitperiod},
-         given={Madisetti\bibnamedelima NS},
-         giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer Science \& Business Media}%
-    }
-    \strng{namehash}{DKLSMN1}
-    \strng{fullhash}{DKLSMN1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{title}{Neural networks and statistical learning}
-    \field{year}{2013}
-  \endentry
-
   \entry{ellis2007identifyingcover}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=EDP}{%
@@ -1665,6 +1617,27 @@
     \field{volume}{42}
     \field{journaltitle}{Computer}
     \field{year}{2009}
+  \endentry
+
+  \entry{kula2015metadata}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KM}{%
+         family={Kula},
+         familyi={K\bibinitperiod},
+         given={Maciej},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KM1}
+    \strng{fullhash}{KM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Metadata embeddings for user and item cold-start
+  recommendations}
+    \field{journaltitle}{arXiv preprint arXiv:1507.08439}
+    \field{year}{2015}
   \endentry
 
   \entry{levy2008learning}{article}{}
@@ -2600,19 +2573,6 @@
     \field{year}{2011}
   \endentry
 
-  \entry{chartUK2017}{misc}{}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{R}
-    \field{sortinithash}{R}
-    \field{title}{Rules for Chart Eligibility}
-    \verb{url}
-    \verb http://www.officialcharts.com/media/653204/official-uk-charts-singles
-    \verb -chart-rules-july-2017.pdf
-    \endverb
-    \field{year}{2017}
-    \warn{\item Invalid format of field 'month'}
-  \endentry
-
   \entry{salton1988syntactic}{inproceedings}{}
     \name{author}{1}{}{%
       {{hash=SG}{%
@@ -3372,6 +3332,40 @@
     \field{volume}{1}
     \field{journaltitle}{ACM SIGMultimedia Records}
     \field{year}{2009}
+  \endentry
+
+  \entry{weston2011wsabie}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=WJ}{%
+         family={Weston},
+         familyi={W\bibinitperiod},
+         given={Jason},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Samy},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=UN}{%
+         family={Usunier},
+         familyi={U\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJBSUN1}
+    \strng{fullhash}{WJBSUN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{IJCAI}
+    \field{pages}{2764\bibrangedash 2770}
+    \field{title}{Wsabie: Scaling up to large vocabulary image annotation}
+    \field{volume}{11}
+    \field{year}{2011}
   \endentry
 
   \entry{whitman2001artist}{inproceedings}{}

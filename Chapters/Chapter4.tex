@@ -2,6 +2,28 @@
 
 \label{Chapter4}
 
-In this section, the methodology, metrics for the evaluation between different algorithms, as well as the result of the experiment are presented.
+In this section, the experimental setup, the metrics for the evaluation between the three algorithms, as well as the result of the experiment are presented.
 
-\subsection{Methodology}
+\subsection{Experimental Setup}
+The main goal of this experiment is to measure how well the learning to rank algorithm is in out dataset, using the two remaining algorithms as the baseline. The expectation is that the learning to rank algorithm that embeds item features would outperform the one without the embedded item features. However, I also expect that the ranking algorithm would not achieve a top-class result, due to the small-scale dataset that we have. As the number of user is much smaller than the number of item, the algorithm might not yet be able to catch all the user behavior patterns for the ranking. In the original experiment, the ranking algorithm is tested on a dataset with millions of users and only about 75.000 to 700.000 items. 
+
+The two baseline algorithms used to compare with the learning to rank algorithm is the two that were mentioned in Chapter \ref{Chapter3}. The first one is the na\"ive collaborative filtering, which is the most simple and straightforward collaborative filtering method. The second one is the matrix factorization CF for implicit feedback dataset, which is the state-of-the-art collaborative filtering.
+
+\subsection{Score Metrics}
+In this experiment, I will use Mean Average Precision (MAP) as the metric to evaluate the efficiency of the algorithms. To define MAP, we first define Precision at position k (P@k) as follow \cite{liu2009learning}:
+
+\begin{displaymath}
+P@k(q) = \frac{#\text{\{relevant documents in the top k positions\}}{k}
+\end{displaymath}
+
+Then, the Average Precision (AP) is difined as:
+
+\begin{displaymath}
+AP(q) = \frac{\sum_{k=1}^m P@k(q) \cdot l_k}{#\text{\{relevant documents\}}
+\end{displaymath}
+
+where \(m\) is the total number of document associated with query q, and \(l_k\) is the binary judgement on the relevance of the document at the \(k\)-th position. The mean value of AP over all test queries is the MAP. 
+
+\subsection{Experiment Result} 
+
+

@@ -1,32 +1,28 @@
 \chapter{Implementation} % Main chapter title
 
-\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter3} 
 
-In this chapter, the approaches used in this research is examined. First, the dataset taken from Spotify is mentioned. After that, the three algorithms and the evaluation metrics are discussed in detail.
+In this chapter, the approaches used in this research is examined. First, the join dataset merging from Last.fm and Spotify is mentioned. After that, the three algorithms and the evaluation metrics are discussed in detail.
 
 \section{Dataset}
 
-The dataset for this thesis is a combination between two databases from two services: last.fm \footnote{https://last.fm} and Spotify Web Api \footnote{https://developer.spotify.com/web-api}. First, a list of user, the album they listen, the artists, and the number of times they listen to the album is taken from last.fm. The album name and artist name are then used to get album tracks, which are all the tracks contain in that album, on Spotify. Finally, using the track id of each tracks, track audio features are crawled. 
+The dataset for this thesis is a combination between two databases from two services: the 1K users dataset from Last.fm \footnote{https://last.fm} and the dataset crawling from Spotify Web Api \footnote{https://developer.spotify.com/web-api}. 
 
+The dataset from Last.fm contains the listening habit from February, 2005 until May, 2009 for nearly 1000 users. The dataset contains more than 19 million entries, each entry consists of 4 attributes: the user id from Last.fm, the song that the user listened to, the artist who wrote the song, and the timestamp represents the time the user listened to the song. 
 
-In the data processing phase, I recognize that some albums have only 1 or 2 tracks. This phenomenon might be due to the lack of data, or because the creators of those albums decide so. However, as an album with just few tracks might not be a good representation for the album, I decide to eliminate all albums that have less than 5 tracks, as following the \textit{Chart Rule} from Official UK Singles Chart \cite{chartUK2017}. Then, for each album, the mean of the acoustic features is calculated, which represents the acoustic features of the whole album. 
+From the last.fm dataset, top 10000 songs that have the highest listening frequency are choosen. Then, track name and the respective artist are queried on Spotify API to get the corresponding track features. As Spotify API not only returns exact match but also similar match, and the name convention between the two systems might be different, a fuzzy matching algorithm is applied to filter the results. Particularly, the Levenshtein ratio is applied on the two fields. Any matching with a ratio higher than 80 percent is a good match, since the two strings are basically the same with some minor differences, which are the results of the different convention between the two system. Since matches with ratio between 60 and 80 percent might be good ones, manual check was done to guarantee the best result. I decided to cut off the result at 60 percent, as the majority of matches that are less than 60 percent are noisy and not accurate.
 
-The ultimate dataset, creating by joining the mention above databases, contains about 185000 users listening to 64000 different albums. The distribution of user listening is shown in the figure \ref{fig:user_distribution}. In number, the total number of user listening to less than 20 albums accounts for 65\%. The number of user listening to between 20 and 40 albums acquire 19\%. The rest 16\% is accumulated unevenly from user listening to 40 up to 600 albums. 
+As some of the songs from Last.fm have yet been analyzed by Spotify, after joining the two datasets, the number of remaining songs is about 4200. I then remove users with less than 10 listening events.
+The dataset is then divided into training set and test set following this rule: for each user, split the listening time into two halves, of which the first half belongs to the training set and the second half belongs to the test set. In the test set, all the tracks that are listened only 1 time are eliminated, as it is likely that the user only listened to it by chance. The final dataset contains with 891 users, 4200 unique tracks, and ...
 
-\begin{figure}[h]
-\centering
-\includegraphics{user_distribution}
-\caption{distribution of user listening to less than 50 albums}
-\label{fig:user_distribution}
-\end{figure}
-
-The final dataset contains the following fields:
+\noindent The final dataset contains the following fields:
 
 \begin{itemize}
 \item[•] Username: The user who listen to the album, taken from last.fm database.
 \item[•] Album: The name of the album the user listens to.
 \item[•] Artist: The artist who performs the album.
 \item[•] Playcount: The total number of time the user listens to the album.
+\item[•] TrackId: The unique id of the track in Last.fm dataset, which also serves as unique key.
 \item[•] Energy: A perceptual measurement of intensity and activity in a range from 0 to 1. The higher the score, the higher the energy the track contains. For example, metal rock has high energy, while a Bach prelude is perceived to have low energy. This measurement is built on top of dynamic range, loudness, timbral, onset rate, and general entropy.
 \item[•] Speechiness: A measurement of how much spoken words is present compare to music. A value from 0.66 to 1 indicates that the track is mostly spoken words, such as talk show or audio book. Vice versa, a value between 0.33 and 0.66 implies that the track contains both music and speech, ranging from pop to rap music. A value below 0.33 indicates a non speech track. 
 \item[•] Acousticness: A evaluation of how much acoustic a track contains compare to how much electronic. Again, a value closer to 1 implements that the track is played with mostly acoustic instruments, such as guitar and harmonica; while a value closer to 0 implements the present of electronic instruments.
@@ -37,19 +33,19 @@ The final dataset contains the following fields:
 \item[•] Valence: A measure from 0 to 1 of the positiveness of a track. Tracks with high valence sound more positive (e.g. happy, cheerful), and vice versa.
 \item[•] Liveness: An indication of whether a track is performed live or in studio. The higher the liveness, the higher possibility that the track is performed live.
 \item[•] Loudness: The overall loudness of a track in decibels (dB), with range from -60 to 0 db. 
+\item[•] Mode: An indication of modality (major or minor) of a track. The field has only 2 values: 1 for major and 0 for minor.
+\item[•] Time signature: An indication of how many beats are in each bar of a track. 
 \end{itemize}
-
-\noindent As some of the features (e.g. key, duration) are not in the scale from 0 to 1, a standardization is necessary to eliminate over-weighting variables. The standardization for all the acoustic features is achieve by subtracting the mean following by dividing by the standard deviation for each feature. 
 
 \section{Algorithms}
 
-The following sections describe my implementation of the three algorithms: a pure collaborative filtering, a pure content-based filtering, followed by the details of the hybrid approach.
+The following sections describe my implementation of the three algorithms that are used in this thesis: a Na\"ive collaborative filtering, a collaborative filtering approach specified for implicit feedback dataset, followed by the hybrid approach that combine collaborative filtering with item features.
 
 \subsection{Pure Collaborative Filtering}
 As the number of song outnumbers the number of user, I decide to implement the user-user based collaborative filtering. The algorithm can be summarized in the following steps:
 
 \begin{enumerate}
-	\item Calculate similarity between users as Pearson correlation between users' rating vectors. 
+	\item Calculate similarity between users using cosine similarity between users' rating vectors. 
 	\item For each user, form a neighborhood of \textit{n} users that have the highest similarity.
 	\item Compute a prediction for an item from a weighted combination of selected neighbor's ratings. 
 \end{enumerate}
@@ -57,35 +53,239 @@ As the number of song outnumbers the number of user, I decide to implement the u
 In step 3, predictions are calculated using the weighted average of deviations from neighbors' mean. The formula is as follow:
 
 \begin{displaymath}
-p_{a,i} = \overline{r}_a + \frac{\sum_{u=1}^{n} (r_{u,i} - \overline{r}_{u}) \times P_{a,u}}{\sum_{u=1}^{n} P_{a,u}}  \tag{1} \label{eq:1}
+p_{a,i} = \overline{r}_a + \frac{\sum_{u=1}^{n} (r_{u,i} - \overline{r}_{u}) \times P_{a,u}}{\sum_{u=1}^{n} P_{a,u}}  \tag{1} 
 \end{displaymath}
 
 with \(p_{a,i} \) is the prediction of item i for user a, \(P_{a,i}\) is the similarity between user a and user u, and \(\overline{r}_a\) is the average of the ratings of user a.  
 
-\subsection{Pure Content-based Filtering}
-Regression approach is applied to predict user-rating for the content-based filtering method, as linear predictors are proved to be useful when data is high-dimensional \cite{dekel2016linear}. Particularly, the \textit{Stochastic Gradient Descent} algorithm will be used to train the predictors. The formalization of the problem and the algorithm are as follows:
+\subsection{Collaborative Filtering for Implicit Feedback Dataset}
 
-\subsubsection{Problem formalization}
-Let \({(x_i, y_i)}_{i=1}^{m}\) be the training set of rating, where each \(x_i \in \mathbb{R}^n\) is an acoustic feature vector and \(y_i \in \mathbb{R} \) is its corresponding user rating. We also define a loss function \( \ell : \mathbb{R}^2 \rightarrowtail \mathbb{R}\) over pairs of label, where \( \ell(p,y) \) is the penalty associating with predicting rating p when the correct rating is y. Depends on the type of loss function, the problem can become a regression problem or a binary classification one. In this case, as we are trying to estimate the rating, the problem belongs to the regression family. \\
+\subsubsection{Introduction}
+One of the most well known work on implicit feedback dataset is the one of Yifan Hu et al \cite{hu2008collaborative}. In his paper, he mentioned that almost all the prior approaches were mostly designed for explicit feedback, and therefore applying these methods on implicit dataset might not work well. According to his work, there are four crucial differences between the two type of dataset:
 
-\noindent A linear predictor for a user is a pair \(( \mathbf{w}, b)\), where \( \mathbf{w} \in \mathbb{R}^n \) is the weight vector and \(b \in \mathbb{R} \) is the bias. Given an acoustic feature vector \( x \), the prediction \(p\) is calculated as follow:
+\begin{enumerate}
+	\item No negative feedback: In explicit feedback dataset, the users actively tell us which items they like and the ones that they do not. In implicit feedback, however, telling the items that the users dislike is hard to achieve. The reason is that, by observing the user behaviors, we can infer that the user might like the items that they consume. However, for an item that the user has no interaction with, it is unknown whether the user does not favor it or he does not know about its existence. This phenomenon derives a crucial implication: in explicit dataset, a pair of user - item that has no information is treated as missing data and is omitted from the analysis. This is impossible for implicit dataset, as eliminating these missing data would leave us with only positive feedback, greatly misrepresenting the full user profile. 
+	
+	\item Implicit feedback is noisy: passively tracking user behaviors can only give us indirect information about user preferences and true motives. For example, we may view purchase from a user, but this does not necessarily indicate a positive view of the product. The user might buy the item as a gift, or show disappointment only later the purchase. This leads to the third distinction.
+	
+	\item The numerical value of explicit feedback indicates preference, while the numerical value of implicit feedback indicates confidence: Explicit feedback let users express their level of preference, e.g. a scale between 1 (totally dislike the item) to 5 (totally love the item). In contrast, numerical values of implicit feedback describe the frequency of actions, e.g. how much time the user listens to a particular song or watches a show. A large value not necessarily implies that the user like the item. For example, in the film domain, a user might really like a movie but is hesitated to watch it again because of the lengthy duration. However, he might periodically watch a weekend show, which derives from his habit but not appreciation of the show. 
+	
+	\item Evaluation of implicit-feedback recommender requires appropriate measures. Traditionally, metrics such as mean squared error are often applied to measure the success of the recommender. However, in implicit models we have to also consider the available of the items, or the competition between items. For example, it is unclear how to evaluate two shows that are on at the same time, and hence cannot be both watched by the user.
+\end{enumerate}
+
+The above comments are used to make adjustments to traditional collaborative filtering for it to work with implicit dataset. The two main important of the new model, hence, is as follows:
+
+\begin{enumerate}
+	\item The model transfers raw observation \((r_{ui})\) into two separate magnitudes with distinct interpretations: preference \((p_{ui})\) and confidence level \((c_{ui})\). 
+	\item All possible user-item combinations \( n \dot m\) have to be addressed. 
+\end{enumerate}
+
+\subsubsection{Model Formalization}
+The formalization of the model is as follows: 
+
+Let \(r_{ui}\) be the observation value between user \(u\) and item \(i\). In out situation, \(r_{ui}\) denotes the number of time user \(u\) listened to track \(i\). For example, \(r_{ui} = 2\) indicates that in the past, user \(u\) listens to track \(i\) 2 times. Next, we introduce a set of binary variable \(p_{ui}\), which indicates the preference of user \(u\) and item \(i\). The values of \(p_{ui}\) is defined by the formula: 
 
 \begin{displaymath}
-p = \mathbf{w} \cdot x + b
-\end{displaymath} 
-
-\noindent The loss function for the training dataset, therefore, is:
-\begin{displaymath}
-\frac{1}{m} \sum_{i=1}^{m} \ell (\mathbf{w} \cdot x + b, y_i)
+p_{ui} = \left\{ \begin{array}{lc} 
+1 &  r_{ui} > 0\\
+0 & r_{ui} = 0\\
+\end{array}
+\right. 
 \end{displaymath}
 
-\noindent Finally, the Ridge regularization is added to the objective function for the purpose of statistical generalization \cite{du2013neural}
+We believe that if a user \(u\) listened to a track \(i\), we have an indication that \(u\) likes \(i\) and vice versa. However, our belief is associated with different confident level. If the user has never listened to the track, the confident level is low as we cannot infer anything from the user. If the track is heard once or twice, we are also not so confident in claiming that the track is favored by the user, as the listening might be from autoplaying a whole album or a random playlist. However, as the number of listening time increase, we can also increase the confidence in saying that the user intentionally listen to the song, and therefore like it. Consequently, we introduce a set of variable \(c_{ui}\), which measures the confidence in observing \(p_{ui}\). A plausible choice for \(c_{ui}\) would be:
 
 \begin{displaymath}
-\mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell (\mathbf{w} \cdot x_i + b, y_i) + \frac{\lambda}{2} (\lVert \mathbf{w} \rVert^2 + b^2) \tag{2} \label{eq:2}
+c_{ui} = 1 + \alpha r_{ui}
 \end{displaymath}
 
-\noindent where \(\lambda\) is a user-defined regularization parameter. The goal of our algorithms is to find the linear predictor that minimize \(\mathbf{F}\). As mentioned earlier, the \textit{Stochastic Gradient Descent} (SGD) algorithm is used to solve this optimization problem.
+\noindent with \( \alpha\) is the rate of increase. 
+
+We also define user factor matrix \(X\) and item factor matrix \(Y\) for matrix factorization: we fix a number \(k\) and represent each user \(u\) with a \(k\) dimensional vector \(x_u\), and represent each item \(i\) with a \(k\) dimensional vector \(y_i\). The \(n \times k \) user matrix \(X\) is formed by the set of user \(x_1, \cdots, x_n \in \mathbb{R}^k) \), and the \(m \times k \) item matrix \(Y\) is formed by the set of item \(y_i, \cdots, y_m \in \mathbb{R}^k \):
+ 
+\[
+X = \begin{bmatrix}
+| & & | \\
+x_1 & \cdots & x_n \\ 
+| & & | 
+\end{bmatrix} \quad
+Y = 
+\begin{bmatrix}
+| & & | \\
+y_1 & \cdots & y_m \\ 
+| & & | \\
+\end{bmatrix}
+\]
+
+Having introduce the variables, now our main goal is to find a user vector \(x_u \in \mathbb{R}^k \) for each user \(u\), and an item vector \(y_i \in \mathbb{R}^f \) for item \(i\) so that the inner product between the two vector is approximately equal to the preference: \(p_{ui} = x^T_u y_i \) with \(x^T\) is the tranpose of vector \(x\). In other words, we would like to minimize the following cost function:
+
+\begin{displaymath}
+min_{x, y} \sum_{u,i} c_{ui} (p_{ui} - x^T_u y_i)^2 + \lambda \left(\sum_u \lVert x_u \rVert^2 + \sum_i \lVert y_i \rVert ^2 \right) \tag{1} \label{eq:1}
+\end{displaymath}
+
+with \( \lambda \left(\sum_u \lVert x_u \rVert^2 + \sum_i \lVert y_i \rVert ^2 \right)\) is the regularization to make sure that the model would not overfit the training data. 
+
+Often, for explicit feedback, Stocastic Gradient Descent (SGD) is used to minimize the cost function. However, as in implicit feedback we have to consider all possible \(u, i\) pairs, SGD cannot be apply. Therefore, another optimization process has been applied to minimize the cost function as follow.
+
+Observing that when we fix either the user-factors or the item-factors, the cost function becomes quadratic and the global minimum can easily be reach. Therefore, we take the differentiation to find the analytic expression for \(x_u\) that minimizes the cost function \eqref{eq:1}:
+
+\begin{displaymath}
+x_u = (Y^T C^u Y + \lambda I)^{-1} Y^T C^u p(u)
+\end{displaymath}
+
+with \(C^u\) is a diagonal \(n \times n\) matrix where \(C^u_{ii} = c_{ui}\) and \(p(u)\) is the preference vector of user \(u\). The na\"ive calculation will take \(O(k^2n) \) for each of the \(m\) user because of the computation \(Y^T C^u Y\). The calculation can be speed up by first parse \(Y^T C^u Y = Y_TY + Y^T (C^u - I) Y \). As \(Y_TY\) is now independent of \(u\), it can be computed beforehand. As for \(Y_T (C^u - I)Y\), we can see that \(C^u - I\) has only \(n_u\) non-zero elements where \(n_u\) is the number of item that \(r_ui > 0) \) and often \(n_u << n\). Similarly, \(C^u p(u)\) also contains just \(n_u\) non-zero element. Hence, the running time for \(Y^T (C^u - I) Y\) is \(O(k^2 n_u)\), the run time for inverting the matrix \( (Y^T C^u Y + \lambda I)^{-1} \) is \(O(k^3) \), and the total run time is \(O(k^2 n_u + k^3)\) for each user. For \(m\) user, the total running time is \(O(k^2 N + k^3 m)\), where \(N = \sum_u n_u\). \hfill \break
+
+\noindent Similar to user-factors, we can do the computation on all item-factors using the same technique. The analytic form for \(y_i\) is:
+
+\begin{displaymath}
+y_i = (X^T C^i X + \lambda I)^{-1} X^T C^i p(i)
+\end{displaymath}
+
+\noindent The running time for recomputing all item-factors is \(O(k^2 N + f^3n)\). \hfill \break
+
+\noindent The pseudo code for the algorithm is in Algorithm 1:
+
+\begin{algorithm}
+\caption{ALS CF for implicit dataset} \label{ALSCF}
+\begin{algorithmic}[1]
+\Function{SGD}{$T, \lambda, \left\{(x_y, y_t)\right\}_{i=1}^{m}$} \text{// number of steps, regularization parameter, training set}
+	\State $\text{draw random indices } \pi_1, \dots, \pi_T$ 
+	\State $w \gets 0$
+	\State $b \gets 0$
+	
+	\For{ $t = 1, \dots, T$}
+		\State $l \gets \ell'(w \cdot x_{\pi_t} + b, y_{\pi_1})$
+		\State $w\_initial \gets 1 - (1 / t) \cdot w$
+		\State $b\_initial \gets 1 - (1 / t) \cdot b$
+		\State $w\_deviate \gets l \cdot x_{\pi_t} / \lambda t $
+		\State $b\_deviate \gets l / \lambda t$
+		\State $w \gets w\_initial - w\_deviate$
+		\State $b \gets b\_initial - b\_deviate$
+	\EndFor
+	\Return [w, b]
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Metadata Embeddings for Item Recommendation}
+In this section, I propose using a hybrid ranking matrix factorization model using k-Order Statistic Loss (k-OLS) to solve the recommendation problem. k-OLS is an improvement of the Weighted Approximate-Rank Pairwise (WARP) Loss, a ranking error function used to optimize precision at \(k\). 
+
+This approach is chosen because of three advantages: first, it has the ability to exploit the side information, i.e. user features or item features, if there is any. Second, the loss function is design to optimize the ranking of the top k item. This advantage has a practical implication: consider Youtube website where there are not so many placeholder for recommended item, a high precision for top 5 - 10 items would play a critical role in user experience. The third advantage is that the loss function also treats missing feedback as unknown but not negative, which is different from the well known similar loss function WARP \cite{weston2011wsabie}. More detail about this will be explained in the algorithm description.
+
+\subsubsection{Metadata Embedding Hybrid Model}
+
+In this section, I will introduce the hybrid content-collaborative model \cite{kula2015metadata}. In this model, like in a collaborative model, users and items are represented as latent vectors. These latent vectors are defined by functions of embedding of the content features that describe each product or user. For example, if the movie "Game of Throne" is described by the following features: "fantasy", "drama", and "adventure", then its latent representation is the sum of these features' latent representations.\\
+
+\noindent The structure of the model is motivated by two considerations:
+
+\begin{itemize}
+	\item The model must have the ability to learn user and item representations from the interaction data: if two items are constantly liked by users, the model must know that the two items are alike.
+	\item The model must be able to compute recommendations for new users and items
+\end{itemize}
+
+\noindent The first motivation is filled by using the embedding feature factors. If two items are constantly liked by users, their embedding feature factors would be similar. Otherwise, if two items are never liked by the same user, their embedding factor would be different from each other. This feature has an implication: if a user \(u\) likes one of the two items, we can confidently recommend the other.
+
+\noindent The second motivation is achieved by representing user and item as linear combination of the content features. Therefore, if a new movie with the features "fantasy", "drama", and "adventure" is added to the system, the representation vector of the movie is the sum of the vectors of the three features. 
+
+\noindent The formalization of the model is as follow:
+Let \(U\) be the set of \(m\) users, \(I\) be the set of\(n\)  items, \(F^U\) be the set of user features, and \(F^I\) be the set of item features. Each user \(u\) is described by a set of features \(f_u \subset F^U\), and each item \(i\) is described by a set of features \(f_i \subset F^I\). The two user feature and item feature matrices are then parameterized into \(m \times d\) and \(n \times d\) embedding matrices \(\boldsymbol{e}^U\) and \(\boldsymbol{e}^I\) respectively as follows:
+
+\[
+e_f^U = \begin{bmatrix}
+\mbox{---} & \boldsymbol{e}_1^U & \mbox{---} \\
+ & \vdots & \\ 
+\mbox{---} & \boldsymbol{e}_m^U & \mbox{---}
+\end{bmatrix} \quad
+e_f^I = 
+\begin{bmatrix}
+\mbox{---} & \boldsymbol{e}_1^I & \mbox{---} \\
+ & \vdots &  \\ 
+\mbox{---}& \boldsymbol{e}_n^I& \mbox{---}\\
+\end{bmatrix}
+\]
+\\
+
+
+\noindent Similarly, we define two bias matrices \(b^U\) and \(b^I\). The latent representation of user \(u\) is the sum of its features' latent vectors:
+
+\begin{displaymath}
+\boldsymbol{q}_u = \sum_{j \in f_u} \boldsymbol{e}_j^U
+\end{displaymath}
+
+\noindent The same for item \(i\):
+
+\begin{displaymath}
+\boldsymbol{p}_i = \sum_{j \in f_i} \boldsymbol{e}_j^I
+\end{displaymath}
+
+\noindent The bias term for user \(u\) is the sum of its bias latent vectors:
+\begin{displaymath}
+b_u = \sum_{j \in f_u} b_j^U
+\end{displaymath}
+
+\noindent The same applies for item bias term \(i\):
+\begin{displaymath}
+b_i = \sum_{j \in f_i} b_j^I
+\end{displaymath}
+
+The prediction for user \(u\) and item\(i\) is the dot product between two corresponding latent representation plus the two bias terms:
+
+\begin{displaymath}
+f_{i}u = f (\boldsymbol{q}_u  \cdot \boldsymbol{p}_i + b_u + b_i) \tag{2} \label{eq:2}
+\end{displaymath}
+
+There are many suitable functions for  \( f(\cdot)\). As mentioned in the beginning of the section, I will apply a ranking approach, thus use the prediction function to try to infer the rank of an arbitrary item. 
+
+\subsubsection{Learning to Rank Recommendation with WARP Loss}
+Given a set of items for a user, a ranking function is responsible for returning an ordered list of items, with the most relevant items are arrange at the top of the list, therefore have a lower rank. In order to do so, the system is given a training with a list of users as well as the set of their known ratings. The ratings can be explicit, i.e. user ratings, or implicit, i.e. number of times a user listened to a track, or watched a movie. In our case, we use listening time as the rating for the ranking function, and the Weighted Approximate-Rank Pairwise (WARP) loss \cite{weston2011wsabie} as our chosen ranking error functions. The main idea of this method is that, we first define the tracks that have been listened by a user positive items for that user, and the remaining negative items. Then for each positive item, we examine a number of random negative items. For each negative item, if the rank of the item is lower than the one of the positive item, we perform a gradient update to lower the loss function. \hfill \break
+
+\noindent Formally, let \(D_u\) be the set of the positive items for user u, we define \(f(u)\) to be the vector of all item scores \(1, \dots, \lvert D \rvert \) for the user \(u\). Therefore, the item score for an item \(d\) is defined as follow:
+
+\begin{displaymath}
+f_d(u) = \frac{1}{\lvert D_u \rvert} \sum_{i \in D_u} (\boldsymbol{q}_u \cdot \boldsymbol{p}_i + b_u + b_i) 
+\end{displaymath}
+
+\noindent where \(\boldsymbol{q}, \boldsymbol{p}, b_u, b_i\) are mentioned in equation \eqref{eq:2}. \hfill \break
+ 
+\noindent To learn \(f\), we minimize an object function of the following form:
+
+\begin{displaymath}
+\sum_{u=1}^{\lvert U \rvert} L\left(f(u), D_u\right) \tag{3} \label{eq:3}
+\end{displaymath}
+
+\noindent where \(L\) is the loss function between the known ratings \(D_u\) and the predictions \(f(u)\) for user \(u\).  \hfill \break
+
+\noindent The class of Weighted Approximate-Rank Pairwise (WARP) loss functions is then defined as follow:
+
+\begin{displaymath}
+L_{WARP}(f(u), D_u) = \sum_{d \in D_u} \Phi \left(rank_d(f(u))\right)   \tag{4} \label{eq:4}
+\end{displaymath}
+
+\noindent where \(rank_d(f(u))\) is the rank of the true label \(d\) given by \(f(u)\):
+
+\begin{displaymath}
+rank_d(f(u)) = \sum_{\bar{d} \notin D_u} I \left(f_{\bar{d}}(u) \geq f_d(urank_{d} \left(f\left( u \right)\right))\right)
+\end{displaymath}
+
+\noindent and \( \Phi (\cdot) \) transforms this rank into a loss:
+
+\begin{displaymath}
+\Phi(k) = \sum_{j=1}^k a_j, \text{ with } a_1 \geq a_2 \geq \ldots \geq 0
+\end{displaymath}
+
+\noindent This class of functions allows one to define different choices of \( \Phi(\cdot) \)  for different minimize purpose. Minimizing \( \Phi\) with \(a_j = \frac{1}{Y} \), with \(Y\) is the total number of item would optimize the mean rank; while setting \(a_1 = 1\) and \( a_{j>1} = 0 \) would optimize only the first rank. Generally,  setting high value of \(a\) for the first \(k\) item would optimize the top \(k\) item in the ranked list, leading to optimize precision at \(k\). 
+
+To minimize the loss function \eqref{eq:4}, the authors derive a differentiable approximation of the rank and use stochastic gradient descent (SGD) to minimize the approximation instead of directly minimize the rank itself, as the rank contains integer values and therefore indifferentiable. To begin with, the loss function of a positive document \(d\) is equal to:
+
+\begin{displaymath}
+L_{WARP}(f_d(u), D_{d_u}) = \sum_{\bar{d} \notin D_u} \Phi \left(rank_{d} \left(f\left( u \right)\right)\right) \frac{I\left(f_{\bar{d}}\left(u\right) \geq f_{d}\left(u\right)\right)} {rank_{d} \left(f\left( u \right)\right)}
+\end{displaymath}
+
+\noindent with the convention \(0/0 = 0\) when the correct label \(d\) is top-ranked. As ranks are integer number, hinge loss is applied to replace the indicator function to add a margin and make the loss continuous. The loss function is then approximated by:
+
+\begin{displaymath}
+\xoverline{L_{WARP}}(
+\end{displaymath}
 
 \subsubsection{Stochastic Gradient Descent}
 SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}, b) \). Given the randomize initial predictor \( (\mathbf{w_0}, b_0) \), the algorithm will perform \(T\) gradient descend steps and produce a sequence of intermediate linear predictors \( ((\mathbf{w}_t, b_t))_{t=0}^{T} \). In each gradient descend step \(t\), the linear predictor is updated using the information exploiting from an individual training example \( (x, y)\). 
@@ -93,7 +293,7 @@ SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}
 \noindent Formally, let \( \pi_1, \dots, \pi_T \) be a sequence of independently random indices, with \( 1 \leq \pi_t \leq m \). On each iteration \( t\), the algorithm runs on index \(\pi_t\). Also, let \([\mathbf{w}, b] \) denote the concatenation of \(\mathbf{w}\) and \(b\). The subgradient of Eq. \eqref{eq:2} is :
 
 \begin{displaymath}
-\nabla \mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell' (\mathbf{w} \cdot x_i + b, y_i) [x_i, 1] + \lambda [\mathbf{w}, b] \tag{3} \label{eq:3}
+\nabla \mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell' (\mathbf{w} \cdot x_i + b, y_i) [x_i, 1] + \lambda [\mathbf{w}, b] \tag{3} 
 \end{displaymath}
 
 \noindent As \(\pi\) is a random index, chosen uniformly between \(1\) and \(m\), 
