@@ -133,7 +133,7 @@ Observing that when we fix either the user-factors or the item-factors, the cost
 x_u = (Y^T C^u Y + \lambda I)^{-1} Y^T C^u p(u)
 \end{displaymath}
 
-with \(C^u\) is a diagonal \(n \times n\) matrix where \(C^u_{ii} = c_{ui}\) and \(p(u)\) is the preference vector of user \(u\). The na\"ive calculation will take \(O(k^2n) \) for each of the \(m\) user because of the computation \(Y^T C^u Y\). The calculation can be speed up by first parse \(Y^T C^u Y = Y_TY + Y^T (C^u - I) Y \). As \(Y_TY\) is now independent of \(u\), it can be computed beforehand. As for \(Y_T (C^u - I)Y\), we can see that \(C^u - I\) has only \(n_u\) non-zero elements where \(n_u\) is the number of item that \(r_ui > 0) \) and often \(n_u << n\). Similarly, \(C^u p(u)\) also contains just \(n_u\) non-zero element. Hence, the running time for \(Y^T (C^u - I) Y\) is \(O(k^2 n_u)\), the run time for inverting the matrix \( (Y^T C^u Y + \lambda I)^{-1} \) is \(O(k^3) \), and the total run time is \(O(k^2 n_u + k^3)\) for each user. For \(m\) user, the total running time is \(O(k^2 N + k^3 m)\), where \(N = \sum_u n_u\). \hfill \break
+with \(C^u\) is a diagonal \(n \times n\) matrix where \(C^u_{ii} = c_{ui}\) and \(p(u)\) is the vector that contains the preferences of user \(u\) (i.e. \(p_{ui}\) value). The na\"ive calculation will take \(O(k^2n) \) for each of the \(m\) user because of the computation \(Y^T C^u Y\). The calculation can be speed up by first parse \(Y^T C^u Y = Y_TY + Y^T (C^u - I) Y \). As \(Y_TY\) is now independent of \(u\), it can be computed beforehand. As for \(Y_T (C^u - I)Y\), we can see that \(C^u - I\) has only \(n_u\) non-zero elements where \(n_u\) is the number of item that \(r_ui > 0) \) and often \(n_u << n\). Similarly, \(C^u p(u)\) also contains just \(n_u\) non-zero element. Hence, the running time for \(Y^T (C^u - I) Y\) is \(O(k^2 n_u)\), the run time for inverting the matrix \( (Y^T C^u Y + \lambda I)^{-1} \) is \(O(k^3) \), and the total run time is \(O(k^2 n_u + k^3)\) for each user. For \(m\) user, the total running time is \(O(k^2 N + k^3 m)\), where \(N = \sum_u n_u\). \hfill \break
 
 \noindent Similar to user-factors, we can do the computation on all item-factors using the same technique. The analytic form for \(y_i\) is:
 
@@ -143,24 +143,18 @@ y_i = (X^T C^i X + \lambda I)^{-1} X^T C^i p(i)
 
 \noindent The running time for recomputing all item-factors is \(O(k^2 N + f^3n)\). \hfill \break
 
-\noindent The pseudo code for the algorithm is in Algorithm 1:
+\noindent The pseudo code for the algorithm is in Algorithm \eqref{CF}
 
 \begin{algorithm}
-\caption{ALS CF for implicit dataset} \label{ALSCF}
+\caption{CF for implicit dataset} \label{CF}
 \begin{algorithmic}[1]
-\Function{SGD}{$T, \lambda, \left\{(x_y, y_t)\right\}_{i=1}^{m}$} \text{// number of steps, regularization parameter, training set}
-	\State $\text{draw random indices } \pi_1, \dots, \pi_T$ 
-	\State $w \gets 0$
-	\State $b \gets 0$
+\Function{ICF}{$Cui, k, regularization, iterations$} \text{// user-item interaction matrix, length of matrix factorization,  regularization parameter, no. of iteration}
+	\State $\text{draw random matrix X with shape } n \times k $ 
+	\State $\text{draw random matrix Y with shape } n \times k $
 	
-	\For{ $t = 1, \dots, T$}
-		\State $l \gets \ell'(w \cdot x_{\pi_t} + b, y_{\pi_1})$
-		\State $w\_initial \gets 1 - (1 / t) \cdot w$
-		\State $b\_initial \gets 1 - (1 / t) \cdot b$
-		\State $w\_deviate \gets l \cdot x_{\pi_t} / \lambda t $
-		\State $b\_deviate \gets l / \lambda t$
-		\State $w \gets w\_initial - w\_deviate$
-		\State $b \gets b\_initial - b\_deviate$
+	\ForEach{$iteration in iterations$}
+		\State $\text{least_squares(Cui, X, Y, regulation)}$
+		\State $\text{least_squares(Cui.T, Y, X, regulation)}$	
 	\EndFor
 	\Return [w, b]
 \EndFunction
@@ -188,7 +182,7 @@ In this section, I will introduce the hybrid content-collaborative model \cite{k
 \noindent The second motivation is achieved by representing user and item as linear combination of the content features. Therefore, if a new movie with the features "fantasy", "drama", and "adventure" is added to the system, the representation vector of the movie is the sum of the vectors of the three features. 
 
 \noindent The formalization of the model is as follow:
-Let \(U\) be the set of \(m\) users, \(I\) be the set of\(n\)  items, \(F^U\) be the set of user features, and \(F^I\) be the set of item features. Each user \(u\) is described by a set of features \(f_u \subset F^U\), and each item \(i\) is described by a set of features \(f_i \subset F^I\). The two user feature and item feature matrices are then parameterized into \(m \times d\) and \(n \times d\) embedding matrices \(\boldsymbol{e}^U\) and \(\boldsymbol{e}^I\) respectively as follows:
+Let \(U\) be the set of \(m\) users, \(I\) be the set of \(n\)  items, \(F^U\) be the set of user features, and \(F^I\) be the set of item features. Each user \(u\) is described by a set of features \(f_u \subset F^U\), and each item \(i\) is described by a set of features \(f_i \subset F^I\). The two user feature and item feature matrices are then parameterized into \(m \times d\) and \(n \times d\) embedding matrices \(\boldsymbol{e}^U\) and \(\boldsymbol{e}^I\) respectively as follows:
 
 \[
 e_f^U = \begin{bmatrix}
@@ -234,171 +228,126 @@ The prediction for user \(u\) and item\(i\) is the dot product between two corre
 f_{i}u = f (\boldsymbol{q}_u  \cdot \boldsymbol{p}_i + b_u + b_i) \tag{2} \label{eq:2}
 \end{displaymath}
 
-There are many suitable functions for  \( f(\cdot)\). As mentioned in the beginning of the section, I will apply a ranking approach, thus use the prediction function to try to infer the rank of an arbitrary item. 
+\noindent There are many suitable functions for  \( f(\cdot)\). As mentioned in the beginning of the section, later in this chapter, I will describe a ranking approach to optimize the latent vectors. But before that, we will look at some important characteristics of the model. 
+
+\noindent The behavior of the embedding model is altered by the differences in the feature sets. If the feature sets consists solely of indicator variables for each user and each item, the embedding model reduces to the standard Matrix Factorization (MF) model. If the feature sets also contain metadata features shared by more than one item or user, the model extends the MF model by letting the feature latent factors explain part of the structure of user interactions. However, if only metadata features and no indicator variables are present, the model does not reduce to a pure content-based system. The reason is that the model would estimate feature embedding by factorizing the collaborative interaction matrix, while content-based system would factorize pure content co-occurrence matrices. The only special case where the model reduce to a pure content-based model is when each user is described by an indicator variable and has interacted with only one item. 
 
 \subsubsection{Learning to Rank Recommendation with WARP Loss}
 Given a set of items for a user, a ranking function is responsible for returning an ordered list of items, with the most relevant items are arrange at the top of the list, therefore have a lower rank. In order to do so, the system is given a training with a list of users as well as the set of their known ratings. The ratings can be explicit, i.e. user ratings, or implicit, i.e. number of times a user listened to a track, or watched a movie. In our case, we use listening time as the rating for the ranking function, and the Weighted Approximate-Rank Pairwise (WARP) loss \cite{weston2011wsabie} as our chosen ranking error functions. The main idea of this method is that, we first define the tracks that have been listened by a user positive items for that user, and the remaining negative items. Then for each positive item, we examine a number of random negative items. For each negative item, if the rank of the item is lower than the one of the positive item, we perform a gradient update to lower the loss function. \hfill \break
 
-\noindent Formally, let \(D_u\) be the set of the positive items for user u, we define \(f(u)\) to be the vector of all item scores \(1, \dots, \lvert D \rvert \) for the user \(u\). Therefore, the item score for an item \(d\) is defined as follow:
+\noindent Formally, let \(x\) be a positive item of user u, we define \( f_x(u) \) be the score for item x for user u as follow:
 
 \begin{displaymath}
-f_d(u) = \frac{1}{\lvert D_u \rvert} \sum_{i \in D_u} (\boldsymbol{q}_u \cdot \boldsymbol{p}_i + b_u + b_i) 
+f_x(u) =  (\boldsymbol{q}_u \cdot \boldsymbol{p}_x + b_u + b_x) 
 \end{displaymath}
 
-\noindent where \(\boldsymbol{q}, \boldsymbol{p}, b_u, b_i\) are mentioned in equation \eqref{eq:2}. \hfill \break
+\noindent where \(\boldsymbol{q}, \boldsymbol{p}, b_u, b_x\) are mentioned in equation \eqref{eq:2}. \hfill \break
  
-\noindent To learn \(f\), we minimize an object function of the following form:
+\noindent To learn \(f\) for a user \(u\), we minimize an object function of the following form:
 
 \begin{displaymath}
-\sum_{u=1}^{\lvert U \rvert} L\left(f(u), D_u\right) \tag{3} \label{eq:3}
+\sum_{u=1}^{\lvert U \rvert} L\left(f(u), y\right) \tag{3} \label{eq:3}
 \end{displaymath}
 
-\noindent where \(L\) is the loss function between the known ratings \(D_u\) and the predictions \(f(u)\) for user \(u\).  \hfill \break
+\noindent where \(L\) is the loss function between the known ratings \(y\) and the predictions \(f(u)\).  \hfill \break
 
 \noindent The class of Weighted Approximate-Rank Pairwise (WARP) loss functions is then defined as follow:
 
 \begin{displaymath}
-L_{WARP}(f(u), D_u) = \sum_{d \in D_u} \Phi \left(rank_d(f(u))\right)   \tag{4} \label{eq:4}
+L_{WARP}(f(u), y) =  \Phi \left(rank_y(f(u))\right)   \tag{4} \label{eq:4}
 \end{displaymath}
 
-\noindent where \(rank_d(f(u))\) is the rank of the true label \(d\) given by \(f(u)\):
+\noindent where \(rank_y(f(u))\) is the rank of true label \(y\) given by \(f(u)\):
 
 \begin{displaymath}
-rank_d(f(u)) = \sum_{\bar{d} \notin D_u} I \left(f_{\bar{d}}(u) \geq f_d(urank_{d} \left(f\left( u \right)\right))\right)
+rank_y(f(u)) = \sum_{i \notin y} I \left(f_i(x) \geq f_y(x)\right)   \tag{5} \label{eq:5}
 \end{displaymath}
 
 \noindent and \( \Phi (\cdot) \) transforms this rank into a loss:
 
 \begin{displaymath}
-\Phi(k) = \sum_{j=1}^k a_j, \text{ with } a_1 \geq a_2 \geq \ldots \geq 0
+\Phi(k) = \sum_{j=1}^k a_j, \text{ with } a_1 \geq a_2 \geq \ldots \geq 0   
 \end{displaymath}
 
 \noindent This class of functions allows one to define different choices of \( \Phi(\cdot) \)  for different minimize purpose. Minimizing \( \Phi\) with \(a_j = \frac{1}{Y} \), with \(Y\) is the total number of item would optimize the mean rank; while setting \(a_1 = 1\) and \( a_{j>1} = 0 \) would optimize only the first rank. Generally,  setting high value of \(a\) for the first \(k\) item would optimize the top \(k\) item in the ranked list, leading to optimize precision at \(k\). 
 
-To minimize the loss function \eqref{eq:4}, the authors derive a differentiable approximation of the rank and use stochastic gradient descent (SGD) to minimize the approximation instead of directly minimize the rank itself, as the rank contains integer values and therefore indifferentiable. To begin with, the loss function of a positive document \(d\) is equal to:
+To minimize the loss function \eqref{eq:4}, the authors derive a differentiable approximation of the rank and use stochastic gradient descent (SGD) to minimize the approximation instead of directly minimize the rank itself, as the rank contains integer values and therefore indifferentiable. To begin with, the loss function of a positive document \(y\) is equal to:
 
 \begin{displaymath}
-L_{WARP}(f_d(u), D_{d_u}) = \sum_{\bar{d} \notin D_u} \Phi \left(rank_{d} \left(f\left( u \right)\right)\right) \frac{I\left(f_{\bar{d}}\left(u\right) \geq f_{d}\left(u\right)\right)} {rank_{d} \left(f\left( u \right)\right)}
+L_{WARP}(f(u), y) = \sum_{i \notin y} \Phi \left(rank_{y} \left(f\left( u \right)\right)\right) \frac{I\left(f_{i}\left(u\right) \geq f_{y}\left(u\right)\right)} {rank_{y} \left(f\left(u \right)\right)}   \tag{6} \label{eq:6}
 \end{displaymath}
 
-\noindent with the convention \(0/0 = 0\) when the correct label \(d\) is top-ranked. As ranks are integer number, hinge loss is applied to replace the indicator function to add a margin and make the loss continuous. The loss function is then approximated by:
+\noindent with the convention \(0/0 = 0\) when the correct label \(y\) is top-ranked. As ranks are integer number, hinge loss is applied to replace the indicator function to add a margin and make the loss continuous. The loss function is then approximated by:
 
 \begin{displaymath}
-\xoverline{L_{WARP}}(
+\xoverline[1]{L_{WARP}}(f(u), y) = \sum_{i \notin y} \Phi \left(rank_y^1 \left(f \left( u \right) \right) \right) \frac{{\lvert 1 - f_y(x) + f_i(x) \rvert}_+ }{rank_y^1 \left( f \left( u \right) \right)}    \tag{7} \label{eq:7}
 \end{displaymath}
 
-\subsubsection{Stochastic Gradient Descent}
-SGD is an optimization technique to minimize the linear predictor \( (\mathbf{w}, b) \). Given the randomize initial predictor \( (\mathbf{w_0}, b_0) \), the algorithm will perform \(T\) gradient descend steps and produce a sequence of intermediate linear predictors \( ((\mathbf{w}_t, b_t))_{t=0}^{T} \). In each gradient descend step \(t\), the linear predictor is updated using the information exploiting from an individual training example \( (x, y)\). 
-
-\noindent Formally, let \( \pi_1, \dots, \pi_T \) be a sequence of independently random indices, with \( 1 \leq \pi_t \leq m \). On each iteration \( t\), the algorithm runs on index \(\pi_t\). Also, let \([\mathbf{w}, b] \) denote the concatenation of \(\mathbf{w}\) and \(b\). The subgradient of Eq. \eqref{eq:2} is :
+\noindent where \({\lvert t \rvert}_+ \) is the positive part of \(t\) and \(rank_y^1(f(u)) \) is the margin-penalized rank of \(y\):
 
 \begin{displaymath}
-\nabla \mathbf{F} (\mathbf{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \ell' (\mathbf{w} \cdot x_i + b, y_i) [x_i, 1] + \lambda [\mathbf{w}, b] \tag{3} 
+rank_y^1 (f(u)) = \sum_{i \notin y} I(1 + f_i(u) > f_y(u))    \tag{8} \label{eq:8}
 \end{displaymath}
 
-\noindent As \(\pi\) is a random index, chosen uniformly between \(1\) and \(m\), 
+\noindent The object function to minimize \eqref{eq:3} now equals:
 
 \begin{displaymath}
-\lambda [\mathbf{w}, b] + \ell' (\mathbf{w} \cdot x_\pi + b, y_\pi) [x_\pi, 1]
+\int \xoverline[1]{L_{WARP}}(f(u), y) dP(u, y)    \tag{9} \label{eq:9}
 \end{displaymath}
 
-\noindent is an unbiased estimator of Eq. \eqref{eq:3}, as well as a stochastic gradient of the objective function in Eq. \eqref{eq:2}. We choose the size of learning step \(t \) to be \( 1/\lambda t\), where  \(lambda\) is the regularization parameter in Eq. \eqref{eq:1}. The learning step size is chosen according to the theoretical convergence analysis of SGD with strongly convex objective functions \cite{hazan2007logarithmic}. Therefore, the update of the predictor on each iteration t is:
+\noindent We can obtain an unbiased estimator of \eqref{eq:9} by stochastically sampling as follows:
+
+\begin{enumerate}
+	\item Sample a pair \((u, y)\) according to \(P(u, y)\)
+	\item For the chosen \((u,y)\) sample a violating label \(\bar{y}\) such that \( 1 + f_{\bar{y}}(u) > f_y(u) \)    
+\end{enumerate}
+
+This chosen triplet \(x, y, \bar{y}\) has contribution:
 
 \begin{displaymath}
-[\mathbf{w}_t, b_t] = [\mathbf{w}_{t-1},b_{t-1}] - \frac{1}{\lambda t} \left(\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1}, y_{\pi_t}) [x_{\pi_t},1] + \lambda [\mathbf{w}_{t-1}, b_{t-1}]\right) 
-\end{displaymath}
+L_{WARP} (f(u), y, \bar{y}) = \Phi(rank_y^1 (f(u))) { \lvert 1 - f_y(u) + f_{\bar{y}}(u) \rvert }_+
+     \tag{10} \label{eq:10}    
+\end{displaymath} 
 
-\noindent Rearrange the above equation:
+to the total risk, i.e. taking the expectation of these contributions approximates \eqref{eq:8} because we have probability \( \frac{1}{rank_y^1(f(u))} \) from drawing \(\bar{y}\), which accounts for the denominator of \eqref{eq:6}. Thus, we can use Robbins-Monro algorithm \cite{robbins1951stochastic} to perform the following stochastic update procedure over the parameters \(\beta\): 
+
 \begin{displaymath}
-[\mathbf{w}_t, b_t] = \left(1 - \frac{1}{t}\right) \left[\mathbf{w}_{t-1}, b_{t-1}\right] - \frac{\ell' (\mathbf{w}_{t-1} \cdot x_{\pi_t} + b_{t-1}, y_{\pi_t})}{\lambda t} [x_{\pi_t}, 1] \tag{4} \label{eq:4}
+\beta_{t+1} = \beta_t - \gamma_t \frac{\partial \xoverline[1]{L_{WARP}} (f(u), y, \bar{y})}{\partial \beta_t}    \tag{11} \label{eq:11}
 \end{displaymath}
 
-\noindent The pseudo code for this algorithm is in Algorithm 1:
+\noindent where \(\gamma_t \) is the learning rate. 
+
+The time complexity of the algorithm can be improved using these two optimization:
+
+\begin{enumerate}
+	\item In step (2), we need to compute the values \(f_i(u)\) for \( i = 1, \ldots, Y \) to know which labels \(\bar{y}\) are violators, which is expensive for large \(Y\). We replace this method by sampling labels i uniformly with replacement until we find a violating label.
+	\item \( rank_y^1 (f(u)) \) in \eqref{eq:11} is also unknown without computing \(f_i(u)\) for \(i \in Y\), which is again expensive. Observing that if there are \(k = rank_y^1(f(u)) \) violating labels, the random variable \(N_k\) which counts the number of trials in out sampling step follows a geometric distribution of parameter \( \frac{k}{Y-1} \). Thus \(k = \frac{Y-1}{E[N_k]}\). Therefore, \(rank_y^1 (f(u))\) in Equation \eqref{eq:10} can be approximated by:
+	\begin{displaymath}
+		rank_y^1 (f(u)) \approx \floor*{\frac{Y-1}{N}}
+	\end{displaymath}
+	where \(\floor*{.}\) is the floor function and N is the number of trials in the sampling step.
+\end{enumerate} 
+
+The pseudo code for training with WARP loss is given in Algorithm \eqref{WARP}
+
 \begin{algorithm}
-\caption{SGD for regularized linear regression} \label{SGD}
+\caption{WARP Loss Optimisation} \label{WARP}
 \begin{algorithmic}[1]
-\Function{SGD}{$T, \lambda, \left\{(x_y, y_t)\right\}_{i=1}^{m}$} \text{// number of steps, regularization parameter, training set}
-	\State $\text{draw random indices } \pi_1, \dots, \pi_T$ 
-	\State $w \gets 0$
-	\State $b \gets 0$
-	
-	\For{ $t = 1, \dots, T$}
-		\State $l \gets \ell'(w \cdot x_{\pi_t} + b, y_{\pi_1})$
-		\State $w\_initial \gets 1 - (1 / t) \cdot w$
-		\State $b\_initial \gets 1 - (1 / t) \cdot b$
-		\State $w\_deviate \gets l \cdot x_{\pi_t} / \lambda t $
-		\State $b\_deviate \gets l / \lambda t$
-		\State $w \gets w\_initial - w\_deviate$
-		\State $b \gets b\_initial - b\_deviate$
-	\EndFor
-	\Return [w, b]
+\Function{WARP}{}
+	\Repeat
+	\State $\text{Pick a random labeled example }(u_i, y_i), y_i \in {1, \ldots, Y}.$
+	\State $\text{Let} f_{y_i}(u_i) = q_{u_i} \cdot p_{y_i} + b_{u_i} + b_{y_i}$
+	\State $\text{Set} N = 0$
+	\Repeat
+		\State $\text{Pick a random annotation} \bar{y} \in {1, \ldots, Y} \ y_i$
+		\State $\text{Let} f_{\bar{y}} (u_i) = q_{u_i} \cdot p_{\bar{y}} + b_{u_i} + b_{\bar{y}}$
+		\State $N = N + 1$
+	\Until{$f_{\bar{y}}(u_i) > f_{y_i}(u_i) - 1 \text{or} N \geq Y - 1$}
+	\If{$f_{\bar{y}}(u_i) > f_{y_i}(u_i) - 1$}
+		\State $\text{Make a gradient step to minimize:}$
+		\State $L \left( \floor*{\frac{Y-1}{N}} \right) {\lvert 1 - f_y(u_i) + f_{\bar{y}} (u_i) \rvert}_+$	
+	\EndIf
+	\Until{\text{validation error does not improve}}
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
-
-\subsection{Content-boosted Collaborative Filtering}
-The idea of the content-booasted collaborative filtering algorithm is quite simple. First, a pseudo user-ratings vector is created for every user in the database. Each element of a pseudo user-ratings vector of a user is the user-rating if available, or the value predicted by the content-based recommender otherwise. The formal definition of a pseudo vector is as follow:
-
-\begin{displaymath}
-v_{u,i} = \left\{ \begin{array}{lcl} r_{u,i} & \mbox{:} & \text{if user }u \text{ rated item } i \\
-c_{u,i} & \mbox{:} & \text{ otherwise} \\
-\end{array} \right.
-\end{displaymath}
-
-\noindent when \( r_{(u,i)} \) denotes the actual rating of user u for item i, and \(c_{(u,i)} \) is the prediction of the content-based predictor. \\
-
-\noindent The pseudo user-ratings vectors of all user together construct a dense pseudo user-rating matrix. This matrix is then used as a substitution of the original user-rating matrix for collaborative filtering method. \\
-
-\noindent To increase the accuracy of the model as well as to promote the score from the content predictor,
-the following weighting schemes are added:\\
-
-\noindent \textbf{Harmonic Mean Weighting}: The accuracy of a pseudo user-ratings vector depends on the number of album the user listens to. The more album and the more times the user listen to them, the better the result that the content-based predictor generates and vice versa. Therefore, \textit{Harmonic Mean weighting} is used to reduce the impact of pseudo vector that does not contain much actual user information. The weighting is as follow:
-
-\begin{gather*}
-hm_{i,j} = \frac{2m_im_j}{m_i + m_j} \\
-m_i = \left\{ \begin{array}{lcl} 
-\frac{n_i}{T} & \mbox{:} & \text{if } n_i < T \\
-1 & \mbox{:} & \text{otherwise} 
-\end{array}
-\right. 
-\end{gather*} 
-
-with \( n_i \) is the number of item user i has rated. The harmonic mean tends to bias toward the lower value; therefore, if one of the two vectors has less than \(T\) items, the correlation will be devalued accordingly. 
-
-\todo{add threshold T and the experience to derive T}
-
-\noindent \textbf{Significant Weighting}: If a user has a high correlated neighbor but the number of co-rating between the two users are small, it is a high chance that the neighbor would worsen the prediction for the user. Therefore, a \textit{Significant weighting} is imposed to the correlation between two users. The weighting penetrates the correlation by a factor of \( n/T\) if the number of co-rated item is less than \(T\); otherwise, the correlation is left unchanged. The equation for the weighting is as follow:
-
-\begin{displaymath}
-sg_{a,u} = \left\{ \begin{array}{lcl} 
-\frac{n}{T} & \mbox{:} & \text{ if } \left\vert{r_a \cap r_u}\right\vert < T \\
-1 & \mbox{:} & \text{otherwise}
-
-\end{array} \right. 
-\end{displaymath} 
-
-with \(r_a\) is the set of rating item of user \(a\). The final hybrid correlation weight \(hw_{a,u}\) is as follow:
-
-\begin{displaymath}
-hw_{a,u} = hm_{a,u} + sg_{a,u} \tag{5} \label{eq:5}
-\end{displaymath}
-
-\noindent \textbf{Self Weighting}: The idea of self weighting is that we want to put more weight in the content-based prediction as we have more user listening information and vice versa. The formula for self weighting is as follow:
-
-\begin{displaymath}
-sw_a = \left\{ \begin{array}{lcl}
-\frac{n_a}{T} \times max & \mbox{:} & \text{if} n_a < T \\
-max & \mbox{:} & \text{otherwise}
-\end{array}
-\right. \tag{6} \label{eq:6}
-\end{displaymath}
-
-where \(n_a\) is the number of items rated by the user. The parameter \(max\) is the maximum confidence that we put on the content-based predictor, in case the user listen to more than T album. In our experiments, we used a value of 2 for \(max\) \\
-
-\noindent \textbf{Final Predictions} Combining the above weighting schemes, the final hybrid prediction for a user \(a\) for item \(i\) is as follow:
-
-\begin{displaymath}
-p_{a,i} = \overline{v}_a + \frac{sw_a \left(c_{a,i} - \overline{v}_a \right) + \sum\limits_{\substack{ u=1 \\ u \neq a}}^{n} hw_{a,u}P_{a,u} \left(v_{u,i} - \overline{v}_u \right) } {sw_a +\sum\limits_{\substack{ u=1 \\ u \neq a}}^{n} hw_{a,u}P_{a,u}}
-\end{displaymath}
-
-where \(c_{a,i}\) is the content-based prediction for user \(a\) for item  \(i\); \(v_{u,i}\) is the pseudo user-rating for user \(u\) and item \(i\); \(\overline{v}_u\) is the mean over all item for user \(u\). \(sw_a\), \(hw_{a,u}\), and \(P_{a,u}\) are shown in equation \eqref{eq:6}, \eqref{eq:5}, and \eqref{eq:1} respectively; and n is the size of neighborhood. 

@@ -90,6 +90,11 @@ headsepline, % Uncomment to get a line under the header
     \fi}
 \makeatother
 
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
