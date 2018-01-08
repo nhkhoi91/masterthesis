@@ -197,11 +197,11 @@ Fu et al. \cite{fu2011survey} developed another taxonomy under human understandi
 
 \paragraph{Low-level features}
 
-Timbral is perhaps the most exploited characteristic in the set of low-level features. It is described as the quality of sound, with different timbres belong to different types of sound sources, e.g. different instruments. Table 2.2 lists some major timbre features. Despite of the large variety in number of features, the timbre extraction phase of all these features are closely related to each other and follow some standard procedures. As this thesis does not deal with low level signal processing, the detail of these procedures is not described here. 
+Timbral is perhaps the most exploited characteristic in the set of low-level features. It is described as the quality of sound, with different timbres belong to different types of sound sources, e.g. different instruments. Table \ref{table:2} lists some major timbre features. Despite of the large variety in number of features, the timbre extraction phase of all these features are closely related to each other and follow some standard procedures. As this thesis does not deal with low level signal processing, the detail of these procedures is not described here. 
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|c | c | c |}
+\begin{tabular}{| c | c | c |}
 \hline
 Class & Feature Type & Used in \\
 \hline
@@ -242,12 +242,13 @@ Harmony is a succession of musical chords, which are three or more notes, typica
 To summarize, low-level audio features such as timbre are sufficient for genre classification but fail to achieve good result in song similarity detection. Mid-level features, on the other hand, are successful in detecting similar song using pitch and harmonic features. Rhythm features have also been exploited for mood classification. Research in using acoustic contents for recommendation problems will be describe later in the overview of music recommender systems part. 
 
 \subsection{Hybrid recommendation}
-Hybrid recommendation is a method that combine several kind of recommenders together. The motivation for hybrid recommender is to try to take advantage of the strength of different algorithms with fewer drawbacks than any individual one. Burke's well-known taxinomy \cite{burke2002hybrid} differentiate between seven kind of hybridization strategies; However, the seven approaches can be abstracted into three base design: monolithic, parallelized, and pipelined hybrids \cite{jannach2010recommender}. Monolithic design incorporates several recommendation strategies into one algorithm, while parallelized and pipelined designs require at least two separate recommenders. The outlines of the three designs are depicted in figure 2.2, 2.3 and 2.4
+Hybrid recommendation is a method that combine several kind of recommenders together. The motivation for hybrid recommender is to try to take advantage of the strength of different algorithms with fewer drawbacks than any individual one. Burke's well-known taxinomy \cite{burke2002hybrid} differentiate between seven kind of hybridization strategies; However, the seven approaches can be abstracted into three base design: monolithic, parallelized, and pipelined hybrids \cite{jannach2010recommender}. Monolithic design incorporates several recommendation strategies into one algorithm, while parallelized and pipelined designs require at least two separate recommenders. The outlines of the three designs are depicted in figure \ref{fig:monolithic}, \ref{fig:parallelized} and \ref{fig:pipelined}
 
 \begin{figure}[h]
 \includegraphics[width=8cm]{monolithic}
 \centering
 \caption{Monolithic hybridization design}
+\label{fig:monolithic}
 
 \end{figure}
 
@@ -255,14 +256,14 @@ Hybrid recommendation is a method that combine several kind of recommenders toge
 \includegraphics[width=8cm]{Parallelized}
 \centering
 \caption{Parallelized hybridization design}
-
+\label{fig:parallelized}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=8cm]{Pipelined}
 \centering
 \caption{Pipelined hybridization design}
-
+\label{fig:pipelined}
 \end{figure}
 
 \subsubsection{Monolithic hybridization design}

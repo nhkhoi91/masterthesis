@@ -4,26 +4,52 @@
 
 In this section, the experimental setup, the metrics for the evaluation between the three algorithms, as well as the result of the experiment are presented.
 
-\subsection{Experimental Setup}
-The main goal of this experiment is to measure how well the learning to rank algorithm is in out dataset, using the two remaining algorithms as the baseline. The expectation is that the learning to rank algorithm that embeds item features would outperform the one without the embedded item features. However, I also expect that the ranking algorithm would not achieve a top-class result, due to the small-scale dataset that we have. As the number of user is much smaller than the number of item, the algorithm might not yet be able to catch all the user behavior patterns for the ranking. In the original experiment, the ranking algorithm is tested on a dataset with millions of users and only about 75.000 to 700.000 items. 
+\section{Experimental Setup}
+The main goal of this experiment is to measure how well the learning to rank algorithm is using the described dataset, taking the two remaining algorithms as the baseline. 
 
-The two baseline algorithms used to compare with the learning to rank algorithm is the two that were mentioned in Chapter \ref{Chapter3}. The first one is the na\"ive collaborative filtering, which is the most simple and straightforward collaborative filtering method. The second one is the matrix factorization CF for implicit feedback dataset, which is the state-of-the-art collaborative filtering.
+\noindent The two baseline algorithms used to compare with the learning to rank algorithm is the two that were mentioned in Chapter \ref{Chapter3}. The first one is the na\"ive collaborative filtering, which is the most simple and straightforward collaborative filtering method. The second one is the matrix factorization CF for implicit feedback dataset, which is the state-of-the-art collaborative filtering.
 
-\subsection{Score Metrics}
-In this experiment, I will use Mean Average Precision (MAP) as the metric to evaluate the efficiency of the algorithms. To define MAP, we first define Precision at position k (P@k) as follow \cite{liu2009learning}:
+\noindent For the ranking algorithm, two versions are setup: with and without item features. For the one with item features, the features are converted from continuous to categorical values, using the following rules:
+
+\begin{itemize}
+	\item Acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence: the features are divided equally into 5 bins, each has range of 0.2.
+	\item Key: each key represent a category on its own.
+	\item Loudness: the feature is divided equally into 12 categories, each has range of 5.
+	\item Tempo: tempo is categorized using standard Italian tempo markings \cite{2018Tempo}. In details, the feature is divided into these following categories:
+	\begin{itemize}
+		\item Grave: tempo from 40 to 50 beat per minute (bpm).
+		\item Largo: tempo from 50 to 55 bpm.
+		\item Larghetto: tempo from 55 to 60 bpm.
+		\item Adagio: tempo from 60 to 70 bpm.
+		\item Andante: tempo from 70 to 85 bpm.
+		\item Moderato: tempo from 85 to 100 bpm.
+		\item Allegretto: tempo from 100 to 115 bpm.
+		\item Allegro: tempo from 115 to 140 bpm.
+		\item Vivace: tempo from 140 to 150 bpm.
+		\item Presto: tempo from 150 to 170 bpm.
+		\item Prestissimo: tempo higher than 170 bpm.
+\end{itemize}	  
+\end{itemize}
+
+
+\section{Score Metrics}
+In this experiment, I will use Precision at position k (P@k) and Mean Average Precision (MAP) as the two metrics to evaluate the efficiency of the algorithms. Precision at position k (P@k) is defined as follow \cite{liu2009learning}:
 
 \begin{displaymath}
-P@k(q) = \frac{#\text{\{relevant documents in the top k positions\}}{k}
+P@k(q) = \frac{\#\text{\{relevant documents in the top k positions\}}}{k}
 \end{displaymath}
 
-Then, the Average Precision (AP) is difined as:
+Then, the Average Precision (AP) is defined as:
 
 \begin{displaymath}
-AP(q) = \frac{\sum_{k=1}^m P@k(q) \cdot l_k}{#\text{\{relevant documents\}}
+AP(q) = \frac{\sum_{k=1}^m P@k(q) \cdot l_k}{\#\text{\{relevant documents\}}}
 \end{displaymath}
 
-where \(m\) is the total number of document associated with query q, and \(l_k\) is the binary judgement on the relevance of the document at the \(k\)-th position. The mean value of AP over all test queries is the MAP. 
+where \(m\) is the total number of document associated with query q, and \(l_k\) is the binary judgment on the relevance of the document at the \(k\)-th position. The mean value of AP over all test queries is the MAP. 
 
-\subsection{Experiment Result} 
+\section{Experiment Result}
+
+
+
 
 

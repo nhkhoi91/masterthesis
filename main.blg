@@ -5,6 +5,7 @@ The style file: biblatex.bst
 A level-1 auxiliary file: Chapters/Chapter1.aux
 A level-1 auxiliary file: Chapters/Chapter2.aux
 A level-1 auxiliary file: Chapters/Chapter3.aux
+A level-1 auxiliary file: Chapters/Chapter4.aux
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
@@ -22,50 +23,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated field_info (elt_size=4) to 19317 items from 5000.
 Database file #1: main-blx.bib
 Database file #2: example.bib
-Warning--I didn't find a database entry for "hu2008collaborative"
-Warning--I didn't find a database entry for "robbins1951stochastic"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 101 entries,
+You've used 103 entries,
             6256 wiz_defined-function locations,
-            1697 strings with 26555 characters,
-and the built_in function-call counts, 589786 in all, are:
-= -- 40017
-> -- 11890
-< -- 3455
-+ -- 15148
-- -- 4511
-* -- 44285
-:= -- 59033
+            1710 strings with 26907 characters,
+and the built_in function-call counts, 598974 in all, are:
+= -- 40578
+> -- 12099
+< -- 3526
++ -- 15332
+- -- 4592
+* -- 44946
+:= -- 59827
 add.period$ -- 0
-call.type$ -- 101
-change.case$ -- 1721
+call.type$ -- 103
+change.case$ -- 1760
 chr.to.int$ -- 31
-cite$ -- 200
-duplicate$ -- 65607
-empty$ -- 53731
-format.name$ -- 7435
-if$ -- 120975
+cite$ -- 204
+duplicate$ -- 66629
+empty$ -- 54627
+format.name$ -- 7551
+if$ -- 122941
 int.to.chr$ -- 0
-int.to.str$ -- 275
+int.to.str$ -- 281
 missing$ -- 0
-newline$ -- 3452
-num.names$ -- 4969
-pop$ -- 34758
+newline$ -- 3507
+num.names$ -- 5076
+pop$ -- 35418
 preamble$ -- 1
-purify$ -- 2360
+purify$ -- 2406
 quote$ -- 0
-skip$ -- 18567
+skip$ -- 18916
 stack$ -- 0
-substring$ -- 63945
-swap$ -- 16074
-text.length$ -- 2929
-text.prefix$ -- 103
+substring$ -- 64742
+swap$ -- 16362
+text.length$ -- 2982
+text.prefix$ -- 105
 top$ -- 1
-type$ -- 3422
+type$ -- 3490
 warning$ -- 0
-while$ -- 7438
+while$ -- 7536
 width$ -- 0
-write$ -- 3352
-(There were 2 warnings)
+write$ -- 3405

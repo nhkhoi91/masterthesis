@@ -1265,44 +1265,6 @@
     \field{year}{2012}
   \endentry
 
-  \entry{hazan2007logarithmic}{article}{}
-    \name{author}{3}{}{%
-      {{hash=HE}{%
-         family={Hazan},
-         familyi={H\bibinitperiod},
-         given={E.},
-         giveni={E\bibinitperiod},
-      }}%
-      {{hash=AA}{%
-         family={Agarwal},
-         familyi={A\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=KS}{%
-         family={Kale},
-         familyi={K\bibinitperiod},
-         given={S.},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer}%
-    }
-    \strng{namehash}{HEAAKS1}
-    \strng{fullhash}{HEAAKS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{number}{2-3}
-    \field{pages}{169\bibrangedash 192}
-    \field{title}{Logarithmic regret algorithms for online convex optimization}
-    \field{volume}{69}
-    \field{journaltitle}{Machine Learning}
-    \field{year}{2007}
-  \endentry
-
   \entry{herlocker1999algorithmic}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=HJL}{%
@@ -1411,6 +1373,43 @@
     \field{sortinithash}{H}
     \field{title}{Understanding Records: A Field Guide to Recording Practice}
     \field{year}{2010}
+  \endentry
+
+  \entry{hu2008collaborative}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=HY}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Yifan},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=KY}{%
+         family={Koren},
+         familyi={K\bibinitperiod},
+         given={Yehuda},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=VC}{%
+         family={Volinsky},
+         familyi={V\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Ieee}%
+    }
+    \strng{namehash}{HYKYVC1}
+    \strng{fullhash}{HYKYVC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Data Mining, 2008. ICDM'08. Eighth IEEE International
+  Conference on}
+    \field{pages}{263\bibrangedash 272}
+    \field{title}{Collaborative filtering for implicit feedback datasets}
+    \field{year}{2008}
   \endentry
 
   \entry{jang2008general}{article}{}
@@ -1856,6 +1855,34 @@
     \field{volume}{13}
     \field{journaltitle}{IEEE Transactions on Speech and Audio Processing}
     \field{year}{2005}
+  \endentry
+
+  \entry{liu2009learning}{article}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=LTY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Tie-Yan},
+         giveni={T\bibinitperiod-Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Now Publishers, Inc.}%
+    }
+    \strng{namehash}{LTY+1}
+    \strng{fullhash}{LTY+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{3}
+    \field{pages}{225\bibrangedash 331}
+    \field{title}{Learning to rank for information retrieval}
+    \field{volume}{3}
+    \field{journaltitle}{Foundations and Trends{\textregistered} in Information
+  Retrieval}
+    \field{year}{2009}
   \endentry
 
   \entry{logan2004music}{inproceedings}{}
@@ -2571,6 +2598,36 @@
     \field{pages}{1\bibrangedash 35}
     \field{title}{Introduction to recommender systems handbook}
     \field{year}{2011}
+  \endentry
+
+  \entry{robbins1951stochastic}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RH}{%
+         family={Robbins},
+         familyi={R\bibinitperiod},
+         given={Herbert},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Monro},
+         familyi={M\bibinitperiod},
+         given={Sutton},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{RHMS1}
+    \strng{fullhash}{RHMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{pages}{400\bibrangedash 407}
+    \field{title}{A stochastic approximation method}
+    \field{journaltitle}{The annals of mathematical statistics}
+    \field{year}{1951}
   \endentry
 
   \entry{salton1988syntactic}{inproceedings}{}

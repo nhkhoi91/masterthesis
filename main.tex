@@ -65,6 +65,8 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{algorithm}
+\usepackage{algorithmicx}
+
 \usepackage[noend]{algpseudocode}
 
 \def \mathbi#1{\textbf{\em #1}}
@@ -93,9 +95,9 @@ headsepline, % Uncomment to get a line under the header
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-\algnewcommand\algorithmicforeach{\textbf{for each}}
-\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 
+\usepackage{graphicx}
+\usepackage{subcaption}
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -310,7 +312,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2} 
 \include{Chapters/Chapter3}
-%\include{Chapters/Chapter4} 
+\include{Chapters/Chapter4} 
 %\include{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
