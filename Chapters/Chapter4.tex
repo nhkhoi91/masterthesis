@@ -31,6 +31,9 @@ The main goal of this experiment is to measure how well the learning to rank alg
 \end{itemize}	  
 \end{itemize}
 
+As there are many hyperparameters in both implicit and ranking algorithm, a sequential optimization strategy using decision trees is used to optimize the hyperparameters. The model is improved by sequentially evaluating the expensive function at the next best point, thereby finding the best hyperparameters with as few evaluations as possible. 
+
+To reduce the training time and approximate the best practice predicting time, instead of implementing the algorithms from scratch, I used a Python library developed by Benfred \cite{Benfred2018} for the implicit algorithm, and LightFM library \cite{DBLP:conf/recsys/Kula15} for the ranking algorithm.
 
 \section{Score Metrics}
 In this experiment, I will use Precision at position k (P@k) and Mean Average Precision (MAP) as the two metrics to evaluate the efficiency of the algorithms. Precision at position k (P@k) is defined as follow \cite{liu2009learning}:

@@ -53,7 +53,7 @@
 \contentsline {subsubsection}{\numberline {3.2.3.1}Metadata Embedding Hybrid Model}{28}{subsubsection.80}
 \contentsline {subsubsection}{\numberline {3.2.3.2}Learning to Rank Recommendation with WARP Loss}{29}{subsubsection.82}
 \contentsline {chapter}{\numberline {4}Experimental Evaluation}{33}{chapter.97}
-\contentsline {subsection}{\numberline {4.0.1}Experimental Setup}{33}{subsection.98}
-\contentsline {subsection}{\numberline {4.0.2}Score Metrics}{34}{subsection.99}
-\contentsline {subsection}{\numberline {4.0.3}Experiment Result}{34}{subsection.100}
+\contentsline {section}{\numberline {4.1}Experimental Setup}{33}{section.98}
+\contentsline {section}{\numberline {4.2}Score Metrics}{34}{section.99}
+\contentsline {section}{\numberline {4.3}Experiment Result}{34}{section.100}
 \contentsline {chapter}{Bibliography}{35}{appendix*.101}
