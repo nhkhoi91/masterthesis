@@ -975,6 +975,18 @@
     \field{year}{2007}
   \endentry
 
+  \entry{Benfred2018}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Fast Python Collaborative Filtering for Implicit Datasets}
+    \verb{url}
+    \verb https://github.com/benfred/implicit
+    \endverb
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{feng2003music}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=FY}{%
@@ -1636,6 +1648,52 @@
     \field{title}{Metadata embeddings for user and item cold-start
   recommendations}
     \field{journaltitle}{arXiv preprint arXiv:1507.08439}
+    \field{year}{2015}
+  \endentry
+
+  \entry{DBLP:conf/recsys/Kula15}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=KM}{%
+         family={Kula},
+         familyi={K\bibinitperiod},
+         given={Maciej},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=BT}{%
+         family={Bogers},
+         familyi={B\bibinitperiod},
+         given={Toine},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Koolen},
+         familyi={K\bibinitperiod},
+         given={Marijn},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CEUR-WS.org}%
+    }
+    \strng{namehash}{KM1}
+    \strng{fullhash}{KM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Proceedings of the 2nd Workshop on New Trends on
+  Content-Based Recommender Systems co-located with 9th {ACM} Conference on
+  Recommender Systems (RecSys 2015), Vienna, Austria, September 16-20, 2015.}
+    \field{pages}{14\bibrangedash 21}
+    \field{series}{{CEUR} Workshop Proceedings}
+    \field{title}{Metadata Embeddings for User and Item Cold-start
+  Recommendations}
+    \verb{url}
+    \verb http://ceur-ws.org/Vol-1448/paper4.pdf
+    \endverb
+    \field{volume}{1448}
     \field{year}{2015}
   \endentry
 
@@ -3049,8 +3107,7 @@
     \verb https://press.spotify.com/us/2014/03/06/spotify-acquires-the-echo-nes
     \verb t/
     \endverb
-    \field{journaltitle}{Press}
-    \field{year}{2014}
+    \field{year}{2017}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -3062,6 +3119,18 @@
   www.igvita.com/2007/01/15/svd-recommendation-system-in-ruby/}}
     \field{note}{Accessed: 2017-08-15}
     \field{title}{SVD recommendation system in ruby}
+  \endentry
+
+  \entry{2018Tempo}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Tempo Markings}
+    \verb{url}
+    \verb http://www.dolmetsch.com/musictheory5.htm
+    \endverb
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{tiemann2007towards}{inproceedings}{}

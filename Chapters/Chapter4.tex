@@ -2,13 +2,9 @@
 
 \label{Chapter4}
 
-In this section, the experimental setup, the metrics for the evaluation between the three algorithms, as well as the result of the experiment are presented.
+This chapter describes my implementation of the three algorithms that are used in this thesis: a Na\"ive collaborative filtering, a collaborative filtering approach specified for implicit feedback dataset, followed by the hybrid approach that combine collaborative filtering with item features.
 
-\section{Algorithms}
-
-The following sections describe my implementation of the three algorithms that are used in this thesis: a Na\"ive collaborative filtering, a collaborative filtering approach specified for implicit feedback dataset, followed by the hybrid approach that combine collaborative filtering with item features.
-
-\subsection{Pure Collaborative Filtering}
+\section{Pure Collaborative Filtering}
 As the number of song outnumbers the number of user, I decide to implement the user-user based collaborative filtering. The algorithm can be summarized in the following steps:
 
 \begin{enumerate}
@@ -25,9 +21,9 @@ p_{a,i} = \overline{r}_a + \frac{\sum_{u=1}^{n} (r_{u,i} - \overline{r}_{u}) \ti
 
 with \(p_{a,i} \) is the prediction of item i for user a, \(P_{a,i}\) is the similarity between user a and user u, and \(\overline{r}_a\) is the average of the ratings of user a.  
 
-\subsection{Collaborative Filtering for Implicit Feedback Dataset}
+\section{Collaborative Filtering for Implicit Feedback Dataset}
 
-\subsubsection{Introduction}
+\subsection{Introduction}
 One of the most well known work on implicit feedback dataset is the one of Yifan Hu et al \cite{hu2008collaborative}. In his paper, he mentioned that almost all the prior approaches were mostly designed for explicit feedback, and therefore applying these methods on implicit dataset might not work well. According to his work, there are four crucial differences between the two type of dataset:
 
 \begin{enumerate}
@@ -47,7 +43,7 @@ The above comments are used to make adjustments to traditional collaborative fil
 	\item All possible user-item combinations \( n \dot m\) have to be addressed. 
 \end{enumerate}
 
-\subsubsection{Model Formalization}
+\subsection{Model Formalization}
 The formalization of the model is as follows: 
 
 Let \(r_{ui}\) be the observation value between user \(u\) and item \(i\). In out situation, \(r_{ui}\) denotes the number of time user \(u\) listened to track \(i\). For example, \(r_{ui} = 2\) indicates that in the past, user \(u\) listens to track \(i\) 2 times. Next, we introduce a set of binary variable \(p_{ui}\), which indicates the preference of user \(u\) and item \(i\). The values of \(p_{ui}\) is defined by the formula: 
@@ -140,12 +136,12 @@ y_i = (X^T C^i X + \lambda I)^{-1} X^T C^i p(i)
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Metadata Embeddings for Item Recommendation}
+\section{Metadata Embeddings for Item Recommendation}
 In this section, I propose using a hybrid ranking matrix factorization model using Weighted Approximated-Rank Pairwise Loss (WARP), a ranking error function used to optimize precision at \(k\), to solve the recommendation problem. 
 
 This approach is chosen because of two advantages: first, it has the ability to exploit the side information, i.e. user features or item features, if there is any. Second, the loss function is design to optimize the ranking of the top k item. This advantage has a practical implication: consider Youtube website where there are not so many placeholder for recommended item, a high precision for top 5 - 10 items would play a critical role in user experience. More detail about this will be explained in the algorithm description.
 
-\subsubsection{Metadata Embedding Hybrid Model}
+\subsection{Metadata Embedding Hybrid Model}
 
 In this section, I will introduce the hybrid content-collaborative model \cite{kula2015metadata}. In this model, like in a collaborative model, users and items are represented as latent vectors. These latent vectors are defined by functions of embedding of the content features that describe each product or user. For example, if the movie "Game of Throne" is described by the following features: "fantasy", "drama", and "adventure", then its latent representation is the sum of these features' latent representations.\\
 
@@ -211,7 +207,7 @@ f_{i}u = f (\boldsymbol{q}_u  \cdot \boldsymbol{p}_i + b_u + b_i) \tag{2} \label
 
 \noindent The behavior of the embedding model is altered by the differences in the feature sets. If the feature sets consists solely of indicator variables for each user and each item, the embedding model reduces to the standard Matrix Factorization (MF) model. If the feature sets also contain metadata features shared by more than one item or user, the model extends the MF model by letting the feature latent factors explain part of the structure of user interactions. However, if only metadata features and no indicator variables are present, the model does not reduce to a pure content-based system. The reason is that the model would estimate feature embedding by factorizing the collaborative interaction matrix, while content-based system would factorize pure content co-occurrence matrices. The only special case where the model reduce to a pure content-based model is when each user is described by an indicator variable and has interacted with only one item. 
 
-\subsubsection{Learning to Rank Recommendation with WARP Loss}
+\subsection{Learning to Rank Recommendation with WARP Loss}
 Given a set of items for a user, a ranking function is responsible for returning an ordered list of items, with the most relevant items are arrange at the top of the list, therefore have a lower rank. In order to do so, the system is given a training with a list of users as well as the set of their known ratings. The ratings can be explicit, i.e. user ratings, or implicit, i.e. number of times a user listened to a track, or watched a movie. In our case, we use listening time as the rating for the ranking function, and the Weighted Approximate-Rank Pairwise (WARP) loss \cite{weston2011wsabie} as our chosen ranking error functions. The main idea of this method is that, we first define the tracks that have been listened by a user positive items for that user, and the remaining negative items. Then for each positive item, we examine a number of random negative items. For each negative item, if the rank of the item is lower than the one of the positive item, we perform a gradient update to lower the loss function. \hfill \break
 
 \noindent Formally, let \(x\) be a positive item of user u, we define \( f_x(u) \) be the score for item x for user u as follow:
@@ -331,53 +327,7 @@ The pseudo code for training with WARP loss is given in Algorithm \eqref{WARP}
 \end{algorithmic}
 \end{algorithm}
 
-\section{Experimental Setup}
-The main goal of this experiment is to measure how well the learning to rank algorithm is using the described dataset, taking the two remaining algorithms as the baseline. 
 
-\noindent The two baseline algorithms used to compare with the learning to rank algorithm is the two that were mentioned in Chapter \ref{Chapter3}. The first one is the na\"ive collaborative filtering, which is the most simple and straightforward collaborative filtering method. The second one is the matrix factorization CF for implicit feedback dataset, which is the state-of-the-art collaborative filtering.
-
-\noindent For the ranking algorithm, two versions are setup: with and without item features. For the one with item features, the features are converted from continuous to categorical values, using the following rules:
-
-\begin{itemize}
-	\item Acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence: the features are divided equally into 5 bins, each has range of 0.2.
-	\item Key: each key represent a category on its own.
-	\item Loudness: the feature is divided equally into 12 categories, each has range of 5.
-	\item Tempo: tempo is categorized using standard Italian tempo markings \cite{2018Tempo}. In details, the feature is divided into these following categories:
-	\begin{itemize}
-		\item Grave: tempo from 40 to 50 beat per minute (bpm).
-		\item Largo: tempo from 50 to 55 bpm.
-		\item Larghetto: tempo from 55 to 60 bpm.
-		\item Adagio: tempo from 60 to 70 bpm.
-		\item Andante: tempo from 70 to 85 bpm.
-		\item Moderato: tempo from 85 to 100 bpm.
-		\item Allegretto: tempo from 100 to 115 bpm.
-		\item Allegro: tempo from 115 to 140 bpm.
-		\item Vivace: tempo from 140 to 150 bpm.
-		\item Presto: tempo from 150 to 170 bpm.
-		\item Prestissimo: tempo higher than 170 bpm.
-\end{itemize}	  
-\end{itemize}
-
-As there are many hyperparameters in both implicit and ranking algorithm, a sequential optimization strategy using decision trees is used to optimize the hyperparameters. The model is improved by sequentially evaluating the expensive function at the next best point, thereby finding the best hyperparameters with as few evaluations as possible. 
-
-To reduce the training time and approximate the best practice predicting time, instead of implementing the algorithms from scratch, I used a Python library developed by Benfred \cite{Benfred2018} for the implicit algorithm, and LightFM library \cite{DBLP:conf/recsys/Kula15} for the ranking algorithm.
-
-\section{Score Metrics}
-In this experiment, I will use Precision at position k (P@k) and Mean Average Precision (MAP) as the two metrics to evaluate the efficiency of the algorithms. Precision at position k (P@k) is defined as follow \cite{liu2009learning}:
-
-\begin{displaymath}
-P@k(q) = \frac{\#\text{\{relevant documents in the top k positions\}}}{k}
-\end{displaymath}
-
-Then, the Average Precision (AP) is defined as:
-
-\begin{displaymath}
-AP(q) = \frac{\sum_{k=1}^m P@k(q) \cdot l_k}{\#\text{\{relevant documents\}}}
-\end{displaymath}
-
-where \(m\) is the total number of document associated with query q, and \(l_k\) is the binary judgment on the relevance of the document at the \(k\)-th position. The mean value of AP over all test queries is the MAP. 
-
-\section{Experiment Result}
 
 
 

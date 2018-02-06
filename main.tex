@@ -24,7 +24,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 english, % ngerman for German
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
@@ -107,16 +107,18 @@ headsepline, % Uncomment to get a line under the header
 	inner=2.5cm, % Inner margin
 	outer=3.8cm, % Outer margin
 	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
 	%showframe, % Uncomment to show how the type block is set on the page
 }
+
+\renewcommand{\baselinestretch}{1.5}
 
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Applying Content-Boosted Collaborative Filtering On Spotify Dataset} 
+\thesistitle{Applying Learning To Rank Algorithm On Spotify Dataset} 
 
 \supervisor{Prof Anna Monreale} % \supname
 
@@ -313,7 +315,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \include{Chapters/Chapter2} 
 \include{Chapters/Chapter3}
 \include{Chapters/Chapter4} 
-%\include{Chapters/Chapter5} 
+\include{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
