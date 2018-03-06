@@ -8,8 +8,14 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Parallelized hybridization design\relax }}{19}{figure.caption.31}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Pipelined hybridization design\relax }}{20}{figure.caption.32}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Boxplot diagram of music features\relax }}{39}{figure.caption.60}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Frequency table of music features\relax }}{39}{figure.caption.61}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Average Precision of the algorithms\relax }}{60}{figure.caption.101}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Boxplot diagram of music features\relax }}{56}{figure.caption.97}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Frequency table of music features\relax }}{56}{figure.caption.98}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Silhouette coefficient of the dataset for different number of clusters\relax }}{58}{figure.caption.100}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces SSE of the dataset for different number of clusters\relax }}{59}{figure.caption.101}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Boxplot diagram of different clusters\relax }}{60}{figure.caption.102}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Average Precision of the algorithms\relax }}{63}{figure.caption.107}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Average Precision of the algorithms regarding training size\relax }}{64}{figure.caption.108}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Training time of the algorithms\relax }}{65}{figure.caption.110}
+\addvspace {10\p@ }

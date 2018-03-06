@@ -3000,6 +3000,19 @@
     \field{year}{1994}
   \endentry
 
+  \entry{ForestMinimize2018}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Sequential optimisation using decision trees}
+    \verb{url}
+    \verb https://scikit-optimize.github.io/optimizer/index.html#skopt.optimize
+    \verb r.forest_minimize
+    \endverb
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{shardanand1995social}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=SU}{%
@@ -3056,6 +3069,30 @@
     \field{title}{An investigation of feature models for music genre
   classification using the support vector classifier}
     \field{year}{2005}
+  \endentry
+
+  \entry{singhal2001modern}{article}{}
+    \true{moreauthor}
+    \name{author}{1}{}{%
+      {{hash=SA}{%
+         family={Singhal},
+         familyi={S\bibinitperiod},
+         given={Amit},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SA+1}
+    \strng{fullhash}{SA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{4}
+    \field{pages}{35\bibrangedash 43}
+    \field{title}{Modern information retrieval: A brief overview}
+    \field{volume}{24}
+    \field{journaltitle}{IEEE Data Eng. Bull.}
+    \field{year}{2001}
   \endentry
 
   \entry{sordo2008quest}{inproceedings}{}

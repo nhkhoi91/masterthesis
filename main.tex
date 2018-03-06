@@ -66,6 +66,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
+\usepackage{multirow}
 
 \usepackage[noend]{algpseudocode}
 
@@ -120,7 +121,8 @@ headsepline, % Uncomment to get a line under the header
 
 \thesistitle{Applying Learning To Rank Algorithm On Spotify Dataset} 
 
-\supervisor{Prof Anna Monreale} % \supname
+\supervisor{Prof. Anna Monreale \n Prof. Giulio Rossetti} % \supname
+
 
 \examiner{} % \examname
 \degree{Master thesis} % \degreename
@@ -171,25 +173,25 @@ headsepline, % Uncomment to get a line under the header
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Author:}\\
-\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+{\authorname} % Author name - remove the \href bracket to remove the link
 \end{flushleft}
 \end{minipage}
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushright} \large
 \emph{Supervisor:} \\
-\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+ {\supname} % Supervisor name - remove the \href bracket to remove the link  
 \end{flushright}
 \end{minipage}\\[3cm]
  
 \vfill
 
 \large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\\deptname\\[2cm] % Research group name and department name
+in
+\\\deptname\\[2cm] % Research group name and department name
  
 \vfill
 
-{\large \today}\\[4cm] % Date
+%{\large \today}\\[4cm] % Date
 %\includegraphics{Logo} % University/department logo - uncomment to place it
  
 \vfill
@@ -228,7 +230,7 @@ headsepline, % Uncomment to get a line under the header
 
 \vspace*{0.2\textheight}
 
-\noindent\enquote{\itshape Thanks to Google, Wiki, Stack Overflow for helping me with this monster}\bigbreak
+\noindent\enquote{\itshape Thanks to Google, Wiki, Stack Overflow for helping me with this thesis}\bigbreak
 
 \hfill Khoi Hoang Nguyen
 
@@ -238,7 +240,7 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+As Spotify released the dataset on music acoustic features, new opportunities to understand user behavior and recommend music is emerged. This thesis creates a join dataset using user listening data from Last.fm and acoustic features from Spotify, then applies a learning to rank algorithm that also includes acoustic features to observe and compare the accuracy with state of the art collaborative filtering techniques.
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
@@ -247,7 +249,12 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+First and foremost, I would like to thank my parents. Without their financial and mental support, I could never have this amazing experience in Italy, whose end is remarked by this thesis.
+
+I would like to thank Professor Monreale and Professor Rossetti for guiding me through the thesis.
+
+I also want to say thank you to all my friends who supported me crawling the data, consulted me on the direction, and were there physically and mentally when I need them.
+
 \end{acknowledgements}
 
 %----------------------------------------------------------------------------------------
@@ -316,6 +323,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \include{Chapters/Chapter3}
 \include{Chapters/Chapter4} 
 \include{Chapters/Chapter5} 
+\include{Chapters/Chapter6}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES

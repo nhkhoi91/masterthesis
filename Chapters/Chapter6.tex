@@ -1,0 +1,13 @@
+\chapter{Conclusion} % Main chapter title
+
+\label{Chapter6}
+
+In this thesis, the following jobs have been done:
+
+\begin{itemize}
+	\item[•] A dataset is created by joining an user listening history provided by Last.fm to a list of features for each track contributed by Spotify. 
+	\item[•] Data exploration methodologies, such as descriptive statistics and clustering analysis, to discover the dataset.
+	\item[•] Comparing the effectiveness of three different machine learning algorithms on data recommendation on the dataset. The main purpose of the comparison is to observe the effect of adding music features on the quality of the recommendation. 
+\end{itemize}
+
+The result of the experiment shows that implicit collaborative filtering, with suitable  parameters, achieves the best result for item recommendation; However, the algorithm slows down linearly as the size of the training increase. The learning to rank algorithm gives a slightly worse result but the running time remains stable as the training set increase in size. Adding the track features, unfortunately, does not increase the accuracy of the algorithm, which might be caused by the lack of optimization, or of the features themselves. Detail investigation of the cause will be conduct as future work due to the limit of the scope of this thesis. Also, a bigger user listening dataset might be collected and applied, as the current dataset shows a converge trend for the data of a number of features.

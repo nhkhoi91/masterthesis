@@ -2,11 +2,17 @@
 
 \label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter3} 
 
-In this chapter, the approaches used in this research is examined. First, the join dataset merging from Last.fm and Spotify is mentioned. After that, the three algorithms and the evaluation metrics are discussed in detail.
+In this chapter, the problem that this thesis attempts to solve is discussed, following by the description of the dataset used for the thesis.
 
-\section{Dataset}
+\section{Problem statement}
+Most of the current endeavors to music recommendation uses low level acoustic features, such as spectral similarity, loudness fluctuations, timbre, etc..., or tries to extract genres and moods by training Gaussian mixture models of MFCCs. Low level features, while complex, are not human friendly and therefore make it hard for the explanation of the recommendation. 
 
-\subsection{Dataset creation}
+\noindent As Spotify releases a dataset of high audio features for music track, new possibilities to understand user listening behaviors and music recommendation emerges. However, as observing current user listening behaviors is burdensome, one of the best way to acquire the knowledge is to make use of available dataset, one of which is the user listening history that Last.fm provides for 1,000 users. 
+
+\noindent Therefore, a join dataset is constructed with the goal of understanding the high level acoustic characteristics of the Last.fm dataset, as well as investigating the possibilities of embedding these features into recommendation process. For the first part, descriptive statistics as well as clustering technique are applied to explore the traits, while for the second part, comparisons between three machine learning algorithms are accomplished. The comparisons attempt to answer a question of how adding high level features affects the quality of the recommendation processes.
+
+\section{Dataset description}
+
 The dataset for this thesis is a combination between two databases from two services: the 1K users dataset from Last.fm \footnote{https://last.fm} and the dataset crawling from Spotify Web Api \footnote{https://developer.spotify.com/web-api}. 
 
 The dataset from Last.fm contains the listening habit from February, 2005 until May, 2009 for nearly 1000 users. The dataset contains more than 19 million entries, each entry consists of 4 attributes: the user id from Last.fm, the song that the user listened to, the artist who wrote the song, and the timestamp represents the time the user listened to the song. 
@@ -38,110 +44,5 @@ The dataset is then divided into training set and test set following this rule: 
 \item[•] Time signature: An indication of how many beats are in each bar of a track. 
 \end{itemize}
 
-\subsection{Some descriptive data summarization}
 
-In this section, some basic descriptive statistics of the data will be described, in order for the understanding of the overall picture of the data. Figure \ref{fig:boxplot} represent the boxplot diagrams of the energy, speechiness, acousticness, danceability, tempo, instrumentalness, valence, liveness, and loudness respectively. For key, mode, and time signature, as they are categorical variables, boxplot diagram information is not useful. Instead, for these variables, the frequency of the values, such as in table \ref{fig:freq_table} is displayed.
-
-\begin{figure}
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{energy}
-    \caption{Energy}
-    \label{fig:energy}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{speechiness}
-    \caption{Speechiness}
-    \label{fig:speechiness}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{acousticness}
-    \caption{Acousticness}
-    \label{fig:acousticness}
-  \end{subfigure}
-  
-  \bigskip
-    \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{danceability}
-    \caption{Danceability}
-    \label{fig:danceability}
-  \end{subfigure}
-  \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{tempo}
-    \caption{Tempo}
-    \label{fig:tempo}
-  \end{subfigure}
-  \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{instrumentalness}
-    \caption{Instrumentalness}
-    \label{fig:instrumentalness}
-  \end{subfigure}
-  
-  \bigskip
-      \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{valence}
-    \caption{Valence}
-    \label{fig:valence}
-  \end{subfigure}
-  \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{liveness}
-    \caption{Liveness}
-    \label{fig:liveness}
-  \end{subfigure}
-  \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{loudness}
-    \caption{Loudness}
-    \label{fig:loudness}
-  \end{subfigure}
-  
-  \caption{Boxplot diagram of music features}
-  \label{fig:boxplot}
-\end{figure}
-
-\begin{figure}
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{key}
-    \caption{Key}
-    \label{fig:key}
-  \end{subfigure}
-  \hfill
-   \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{mode}
-    \caption{Mode}
-    \label{fig:mode}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{time_signature}
-    \caption{Time signature}
-    \label{fig:time_signature}
-  \end{subfigure}
-	
-	\caption{Frequency table of music features}
-	\label{fig:freq_table}
-\end{figure}
-
-\bigskip
-
-\noindent We can see that from the diagrams:
-\begin{itemize}
-	\item Energy: the median is quite high, at nearly 0.8. However, the interquartile range of the energy is 0.35, suggesting that the energy spans equally across the value range.
-	\item Speechiness: the median is at 0.04, with the first quartile at 0.03 and third quartile at 0.06, showing that most of the tracks have low level of spoken word. 
-	\item Acousticness: the median is also at 0.04, with the first quartile at 0.003. However, the third quartile is at 0.3, suggesting that most of the tracks are not acoustic.
-	\item Danceability: the median is at 0.5, with the first quartile at 0.4 and third quartile at 0.6, showing a normal distribution, which means that people listen equally to danceable track as well as undanceable track.
-	\item Tempo: the median tempo is 123, with the first quartile of 104 and third quartile of 142, suggesting that most people listen to Allegro, which is fast and bright music.
-	\item Instrumentalness: the median of 0.003 and the third quartile of 0.17 imply that most of the tracks contain vocal and not just pure instrument.
-	\item Valence: with the median of 0.44, first quartile of 0.25, and third quartile of 0.66, valence also forms the normal distribution, suggesting that people listen equally to both positive and negative music.
-	\item Liveness: the median of 0.12 and third quartile of 0.25 indicate that most tracks have a low level of liveness.
-	\item Loudness: the first quartile of -9 and third quartile of -5 implement that most song have quite the same level of loudness.
-	\item Key: songs with different key have different playing frequency. Overall, major key songs dominate minor ones.
-	\item Mode: major key tracks are played more than minor ones, as previously stated.
-	\item Time signature: the table indicates that more than 90\% of the tracks have 4 beats in each measure, around 7\% of the tracks have 3 beats in each measure, and the rest of the track have either 1 or 5 beats per measure.
-\end{itemize}
-	
 
